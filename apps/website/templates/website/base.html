@@ -1,0 +1,83 @@
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load i18n %}
+{% load compress %}
+{% load static tailwind_tags %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{# ------------------------------- WEBPAGE BASE CONTENT ------------------------------- #}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Welcome to my website - Ruveloper! (Ruben Caballero)">
+    <meta name="author" content="Ruben Caballero">
+
+    {# Block title with default #}
+    <title>{% block title %}👨‍💻Ruveloper{% endblock title %}</title>
+
+    {# Favicon #}
+    <link rel="icon" href="{% static 'website/img/favicon.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'website/img/apple-touch-icon.png' %}">
+
+    {# ----------------------------- STYLESHEETS - CSS -----------------------------#}
+    {% block css %}
+        <!--  VENDOR MINIFIED CSS -->
+
+        <!-- MAIN CSS -->
+        {% tailwind_css %}
+
+        {% compress css %}
+            <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+        {% endcompress %}
+    {% endblock css %}
+
+    {# ------------------------------ JAVASCRIPT - JS ------------------------------#}
+    {# Placed at the top of the document. Pages load faster and at the end execute the scripts (defer) #}
+    {% block javascript %}
+        <!-- VENDOR MINIFIED JS -->
+
+        <!-- Main JS -->
+        {% compress js %}
+            <script defer src="{% static 'website/js/base.js' %}"></script>
+        {% endcompress %}
+    {% endblock javascript %}
+
+</head>
+<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+
+<!-----------------------------------------------------------------------------------------------
+    Header and Navbar
+------------------------------------------------------------------------------------------------->
+<header id="header">
+    {% block header %}
+    {% endblock header %}
+</header>
+
+<!-----------------------------------------------------------------------------------------------
+    Main Content
+------------------------------------------------------------------------------------------------->
+<main id="main">
+    {% block main-content %}
+    {% endblock main-content %}
+</main>
+
+<!-----------------------------------------------------------------------------------------------
+    Footer
+------------------------------------------------------------------------------------------------->
+<footer id="footer">
+    {% block footer %}
+    {% endblock footer %}
+</footer>
+
+<!-----------------------------------------------------------------------------------------------
+    Inline Javascript
+------------------------------------------------------------------------------------------------->
+{% block inline_javascript %}{% endblock inline_javascript %}
+
+{# -------------------------------------------- END -------------------------------------------- #}
+</body>
+</html>
