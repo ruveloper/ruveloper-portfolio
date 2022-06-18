@@ -1,0 +1,98 @@
+{# ! DYNAMIC FLOWBITE COMPONENT - Requires Flowbite #}
+
+{% comment %}
+PARAMETERS
+    * cms_base: Base --> Base model instance.
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load compress %}
+{% load i18n %}
+
+{# * -------------------------------- CONTENT ------------------------------- #}
+<nav id="navbar"
+     class="w-screen md:h-16 px-3 py-2.5 fixed top-0 z-30
+              bg-transparent
+              font-bold text-xl text-white drop-shadow-md
+              transition-[background-color] ease-in-out duration-300">
+
+    <div class="container h-full flex flex-wrap items-center mx-auto    ">
+        {# -------- Developer link -------- #}
+        <a href="/" class="flex-1 flex items-center min-w-min">
+            <span class="self-center">{{ cms_base.brand }}</span>
+        </a>
+        <div class="flex items-center gap-x-3 md:order-2 md:flex-1 md:min-w-min md:justify-end ">
+            {# -------- Social links -------- #}
+            <a href="{{ cms_base.github }}"
+               target="_blank"
+               data-tooltip-target="tooltip-github" data-tooltip-placement="bottom" data-tooltip-style="light">
+                <i class="fa-brands fa-github fa-lg"></i>
+                <div id="tooltip-github" role="tooltip"
+                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 shadow-sm opacity-0 tooltip">
+                    Github
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </a>
+            <a href="{{ cms_base.linkedin }}"
+               target="_blank"
+               data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom"
+               data-tooltip-style="light">
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+                <div id="tooltip-linkedin" role="tooltip"
+                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 shadow-sm opacity-0 tooltip">
+                    Linkedin
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+            </a>
+
+            {# -------- Language selector -------- #}
+            {% include "website/components/flowbite/lang_selector.html" %}
+
+            {# -------- Menu button -------- #}
+            <button id="navbar-mobile-menu" data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 text-md rounded-lg md:hidden
+                            hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    aria-controls="navbar-menu" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        {# -------- Menu entries -------- #}
+        <div id="navbar-menu" class="hidden w-full md:flex md:w-auto">
+            <ul class="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0">
+                {# Add aria current if view_name match with the element url #}
+                {% with request.resolver_match.view_name as view_name %}
+                    <li>
+                        <a href="{% url 'website:home' %}" class="block
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
+                                md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
+                                {% if view_name == 'website:home' %} aria-current="page" {% endif %}
+                        >{% translate "Home" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'website:about' %}" class="block
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
+                                md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
+                                {% if view_name == 'website:about' %} aria-current="page" {% endif %}
+                        >{% translate "About" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'website:projects' %}" class="block
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
+                                md:px-2 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
+                                {% if view_name == 'website:projects' %} aria-current="page" {% endif %}
+                        >{% translate "Projects" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'website:contact' %}" class="block
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
+                                md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
+                                {% if view_name == 'website:contact' %} aria-current="page" {% endif %}
+                        >{% translate "Contact" %}</a>
+                    </li>
+                {% endwith %}
+            </ul>
+        </div>
+    </div>
+</nav>

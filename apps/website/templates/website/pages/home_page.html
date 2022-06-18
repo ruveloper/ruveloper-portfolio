@@ -2,27 +2,76 @@
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
-{% load compress %}
+{% load i18n %}
 
 {# Website title #}
-{% block title %}{{ block.super }} - Inicio{% endblock %}
-
-{# STATIC CSS | JS #}
-{% block css %}
-    {{ block.super }}
-{% endblock %}
-
-{% block javascript %}
-    {{ block.super }}
-{% endblock %}
-
+{% block title %}{% translate "Home" %} | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}
-    <div class="container mx-auto">
-        <section class="flex items-center justify-center h-screen">
-            <h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-        </section>
-    </div>
-{% endblock %}
+    <!------------------------------------------------------------------------------
+    Home Page
+    -------------------------------------------------------------------------------->
+    <section class="w-full min-h-screen md:h-screen relative flex flex-col justify-between">
 
+        {# -------- Card -------- #}
+        <div class="md:absolute md:inset-0 z-10">
+            <div class="container md:h-screen mx-auto flex flex-col">
+
+                {# -------- Logo image -------- #}
+                <img class="max-w-fit max-h-20 md:max-h-36 lg:max-h-44 xl:max-h-52 self-start z-20
+                            mx-2 mt-10 lg:mt-0
+                            translate-y-8 md:translate-y-12 lg:translate-y-24 xl:translate-y-32"
+                     src="{% if cms_base.logo %} {{ cms_base.logo.url }}{% else %} {% static 'img/Logo.svg' %} {% endif %}"
+                     alt="Developer logo">
+
+                {# -------- Glass Card -------- #}
+                <div class="text-gray-800
+                            m-5 ml-14 p-5 rounded-xl
+                            md:max-w-sm md:translate-x-8
+                            lg:max-w-lg lg:translate-x-28
+                            xl:max-w-[41rem] xl:translate-x-36
+                            bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg border border-white-100">
+                    <p class="bg-white rounded-xl px-3 py-2
+                    font-extrabold md:text-xl lg:text-2xl xl:text-3xl">
+                        {% if cms_home.card_title %}
+                            {{ cms_home.card_title|safe }}
+                        {% else %}
+                            Hi! here @developer
+                        {% endif %}
+                    </p>
+                    <p class="mt-3 font-bold text-white drop-shadow-md
+                    md:text-lg lg:text-xl xl:text-2xl">
+                        {% if cms_home.card_body %}
+                            {{ cms_home.card_body|safe }}
+                        {% else %}
+                            My name is John Doe , a Full-Stack web developer.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>
+                            I focus on
+                            <span class="typed"
+                                  data-typed-items="
+                              <span class='font-extrabold bg-cyan-700 text-white px-2 py-0.5 rounded-lg'>Python</span> as programming language.,
+                              backend with <span class='font-extrabold bg-emerald-700 text-white px-2 py-0.5 rounded-lg'>Django</span>.,
+                              frontend with <span class='font-extrabold bg-amber-500 text-white px-2 py-0.5 rounded-lg'>Javascript</span>."></span>
+                        {% endif %}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        {# -------- Dev Photo -------- #}
+        <div class="w-full md:absolute md:inset-0">
+            <picture class="container md:h-screen mx-auto flex justify-center items-end overflow-hidden
+                                md:h-screen md:justify-end md:overflow-visible">
+                <!-- load webp if supported, otherwise load png-->
+                <source srcset="{% if cms_home.dev_photo_webp %}{{ cms_home.dev_photo_webp.url }}
+                    {% else %}{% static 'img/developer.webp' %} {% endif %}" type="image/webp">
+                <img class="max-w-fit h-96 md:h-5/6 drop-shadow-[-30px_35px_35px_rgba(0,0,0,0.5)]"
+                     src="{% if cms_home.dev_photo %} {{ cms_home.dev_photo.url }}
+                         {% else %}{% static 'img/developer.png' %} {% endif %}" alt="developer image">
+            </picture>
+        </div>
+
+    </section>
+{% endblock %}

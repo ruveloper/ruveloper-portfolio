@@ -1,0 +1,85 @@
+/* * ----- SCROLLBAR ----- */
+body {
+    scrollbar-gutter: stable;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(34, 0, 255, 0.4);
+    border-radius: 10rem;
+    border: 1px solid #fff;
+}
+
+body::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+}
+
+/* --------- Base styles --------- */
+/* Navbar - active page style */
+#navbar a[aria-current="page"] {
+    border-bottom: 1px solid #ffffff;
+}
+
+@media (max-width: 768px) {
+    #navbar a[aria-current="page"] {
+        border-radius: 0;
+    }
+}
+
+/* Background - effect colors */
+#main #base-canvas-animated-gradient {
+    --gradient-color-1: #00d3ef;
+    --gradient-color-2: #6eb8f4;
+    --gradient-color-3: #3849ff;
+    --gradient-color-4: #6427ff;
+}
+
+/* --------- Home styles --------- */
+.background-clip-path::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(249, 250, 251);
+    clip-path: polygon(0 90%, 100% 65%, 100% 100%, 0% 100%);
+}
+
+/* ----- Section page styles ----- */
+.page-radial-cut {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background: radial-gradient(circle at 50% 0, transparent 2.4rem, white 2.4rem) no-repeat bottom left;
+}
+
+/* ----- Shimmer loading styles ----- */
+.shimmer-loading-background {
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmerAnimation;
+    animation-timing-function: linear;
+    background: darkgray;
+    background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+}
+
+@keyframes shimmerAnimation {
+    0% {
+        background-position: -468px 0
+    }
+    100% {
+        background-position: 468px 0
+    }
+}

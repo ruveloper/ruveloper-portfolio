@@ -1,0 +1,85 @@
+{% extends 'website/base.html' %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load i18n %}
+
+{# Website title #}
+{% block title %}{% translate "Home" %} | {{ block.super }}{% endblock %}
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+
+    <!------------------------------------------------------------------------------
+    About Page Section
+    -------------------------------------------------------------------------------->
+    <section class="container mx-auto mt-32 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    page-radial-cut">
+
+        {# -------- Section icon -------- #}
+        {% include 'website/components/icon_header.html' with icon_name="fa-solid fa-user-astronaut" %}
+
+        {# -------- Section Content -------- #}
+
+        {# ---- Card ---- #}
+        <section class="w-full h-fit flex flex-wrap justify-center items-center">
+            {# Card image #}
+            <picture class="w-96 md:w-2/6">
+                <source srcset="{% if cms_about.profile_image_webp %} {{ cms_about.profile_image_webp.url }}
+                                    {% else %}{% static 'img/profile.webp' %}{% endif %}">
+                <img class="w-full rounded-t-md md:rounded-md"
+                     src="{% if cms_about.profile_image %} {{ cms_about.profile_image.url }}
+                           {% else %} {% static 'img/profile.jpg' %} {% endif %}" alt="profile image">
+            </picture>
+            {# Card content #}
+            <div class="w-96 md:w-3/6 p-5 rounded-b-2xl md:rounded-2xl
+            bg-white md:-translate-x-10 drop-shadow-lg">
+                <p class="text-justify font-normal">
+                    {% if cms_about.body %}
+                        {{ cms_about.body | safe }}
+                    {% else %}
+                        I am John Doe and I work as a software developer.
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci asperiores
+                        atque autem blanditiis consectetur doloribus fugit in ipsam itaque labore molestias nam
+                        obcaecati, praesentium qui totam vero voluptates voluptatum!</span>
+                    {% endif %}
+                </p>
+            </div>
+        </section>
+
+        {# ---- Stack Section---- #}
+        {% if cms_about.activate_stack and cms_about.technology_set.count >= 1 %}
+            {% with cms_about.technology_set.all as technologies %}
+                <section class="w-full h-fit my-14">
+                    {% translate "My tech stack" as my_tech_stack_title %}
+                    {% include 'website/components/section_title.html' with section_title=my_tech_stack_title %}
+                    {% include 'website/components/flowbite/tech_stack.html' with technologies=technologies %}
+                </section>
+            {% endwith %}
+        {% endif %}
+
+        {# ---- Trust me - Companies Section---- #}
+        {% if cms_about.activate_trust_me and cms_about.company_set.count >= 1 %}
+            {% with cms_about.company_set.all as companies %}
+                <section class="w-full h-fit my-14">
+                    {% translate "They trusted me" as trus_me_title %}
+                    {% include 'website/components/section_title.html' with section_title=trus_me_title %}
+                    {% include 'website/components/brand_slider.html' with companies=companies %}
+                </section>
+            {% endwith %}
+        {% endif %}
+
+        {# ---- Resume Section---- #}
+        {% if cms_about.activate_resume and cms_about.resumeentry_set.count >= 1 %}
+            {% with cms_about.resumeentry_set.all as resume_entries %}
+                <section>
+                    {% translate "Resume" as resume_title %}
+                    {% include 'website/components/section_title.html' with section_title=resume_title %}
+                    {% include 'website/components/resume.html' with resume_entries=resume_entries %}
+                </section>
+            {% endwith %}
+        {% endif %}
+
+    </section>
+
+{% endblock %}

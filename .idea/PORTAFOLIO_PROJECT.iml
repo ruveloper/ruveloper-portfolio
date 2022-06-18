@@ -14,10 +14,22 @@
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/apps/website/static/css/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/.mypy_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/website/static/js/tinymce_v6" />
+      <excludeFolder url="file://$MODULE_DIR$/htmlcov" />
+      <excludeFolder url="file://$MODULE_DIR$/media_test" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (PortfolioEnv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="flowbite" level="application" />
+    <orderEntry type="library" name="swup" level="application" />
+    <orderEntry type="library" name="gsap" level="application" />
+    <orderEntry type="library" name="@barba" level="application" />
+    <orderEntry type="library" name="@barba/core" level="application" />
+    <orderEntry type="library" name="@lottiefiles/lottie-player" level="application" />
+    <orderEntry type="library" name="api" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
@@ -25,6 +37,7 @@
       <list>
         <option value="$MODULE_DIR$/apps/website/templates" />
         <option value="$MODULE_DIR$/apps/website/templates/website" />
+        <option value="$MODULE_DIR$/apps/website/templates/website/components/flowbite" />
       </list>
     </option>
   </component>

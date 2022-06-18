@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load compress %}
-{% load static tailwind_tags %}
+{% load tailwind_tags %}
 
 {% get_current_language as LANGUAGE_CODE %}
 
@@ -13,25 +13,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Welcome to my website - Ruveloper! (Ruben Caballero)">
-    <meta name="author" content="Ruben Caballero">
+    <meta name="description" content="{{ cms_base.brand }} portfolio website">
+    <meta name="author" content="{{ cms_base.brand }}">
 
     {# Block title with default #}
-    <title>{% block title %}👨‍💻Ruveloper{% endblock title %}</title>
+    <title>{% block title %}{{ cms_base.brand }}{% endblock title %}</title>
 
     {# Favicon #}
-    <link rel="icon" href="{% static 'website/img/favicon.png' %}" type="image/x-icon">
-    <link rel="apple-touch-icon" href="{% static 'website/img/apple-touch-icon.png' %}">
+    <link rel="icon"
+          href="{% if cms_base.favicon %} {{ cms_base.favicon.url }} {% else %} {% static 'img/favicon.png' %} {% endif %}"
+          type="image/x-icon">
 
     {# ----------------------------- STYLESHEETS - CSS -----------------------------#}
     {% block css %}
         <!--  VENDOR MINIFIED CSS -->
+        {# Font Awesome from python/django package #}
+        <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
 
         <!-- MAIN CSS -->
         {% tailwind_css %}
 
         {% compress css %}
-            <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+            <link rel="stylesheet" href="{% static 'css/main.css' %}">
         {% endcompress %}
     {% endblock css %}
 
@@ -39,30 +42,73 @@
     {# Placed at the top of the document. Pages load faster and at the end execute the scripts (defer) #}
     {% block javascript %}
         <!-- VENDOR MINIFIED JS -->
+        <script defer src="{% static 'js/vendor/typed.min.js' %}"></script>
+        <script defer src="{% static 'js/vendor/background_animated_gradient.js' %}"></script>
+        {# Flowbite script #}
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.3/dist/flowbite.js"
+                integrity="sha256-yu1uuPmePkQFu7xiGLVblZA4DMvd7r4NVHhl0SCD5dw=" crossorigin="anonymous"></script>
+        {# Barba script #}
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"
+                integrity="sha256-P8TcQlPC0xAErCcAqxa+p51ZwgDUsL+aaKs0nDgnIZg=" crossorigin="anonymous"></script>
+        {# Gsap transitions script #}
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.1/dist/gsap.min.js"
+                integrity="sha256-+64IAyFjKtTOBukgfvmlNKvR1kiKlqCkM0+naNH5Nxc=" crossorigin="anonymous"></script>
+        {# Lottie animation script #}
+        <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"
+                integrity="sha256-maJRZiFl9M6KWEUDMNA7RXjwWhejqmJfnK6fiGe5GGg=" crossorigin="anonymous"></script>
+
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ g_tag_id }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'G-0NTD322SN5');
+        </script>
+
+        <!-- reCAPTCHA v3 API -->
+        <script data-script-reload="active" src="https://www.google.com/recaptcha/api.js"></script>
 
         <!-- Main JS -->
         {% compress js %}
-            <script defer src="{% static 'website/js/base.js' %}"></script>
+            <script defer src="{% static 'js/main.js' %}"></script>
         {% endcompress %}
     {% endblock javascript %}
 
 </head>
-<body class="bg-gray-50 font-serif leading-normal tracking-normal">
 
+<body class="bg-gray-50 font-sans leading-relaxed tracking-normal" data-barba="wrapper">
 <!-----------------------------------------------------------------------------------------------
-    Header and Navbar
+    Navbar
 ------------------------------------------------------------------------------------------------->
-<header id="header">
+<header>
     {% block header %}
+        {% include 'website/components/flowbite/base_navbar.html' with cms_base=cms_base %}
     {% endblock header %}
 </header>
 
 <!-----------------------------------------------------------------------------------------------
     Main Content
 ------------------------------------------------------------------------------------------------->
-<main id="main">
-    {% block main-content %}
-    {% endblock main-content %}
+<main id="main" class="w-full h-fit relative ">
+    {# -------- Background -------- #}
+    <canvas id="base-canvas-animated-gradient"
+            class="w-full h-screen bg-gradient-to-r from-violet-500 to-sky-500"></canvas>
+
+    {# -------- Clip Path-------- #}
+    <div class="w-full h-screen absolute top-0 background-clip-path"></div>
+
+    {# ------- Main content ------- #}
+    <div class="w-full absolute top-0"
+            {# * BARBA UPDATER CONTAINER #}
+         data-barba="container" data-barba-namespace="base">
+        {% block main-content %}
+        {% endblock main-content %}
+    </div>
 </main>
 
 <!-----------------------------------------------------------------------------------------------
@@ -76,7 +122,8 @@
 <!-----------------------------------------------------------------------------------------------
     Inline Javascript
 ------------------------------------------------------------------------------------------------->
-{% block inline_javascript %}{% endblock inline_javascript %}
+{% block inline_javascript %}
+{% endblock inline_javascript %}
 
 {# -------------------------------------------- END -------------------------------------------- #}
 </body>

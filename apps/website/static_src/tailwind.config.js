@@ -14,13 +14,13 @@ module.exports = {
         /*  Templates within theme app (<tailwind_app_name>/templates), e.g. base.html. */
         '../templates/**/*.html',
 
-        /* 
+        /*
          * Main templates directory of the project (BASE_DIR/templates).
          * Adjust the following line to match your project structure.
          */
         '../../templates/**/*.html',
-        
-        /* 
+
+        /*
          * Templates in other django apps (BASE_DIR/<any_app_name>/templates).
          * Adjust the following line to match your project structure.
          */
@@ -31,16 +31,23 @@ module.exports = {
          * patterns match your project structure.
          */
         /* JS 1: Ignore any JavaScript in node_modules folder. */
-        // '!../../**/node_modules',
+        '!../../**/node_modules',
         /* JS 2: Process all JavaScript files in the project. */
-        // '../../**/*.js',
+        '../../**/*.js',
 
         /**
          * Python: If you use Tailwind CSS classes in Python, uncomment the following line
          * and make sure the pattern below matches your project structure.
          */
-        // '../../**/*.py'
+        '../../**/*.py'
     ],
+    // * ---------------- CLASES INCLUDED MANUALLY ----------------
+    safelist: [
+        'underline', 'decoration-2', 'decoration-fuchsia-600', 'decoration-green-600', 'decoration-indigo-600',
+        'w-full',  'md:w-5/6',  'md:ml-auto',  'my-5',  'p-5',  'rounded-md',  'bg-gray-100',  'text-end',
+        'bg-clip-text', 'text-transparent', 'bg-gradient-to-r', 'from-blue-700', 'to-violet-700',
+    ],
+    // * ----------------------------------------------------------
     theme: {
         extend: {},
     },
@@ -50,9 +57,12 @@ module.exports = {
          * for forms. If you don't like it or have own styling for forms,
          * comment the line below to disable '@tailwindcss/forms'.
          */
+        require('tailwindcss'),
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
+        require('autoprefixer'),
+        require('flowbite/plugin'),
     ],
 }

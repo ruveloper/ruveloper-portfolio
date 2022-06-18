@@ -1,0 +1,67 @@
+{% extends 'website/base.html' %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load i18n %}
+
+{# Website title #}
+{% block title %}{% translate "Contact" %} | {{ block.super }}{% endblock %}
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+
+    <!------------------------------------------------------------------------------
+    About Page Section
+    -------------------------------------------------------------------------------->
+    <section class="container mx-auto mt-32 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    page-radial-cut">
+
+        {# -------- Section icon -------- #}
+        {% include 'website/components/icon_header.html' with icon_name="fa-solid fa-paper-plane" %}
+
+        {# -------- Section Content -------- #}
+        {# ---- Title ---- #}
+        <h2 class="w-full mb-10 text-3xl text-center lg:text-4xl font-bold leading-tight">
+            {% translate "Let's talk!" %}</h2>
+
+        {# ---- Contact ---- #}
+        <div class="w-full grid gap-8 grid-cols-1 md:grid-cols-2 mx-auto text-gray-900">
+
+            <div class="flex flex-col justify-between">
+                <div class="text-center">
+                    <p>{% translate "Prefer email me?" %}</p>
+                    <p class="text-2xl lg:text-3xl">
+                        <a href="mailto:{{ cms_base.email }}"
+                           class="bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-violet-700
+                                md:text-black
+                                md:hover:text-transparent md:hover:bg-gradient-to-r md:hover:from-blue-700 md:hover:to-violet-700">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            {{ cms_base.email }}
+                        </a>
+                    </p>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <video id="send-email-animation" autoplay loop muted playsinline>
+                        <source src="{% static "img/animations/send_email.webm" %}" type="video/webm">
+                        <source src="{% static "img/animations/send_email.mp4" %}" type="video/mp4">
+                    </video>
+                    <script type="text/javascript">
+                        document.getElementById("send-email-animation").play();
+                    </script>
+                </div>
+            </div>
+
+            {# * ----------- CONTACT FORM ------------ #}
+            <div class="flex flex-col justify-center">
+                {% include 'website/components/contact_form.html' with form=form %}
+            </div>
+
+        </div>
+
+        {# * ----------- MODAL CONTACT ON SUCCESS ------------ #}
+        {% include 'website/components/flowbite/modal_contact_success.html' %}
+
+    </section>
+
+{% endblock %}

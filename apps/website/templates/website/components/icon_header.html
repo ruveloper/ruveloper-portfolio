@@ -1,0 +1,19 @@
+{# ! BASE COMPONENT STRUCTURE #}
+
+{% comment %}
+PARAMETERS
+- templates:
+    - icon_name:str --> fontawesome name of representative icon for the section, ex:"fa-solid fa-laptop-code"
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+
+{# * -------------------------------- CONTENT -------------------------------- #}
+<div class="relative w-full h-10 mb-4">
+    <div class="absolute left-0 right-0 mx-auto w-20 h-20 rounded-full -translate-y-10 text-4xl overflow-hidden
+            flex justify-center items-center text-white
+            bg-gray-300 bg-opacity-30 border-4 border-white">
+        <i class="{{ icon_name }}"></i>
+    </div>
+</div>

@@ -1,6 +1,17 @@
 # ! ------- DJANGO SPECIFIC --------
 # Ignore staticfiles since these fill on production with the command collectstatic. Is not neccesary on development
 /static
+# Ignore media folder except uploads folder as it's used for Django File Browser package.
+/media/*
+!/media/default/
+!/media/uploads/
+/media/uploads/*
+!/media/uploads/.gitkeep
+# Ignore media test folder
+media_test/
+# Ignore dist except for styles build with Tailwind
+dist/*
+!dist/styles.css
 
 # Dabatase
 db.sqlite3
@@ -19,7 +30,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
