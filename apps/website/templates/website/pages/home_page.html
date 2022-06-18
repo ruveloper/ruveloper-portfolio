@@ -1,0 +1,28 @@
+{% extends 'website/base.html' %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load compress %}
+
+{# Website title #}
+{% block title %}{{ block.super }} - Inicio{% endblock %}
+
+{# STATIC CSS | JS #}
+{% block css %}
+    {{ block.super }}
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+{% endblock %}
+
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+    <div class="container mx-auto">
+        <section class="flex items-center justify-center h-screen">
+            <h1 class="text-5xl">Django + Tailwind = ❤️</h1>
+        </section>
+    </div>
+{% endblock %}
+
