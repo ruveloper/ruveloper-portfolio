@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [0.2.0-dev]
+## [0.2.0-dev] - 20/06/22
 
 ### Implementations: Templates
 
@@ -13,7 +13,7 @@
     - Base template
     - Home page template
 
-## [0.1.0-dev]
+## [0.1.0-dev] - 18/06/22
 
 ### Start Project: Basic config + Tailwind
 
