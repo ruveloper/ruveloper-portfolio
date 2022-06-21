@@ -5,16 +5,20 @@
 ### Implementations: Templates
 
 #### Added
-Packages:
-- Flowbite to tailwind.config.js
-- Fontawesome from pypi
-Templates:
-- Base template
-- Home page template
 
-## [0.1.0] Start Project: Basic config + Tailwind
+* Packages:
+    - Flowbite to tailwind.config.js
+    - Fontawesome from pypi
+* Templates:
+    - Base template
+    - Home page template
+
+## [0.1.0-dev]
+
+### Start Project: Basic config + Tailwind
 
 #### Follow the README file to run the project in development mode.
+
 - Start project
 - Added requirements
 - Config tailwind and browser-reload.
