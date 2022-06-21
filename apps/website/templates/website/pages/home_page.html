@@ -2,27 +2,66 @@
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
-{% load compress %}
 
 {# Website title #}
-{% block title %}{{ block.super }} - Inicio{% endblock %}
-
-{# STATIC CSS | JS #}
-{% block css %}
-    {{ block.super }}
-{% endblock %}
-
-{% block javascript %}
-    {{ block.super }}
-{% endblock %}
-
+{% block title %}{{ block.super }} - Home{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}
-    <div class="container mx-auto">
-        <section class="flex items-center justify-center h-screen">
-            <h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-        </section>
+    <!------------------------------------------------------------------------------
+    Home Page
+    -------------------------------------------------------------------------------->
+    <div class="w-screen h-screen relative home-clip-path">
+
+        {# -------- Dev Photo -------- #}
+        <div class="absolute inset-0">
+            <picture class="container h-screen mx-auto flex flex-row-reverse
+            justify-center md:justify-start items-end">
+                <!-- load webp if supported, otherwise load png-->
+                <source srcset="{% static 'img/profile_xl.webp' %}" type="image/webp">
+                <img class="h-1/2 md:h-5/6 min-w-fit drop-shadow-[-30px_35px_35px_rgba(0,0,0,0.5)]"
+                     src="{% static 'img/profile_md.png' %}" alt="developer image">
+            </picture>
+        </div>
+
+        {# -------- Content -------- #}
+        <div class="absolute inset-0">
+            <div class="container h-screen mx-auto flex flex-col">
+
+                {# -------- Logo image -------- #}
+                <img class="max-w-fit
+                mx-2 mt-10 lg:mt-0
+                translate-y-8 md:translate-y-12 lg:translate-y-24 xl:translate-y-32
+                max-h-20 md:max-h-36 lg:max-h-44 xl:max-h-52"
+                     src="{% static 'img/Logo.svg' %}" alt="">
+
+                {# -------- Glass Card -------- #}
+                <div class="text-gray-800
+                m-5 ml-14 p-5 rounded-xl
+                md:max-w-sm md:translate-x-8 md:
+                lg:max-w-lg lg:translate-x-28 lg:
+                xl:max-w-2xl xl:translate-x-36 xl:
+                bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg border border-white-100">
+                    <p class="bg-white rounded-xl px-3 py-2
+                    font-extrabold md:text-xl lg:text-2xl xl:text-3xl">
+                        Hi! here @developer
+                    </p>
+                    <p class="mt-6 font-bold text-white
+                    md:text-lg ltg:text-xl xl:text-2xl">
+                        My name is John Doe , a Full-Stack web developer. <br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>
+                        I focus on
+                        <span class="typed"
+                          data-typed-items="
+                              backend with <span class='font-extrabold bg-emerald-700 text-white px-2 py-1 rounded-lg'>Python</span>,
+                              frontend with <span class='font-extrabold bg-amber-500 text-white px-2 py-1 rounded-lg'>Javascript</span>">
+                        </span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 {% endblock %}
 

@@ -1,0 +1,34 @@
+/* --------- Base styles --------- */
+/* Navbar - active page style */
+#navbar a[aria-current="page"] {
+    border-style: solid;
+    border-radius: 0.75rem;
+    border-width: 1px;
+    border-color: white;
+}
+
+@media (max-width: 768px) {
+    #navbar a[aria-current="page"] {
+        border-radius: 0;
+    }
+}
+
+/* Background - effect colors */
+#main #base-canvas-animated-gradient {
+    --gradient-color-1: #00d3ef;
+    --gradient-color-2: #6eb8f4;
+    --gradient-color-3: #3849ff;
+    --gradient-color-4: #6427ff;
+}
+
+/* --------- Home styles --------- */
+.home-clip-path::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    clip-path: polygon(0 90%, 100% 65%, 100% 100%, 0% 100%);
+}

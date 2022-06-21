@@ -29,6 +29,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'solo',
     'widget_tweaks',
+    'fontawesomefree',
     'tailwind',
     'django_browser_reload',
     # Compress html and static files
