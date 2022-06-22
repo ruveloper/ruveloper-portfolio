@@ -1,0 +1,93 @@
+{% extends 'website/base.html' %}
+
+{% comment %}
+PARAMETERS:
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+
+{# Website title #}
+{% block title %}{{ block.super }} - Sobre mí{% endblock %}
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+
+    <!------------------------------------------------------------------------------
+    About Page Section
+    -------------------------------------------------------------------------------->
+    <section class="container mx-auto mt-48 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    page-radial-cut">
+
+        {# -------- Section icon -------- #}
+        {% include 'website/components/icon_header.html' with icon_name="fa-solid fa-paste" %}
+
+        {# -------- Section Content -------- #}
+
+        {# ---- Cards ---- #}
+        <div id="projects" class="w-full flex flex-row flex-wrap gap-y-5">
+
+            {# TODO: Remove FOR - Example simulating multiple projects #}
+
+            {% for project_id in '012345678'|make_list %}
+
+                <div id="project-{{ project_id }}"
+                     class="w-full px-3 group
+                            md:w-1/3 md:h-52
+                            md:focus-within:w-full md:focus-within:h-auto md:focus-within:mb-10
+                            md:focus-within:flex md:focus-within:flex-row md:focus-within:order-first">
+
+                    <button class="w-full cursor-default
+                                    md:h-full md:cursor-pointer
+                                    md:hover:scale-105 md:duration-300 md:ease-in-out
+                                    md:group-focus-within:hover:scale-100 md:group-focus-within:transition-none
+                                    md:group-focus-within:justify-self-stretch
+                                    md:group-focus-within:cursor-default md:group-focus-within:w-1/3"
+                            onfocus='scrollToIdWithDelay("project-{{ project_id }}", 300)'>
+                        <img class="w-full h-full object-cover rounded-t-lg shadow-lg shimmer-loading-background
+                                    md:rounded-lg md:shadow-none
+                                    md:group-focus-within:rounded-none md:group-focus-within:rounded-l-lg
+                                    md:group-focus-within:shadow-lg"
+                             src="https://picsum.photos/50{{ project_id }}/300"
+                             alt="">
+                    </button>
+
+                    <div class="w-full p-6 flex flex-col text-gray-600 text-left rounded-b-lg shadow-lg
+                                md:hidden md:rounded-b-none md:shadow-none
+                                md:group-focus-within:block md:group-focus-within:w-2/3 md:group-focus-within:min-h-[200px]
+                                md:group-focus-within:flex md:group-focus-within:flex-col md:group-focus-within:justify-evenly
+                                md:group-focus-within:rounded-r-lg md:group-focus-within:shadow-lg">
+
+                        <div class="text-content">
+                            <h2 id="project-title" class="mb-2 font-bold text-2xl text-gray-800">Project Name</h2>
+                            <div id="project-detail">
+                                <p>
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad beatae deserunt
+                                        eos error iusto minima tempore. Alias, culpa deserunt distinctio, earum, et in
+                                        ipsa nesciunt non nulla officia unde vel!</span>
+                                    <span>Autem distinctio expedita fuga fugiat hic, ipsam itaque molestias mollitia
+                                        neque obcaecati omnis ratione saepe suscipit. Alias autem deleniti enim hic
+                                        laboriosam molestiae obcaecati odio possimus quam ut veniam, veritatis?</span>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="mt-5 h-auto flex justify-center items-center">
+                            <a class="py-2 px-8 font-medium border border-blue-600 text-blue-600 rounded-xl
+                                        hover:bg-blue-600 hover:text-white transition-all duration-300"
+                               href="{% url 'website:project_detail' project_slug='project_example' %}">
+                                <i class="fa-solid fa-circle-plus mr-2"></i>Ver más</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endblock %}
