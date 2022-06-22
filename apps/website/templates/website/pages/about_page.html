@@ -1,0 +1,65 @@
+{% extends 'website/base.html' %}
+
+{% comment %}
+PARAMETERS:
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+
+{# Website title #}
+{% block title %}{{ block.super }} - Sobre mí{% endblock %}
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+
+    <!------------------------------------------------------------------------------
+    About Page Section
+    -------------------------------------------------------------------------------->
+    <section class="container mx-auto mt-48 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    page-radial-cut">
+
+        {# -------- Section icon -------- #}
+        {% include 'website/components/icon_header.html' with icon_name="fa-solid fa-user-astronaut" %}
+
+        {# -------- Section Content -------- #}
+
+        {# ---- Card ---- #}
+        <div class="w-full h-fit flex flex-wrap justify-center items-center">
+            {# Card image #}
+            <picture class="w-96 md:w-2/6">
+                <source srcset="{% static 'img/profile_alt.webp' %}">
+                <img class="w-full rounded-t-md md:rounded-md"
+                     src="{% static 'img/profile_alt.jpg' %}" alt="profile image">
+            </picture>
+            {# Card content #}
+            <div class="w-96 md:w-3/6 p-5 rounded-b-2xl md:rounded-2xl
+            bg-white md:-translate-x-10 drop-shadow-lg">
+                <p class="text-justify font-normal">
+                    I am John Doe and I work as a software developer.
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci asperiores
+                        atque autem blanditiis consectetur doloribus fugit in ipsam itaque labore molestias nam
+                        obcaecati, praesentium qui totam vero voluptates voluptatum!</span>
+                    <span>Ab, ad adipisci aperiam aspernatur atque autem commodi culpa deserunt dolore doloribus enim
+                        eos excepturi facere fuga id laudantium molestias nemo nesciunt obcaecati ratione, rem repellat
+                        rerum, soluta temporibus velit!</span>
+                </p>
+            </div>
+        </div>
+
+        {# ---- Brands ---- #}
+        <section class="w-full h-fit my-10">
+            {% include 'website/components/section_title.html' with section_title="They trusted me" %}
+            {% include 'website/components/brand_slider.html' %}
+        </section>
+
+        {# ---- Stack ---- #}
+        <section class="w-full h-fit mt-20 mb-10">
+            {% include 'website/components/section_title.html' with section_title="My tech stack" %}
+            {% include 'website/components/tech_stack.html' %}
+        </section>
+
+
+    </section>
+
+{% endblock %}

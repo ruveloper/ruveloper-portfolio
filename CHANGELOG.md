@@ -1,6 +1,16 @@
 # CHANGELOG
 
-## [0.2.0-dev] - 20/06/22
+## [0.3.0-dev]
+
+### Implementations: Templates
+
+#### Added
+
+* Templates:
+    - About page template
+
+
+## [0.2.0-dev] - 20/06/2022
 
 ### Implementations: Templates
 
@@ -13,7 +23,7 @@
     - Base template
     - Home page template
 
-## [0.1.0-dev] - 18/06/22
+## [0.1.0-dev] - 18/06/2022
 
 ### Start Project: Basic config + Tailwind
 

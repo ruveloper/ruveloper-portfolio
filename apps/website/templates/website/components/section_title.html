@@ -1,0 +1,40 @@
+{% comment %}
+PARAMETERS
+- templates:
+        - section_title:str
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load compress %}
+
+{# ? -------------------------------- CONTENT -------------------------------- #}
+<div class="section-title mb-10 text-md uppercase font-medium">
+    <h1 class="relative pb-5">{{ section_title }}</h1>
+</div>
+
+{# ? --------------------------------- STYLES -------------------------------- #}
+{% compress css %}
+    <style>
+        .section-title h1::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            height: 1px;
+            width: 95%;
+            max-width: 255px;
+            background-color: rgb(12, 177, 242);
+        }
+
+        .section-title h1::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5px;
+            width: 55px;
+            background-color: rgb(15, 90, 242);
+        }
+    </style>
+{% endcompress %}
