@@ -15,3 +15,8 @@ class ProjectsPage(TemplateView):
 
 class ProjectDetailPage(TemplateView):
     template_name = 'website/pages/project_detail_page.html'
+
+
+class ContactPage(TemplateView):
+    template_name = 'website/pages/contact_page.html'
+

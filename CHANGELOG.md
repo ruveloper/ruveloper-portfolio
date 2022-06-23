@@ -8,6 +8,9 @@
 
 * Templates:
     - About page template
+    - Projects page template
+    - Project detail page template
+    - Contact page template
 
 
 ## [0.2.0-dev] - 20/06/2022
