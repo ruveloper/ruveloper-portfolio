@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [0.3.0-dev]
+## [0.3.0-dev] - 23/06/2022
 
 ### Implementations: Templates
 
