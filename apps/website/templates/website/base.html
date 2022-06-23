@@ -112,23 +112,24 @@
                                 >Home</a>
                             </li>
                             <li>
-                                <a href="/about" class="block
+                                <a href="{% url 'website:about' %}" class="block
                                 py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                         {% if view_name == 'website:about' %} aria-current="page" {% endif %}
                                 >About</a>
                             </li>
                             <li>
-                                <a href="/projects" class="block
+                                <a href="{% url 'website:projects' %}" class="block
                                 py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
                                 md:px-2 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                         {% if view_name == 'website:projects' %} aria-current="page" {% endif %}
                                 >Projects</a>
                             </li>
                             <li>
-                                <a href="/contact" class="block
+                                <a href="{% url 'website:contact' %}" class="block
                                 py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
+                                        {% if view_name == 'website:contact' %} aria-current="page" {% endif %}
                                 >Contact</a>
                             </li>
                         {% endwith %}

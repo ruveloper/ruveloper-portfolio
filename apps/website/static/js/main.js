@@ -19,3 +19,16 @@
     }
 
 })();
+
+/**
+ * Helper Functions
+ */
+function scrollToIdWithDelay(id, delay) {
+    setTimeout(
+        function () {
+            document.getElementById(id).scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }, delay);
+}

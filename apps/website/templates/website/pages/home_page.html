@@ -11,22 +11,14 @@
     <!------------------------------------------------------------------------------
     Home Page
     -------------------------------------------------------------------------------->
-    <div class="w-screen h-screen relative home-clip-path">
+    <div class="w-screen min-h-screen md:h-screen relative flex flex-col justify-between ">
 
-        {# -------- Dev Photo -------- #}
-        <div class="absolute inset-0">
-            <picture class="container h-screen mx-auto flex flex-row-reverse
-            justify-center md:justify-start items-end">
-                <!-- load webp if supported, otherwise load png-->
-                <source srcset="{% static 'img/profile_xl.webp' %}" type="image/webp">
-                <img class="h-1/2 md:h-5/6 min-w-fit drop-shadow-[-30px_35px_35px_rgba(0,0,0,0.5)]"
-                     src="{% static 'img/profile_md.png' %}" alt="developer image">
-            </picture>
-        </div>
+        {# -------- Clip Path-------- #}
+        <div class="absolute top-0 left-0 w-screen h-screen home-clip-path"></div>
 
         {# -------- Content -------- #}
-        <div class="absolute inset-0">
-            <div class="container h-screen mx-auto flex flex-col">
+        <div class="md:absolute md:inset-0">
+            <div class="container md:h-screen mx-auto flex flex-col">
 
                 {# -------- Logo image -------- #}
                 <img class="max-w-fit
@@ -46,13 +38,13 @@
                     font-extrabold md:text-xl lg:text-2xl xl:text-3xl">
                         Hi! here @developer
                     </p>
-                    <p class="mt-6 font-bold text-white
+                    <p class="mt-3 font-bold text-white
                     md:text-lg ltg:text-xl xl:text-2xl">
-                        My name is John Doe , a Full-Stack web developer. <br>
+                        My name is John Doe , a Full-Stack web developer.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>
                         I focus on
                         <span class="typed"
-                          data-typed-items="
+                              data-typed-items="
                               backend with <span class='font-extrabold bg-emerald-700 text-white px-2 py-1 rounded-lg'>Python</span>,
                               frontend with <span class='font-extrabold bg-amber-500 text-white px-2 py-1 rounded-lg'>Javascript</span>">
                         </span>
@@ -60,6 +52,17 @@
                 </div>
 
             </div>
+        </div>
+
+        {# -------- Dev Photo -------- #}
+        <div class="md:absolute md:inset-0">
+            <picture class="container h-fit md:h-screen mx-auto flex flex-row-reverse
+            justify-center md:justify-start items-end">
+                <!-- load webp if supported, otherwise load png-->
+                <source srcset="{% static 'img/profile_xl.webp' %}" type="image/webp">
+                <img class="h-80 md:h-5/6 min-w-fit drop-shadow-[-30px_35px_35px_rgba(0,0,0,0.5)]"
+                     src="{% static 'img/profile_md.png' %}" alt="developer image">
+            </picture>
         </div>
 
     </div>

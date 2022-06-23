@@ -22,13 +22,43 @@
 }
 
 /* --------- Home styles --------- */
-.home-clip-path::before {
+.home-clip-path::after {
     display: block;
     content: '';
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background: white;
+    background: rgb(249,250,251);
     clip-path: polygon(0 90%, 100% 65%, 100% 100%, 0% 100%);
+}
+
+/* ----- Section page styles ----- */
+.page-radial-cut {
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background: radial-gradient(circle at 50% 0, transparent 4.9rem, white 4.9rem) no-repeat bottom left;
+}
+
+/* ----- Shimmer loading styles ----- */
+.shimmer-loading-background {
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmerAnimation;
+    animation-timing-function: linear;
+    background: darkgray;
+    background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+}
+
+@keyframes shimmerAnimation{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
 }

@@ -1,0 +1,65 @@
+{% extends 'website/base.html' %}
+
+{% comment %}
+PARAMETERS:
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+
+{# Website title #}
+{% block title %}{{ block.super }} - Sobre mí{% endblock %}
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+
+    <!------------------------------------------------------------------------------
+    About Page Section
+    -------------------------------------------------------------------------------->
+    <section class="container mx-auto mt-48 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    page-radial-cut">
+
+        {# -------- Section icon -------- #}
+        {% include 'website/components/icon_header.html' with icon_name="fa-solid fa-clipboard-check" %}
+
+        {# -------- Breadcrumb -------- #}
+        <div class="w-full mb-10 flex flex-wrap items-center">
+            <div class="grow-0 text-lg md:text-3xl">
+                <a href=""><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="grow flex justify-center items-center gap-x-1 md:gap-x-3
+                        text-xs md:text-base text-gray-400">
+                <a href="{% url 'website:home' %}" class="hover:text-gray-900"><i class="fa-solid fa-house"></i> Home</a>
+                <i class="text-gray-400 fa-solid fa-angle-right"></i>
+                <a href="{% url 'website:projects' %}" class="hover:text-gray-900">Projects</a>
+                <i class="text-gray-400 fa-solid fa-angle-right"></i>
+                <a href="" class="text-blue-500">Project Name</a>
+            </div>
+            <div class="grow-0 text-lg md:text-3xl">
+                <a href=""><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        {# -------- Section Content -------- #}
+
+        {# ---- Detail ---- #}
+        <div class="text-content">
+            <h2 id="project-title" class="mb-2 font-bold text-2xl text-gray-800">Project Name</h2>
+            <div id="project-detail">
+                <p>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam,
+                        assumenda culpa dolore eos facere fugiat labore maiores nobis odit officiis perferendis
+                        quam reprehenderit rerum sit suscipit tempora unde voluptatem.</span>
+                    <span>Ad cupiditate distinctio dolor et eveniet facilis iusto labore necessitatibus nihil,
+                        quod repellendus saepe suscipit velit. Amet blanditiis, deserunt dolorum enim eveniet,
+                        expedita placeat quo quod reiciendis sint, tempore veritatis?</span>
+                    <span>Commodi debitis delectus facere id, iusto officiis ratione rerum sapiente similique ut.
+                        Aut dignissimos eaque error impedit, in ipsam nam nisi numquam placeat quaerat quas quos
+                        rem saepe temporibus, voluptas.</span>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

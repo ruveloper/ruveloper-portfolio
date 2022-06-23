@@ -1,0 +1,29 @@
+{# ! BASE PAGE STRUCTURE #}
+{% extends 'website/base.html' %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load compress %}
+
+{# Website title #}
+{% block title %}{{ block.super }} - Any{% endblock %}
+
+{# STATIC CSS | JS #}
+{% block css %}
+    {{ block.super }}
+    {# ! WARNING: if use any django template variable {{ any }}, remove compress #}
+    {% compress css %}
+    {% endcompress %}
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+    {# ! WARNING: if use any django template variable {{ any }}, remove compress #}
+    {% compress js %}
+    {% endcompress %}
+{% endblock %}
+
+
+{# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
+{% block main-content %}
+{% endblock %}

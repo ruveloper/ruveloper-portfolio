@@ -1,0 +1,107 @@
+{# ! DYNAMIC FLOWBITE COMPONENT - Requires Flowbite installed #}
+
+{% comment %}
+PARAMETERS
+
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load compress %}
+
+{# ? -------------------------------- CONTENT ------------------------------- #}
+
+<div class="mb-4">
+    <ul class="flex flex-wrap justify-center items-end text-sm font-medium text-center" id="techTab"
+        data-tabs-toggle="#techTabContent"
+        role="tablist">
+        <li class="mr-2" role="presentation">
+            <button class="inline-block px-4 py-3 rounded-t-lg border-b-2 text-blue-600 hover:text-blue-600 border-blue-600"
+                    type="button" role="tab"
+                    id="python-tab" data-tabs-target="#python-tab-content" aria-controls="python-tab-content"
+                    aria-selected="true">
+                <div class="flex flex-col gap-2">
+                    <img class="h-10 mx-auto" src="{% static 'img/logos/python.svg' %}" alt="python">
+                    <p>Python</p>
+                </div>
+            </button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block px-4 py-3 rounded-t-lg border-b-2 hover:text-gray-600 hover:border-gray-300 text-gray-500 border-gray-100"
+                    type="button" role="tab"
+                    id="django-tab" data-tabs-target="#django" aria-controls="django"
+                    aria-selected="false">
+                <div class="flex flex-col gap-2">
+                    <img class="h-10 mx-auto" src="{% static 'img/logos/django.svg' %}" alt="django">
+                    <p>Django</p>
+                </div>
+            </button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block px-4 py-3 rounded-t-lg border-b-2 hover:text-gray-600 hover:border-gray-300 text-gray-500 border-gray-100"
+                    type="button" role="tab"
+                    id="web-tab" data-tabs-target="#web" aria-controls="web"
+                    aria-selected="false">
+                <div class="flex flex-col gap-2">
+                    <img class="h-10 mx-auto" src="{% static 'img/logos/web.svg' %}" alt="web">
+                    <p>HTML, CSS, Javascript</p>
+                </div>
+            </button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block px-4 py-3 rounded-t-lg border-b-2 hover:text-gray-600 hover:border-gray-300 text-gray-500 border-gray-100"
+                    type="button" role="tab"
+                    id="postgresql-tab" data-tabs-target="#postgresql" aria-controls="postgresql"
+                    aria-selected="false">
+                <div class="flex flex-col gap-2">
+                    <img class="h-10 mx-auto" src="{% static 'img/logos/postgresql.svg' %}" alt="postgresql">
+                    <p>PostgreSQL</p>
+                </div>
+            </button>
+        </li>
+    </ul>
+</div>
+<div id="techTabContent">
+    <div id="python-tab-content" role="tabpanel" aria-labelledby="python-tab"
+         class="p-4 bg-gray-50 rounded-lg">
+        <p class="text-sm text-gray-500">
+            <strong class="font-medium text-gray-800">Python is a multipurpose programming language </strong>
+                and is one of the most widely used languages in the world. It is used in automation processes, 
+            application design, machine learning, data science, backend development, among others.</p>
+    </div>
+    <div id="django" role="tabpanel" aria-labelledby="django-tab"
+         class="hidden p-4 bg-gray-50 rounded-lg">
+        <p class="text-sm text-gray-500">
+            <strong class="font-medium text-gray-800">Django is the most famous Python web-backend development framework</strong>
+            with more than 15 years in the market, it is widely used by companies like Google, Instagram,
+            Spotify and Mozilla who rely on it to build web applications today.</p>
+    </div>
+    <div id="web" role="tabpanel" aria-labelledby="web-tab"
+         class="hidden p-4 bg-gray-50 rounded-lg">
+        <p class="text-sm text-gray-500">
+            <strong class="font-medium text-gray-800">HTML, CSS and Javascript is the set of technologies that build the web</strong>,
+            with them, we can structure, provide visual styles and give functionality to each website.</p>
+    </div>
+    <div id="postgresql" role="tabpanel" aria-labelledby="postgresql-tab"
+         class="hidden p-4 bg-gray-50 rounded-lg">
+        <p class="text-sm text-gray-500">
+            <strong class="font-medium text-gray-800">PostgreSQL is an advanced, enterprise-class, and open-source relational database system</strong>.
+            It uses and extends the SQL language combined with many features that safely store and scale the most complicated data workloads.
+        </p>
+    </div>
+</div>
+
+
+{# ? --------------------------------- STYLES -------------------------------- #}
+{% compress css %}
+    <style>
+
+    </style>
+{% endcompress %}
+
+{# ? --------------------------------- SCRIPT -------------------------------- #}
+{% compress js %}
+    <script>
+
+    </script>
+{% endcompress %}
