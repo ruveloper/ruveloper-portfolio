@@ -58,15 +58,17 @@
 <!-----------------------------------------------------------------------------------------------
     Navbar
 ------------------------------------------------------------------------------------------------->
-<header id="navbar">
+<header>
     {% block header %}
-        <nav class="w-screen md:h-16 px-4 py-2.5
-        fixed top-0 z-30 bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg drop-shadow-lg">
-            <div class="container h-full flex flex-wrap justify-between items-center mx-auto
-            font-bold text-xl text-white">
+        <nav  id="navbar"
+              class="w-screen md:h-16 px-3 py-2.5 fixed top-0 z-30
+              bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg drop-shadow-lg
+              font-bold text-xl text-white
+              transition-[background-color] ease-in-out duration-300">
+            <div class="container h-full flex flex-wrap justify-between items-center mx-auto">
                 {# -------- Developer link -------- #}
                 <a href="/" class="flex items-center">
-                    <span class="self-center text-xl font-semibold">developer</span>
+                    <span class="self-center">developer</span>
                 </a>
                 <div class="flex items-center gap-x-3 md:order-2">
                     {# -------- Social links -------- #}
@@ -91,7 +93,7 @@
                     </a>
 
                     {# -------- Menu button -------- #}
-                    <button data-collapse-toggle="mobile-menu" type="button"
+                    <button id="navbar-mobile-menu" data-collapse-toggle="navbar-menu" type="button"
                             class="inline-flex items-center p-2 text-md rounded-lg md:hidden
                             hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                             aria-controls="" aria-expanded="false">
@@ -100,35 +102,34 @@
                     </button>
                 </div>
                 {# -------- Menu entries -------- #}
-                <div id="mobile-menu" class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-                    <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0
-                    font-bold text-xl text-white ">
+                <div id="navbar-menu" class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
+                    <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0">
                         {# Add aria current if view_name match with the element url #}
                         {% with request.resolver_match.view_name as view_name %}
                             <li>
                                 <a href="{% url 'website:home' %}" class="block
-                                py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                         {% if view_name == 'website:home' %} aria-current="page" {% endif %}
                                 >Home</a>
                             </li>
                             <li>
                                 <a href="{% url 'website:about' %}" class="block
-                                py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                         {% if view_name == 'website:about' %} aria-current="page" {% endif %}
                                 >About</a>
                             </li>
                             <li>
                                 <a href="{% url 'website:projects' %}" class="block
-                                py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-2 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                         {% if view_name == 'website:projects' %} aria-current="page" {% endif %}
                                 >Projects</a>
                             </li>
                             <li>
                                 <a href="{% url 'website:contact' %}" class="block
-                                py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-white hover:bg-opacity-30
+                                py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                         {% if view_name == 'website:contact' %} aria-current="page" {% endif %}
                                 >Contact</a>
