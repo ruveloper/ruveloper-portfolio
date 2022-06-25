@@ -22,7 +22,7 @@
 }
 
 /* --------- Home styles --------- */
-.home-clip-path::after {
+.background-clip-path::after {
     display: block;
     content: '';
     position: absolute;

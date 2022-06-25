@@ -61,7 +61,7 @@
 <header id="navbar">
     {% block header %}
         <nav class="w-screen md:h-16 px-4 py-2.5
-        fixed top-0 z-10 bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg drop-shadow-lg">
+        fixed top-0 z-30 bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg drop-shadow-lg">
             <div class="container h-full flex flex-wrap justify-between items-center mx-auto
             font-bold text-xl text-white">
                 {# -------- Developer link -------- #}
@@ -80,7 +80,8 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/dev-user" target="_blank"
-                       data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom" data-tooltip-style="light">
+                       data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom"
+                       data-tooltip-style="light">
                         <i class="fa-brands fa-linkedin fa-lg"></i>
                         <div id="tooltip-linkedin" role="tooltip"
                              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 shadow-sm opacity-0 tooltip">
@@ -147,6 +148,9 @@
     {# -------- Background -------- #}
     <canvas id="base-canvas-animated-gradient"
             class="w-full h-screen bg-gradient-to-r from-violet-500 to-sky-500"></canvas>
+
+    {# -------- Clip Path-------- #}
+    <div class="w-full h-screen absolute top-0 background-clip-path"></div>
 
     {# ------- Main content ------- #}
     <div class="w-full absolute top-0">
