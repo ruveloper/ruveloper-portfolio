@@ -13,14 +13,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Welcome to my website - Ruveloper! (Ruben Caballero)">
-    <meta name="author" content="Ruben Caballero">
+    <meta name="description" content="Welcome to my website - Developer!">
+    <meta name="author" content="Developer">
 
     {# Block title with default #}
     <title>{% block title %}Developer{% endblock title %}</title>
 
     {# Favicon #}
-    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <link rel="icon"
+          href="{% if cms_base.favicon %} {{ cms_base.favicon.url }} {% else %} {% static 'img/favicon.png' %} {% endif %}"
+          type="image/x-icon">
 
     {# ----------------------------- STYLESHEETS - CSS -----------------------------#}
     {% block css %}
@@ -59,19 +61,22 @@
 ------------------------------------------------------------------------------------------------->
 <header>
     {% block header %}
-        <nav  id="navbar"
-              class="w-screen md:h-16 px-3 py-2.5 fixed top-0 z-30
+        <nav id="navbar"
+             class="w-screen md:h-16 px-3 py-2.5 fixed top-0 z-30
               bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg drop-shadow-lg
               font-bold text-xl text-white
               transition-[background-color] ease-in-out duration-300">
             <div class="container h-full flex flex-wrap justify-between items-center mx-auto">
                 {# -------- Developer link -------- #}
                 <a href="/" class="flex items-center">
-                    <span class="self-center">developer</span>
+                    <span class="self-center">
+                        {% if cms_base.brand %} {{ cms_base.brand }} {% else %} developer {% endif %}
+                    </span>
                 </a>
                 <div class="flex items-center gap-x-3 md:order-2">
                     {# -------- Social links -------- #}
-                    <a href="https://github.com/dev-user" target="_blank"
+                    <a href="{% if cms_base.github %} {{ cms_base.github }} {% else %} https://github.com/dev-user {% endif %}"
+                       target="_blank"
                        data-tooltip-target="tooltip-github" data-tooltip-placement="bottom" data-tooltip-style="light">
                         <i class="fa-brands fa-github fa-lg"></i>
                         <div id="tooltip-github" role="tooltip"
@@ -80,7 +85,8 @@
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/dev-user" target="_blank"
+                    <a href="{% if cms_base.linkedin %} {{ cms_base.linkedin }} {% else %} https://www.linkedin.com/in/dev-user {% endif %}"
+                       target="_blank"
                        data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom"
                        data-tooltip-style="light">
                         <i class="fa-brands fa-linkedin fa-lg"></i>
