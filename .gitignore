@@ -1,6 +1,8 @@
 # ! ------- DJANGO SPECIFIC --------
 # Ignore staticfiles since these fill on production with the command collectstatic. Is not neccesary on development
 /static
+# Ignore media files since these folder its specific to each project instance.
+/media
 
 # Dabatase
 db.sqlite3
