@@ -5,21 +5,38 @@ from django.core.validators import FileExtensionValidator
 from apps.website.validators import validate_image_logo
 
 from solo.models import SingletonModel
-from apps.website.utils import upload_cms_image_location
+from apps.website.utils import upload_cms_image_location, convert_img_to_webp
 
 
 class About(SingletonModel):
     created = models.DateTimeField(_('Created on'), auto_now_add=True)
     modified = models.DateTimeField(_('Modified on'), auto_now=True)
 
-    # ? Profile section
-    image = models.ImageField(_('Profile image'), upload_to=upload_cms_image_location, blank=True, null=True)
+    # * Profile section
+    profile_image = models.ImageField(
+        _('Profile image'), blank=True, null=True,
+        upload_to=upload_cms_image_location,
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])],
+    )
+    profile_image_webp = models.ImageField(
+        _('Profile image (Webp)'), blank=True, null=True, editable=False,
+        upload_to=upload_cms_image_location,
+        help_text=_('Auto-generated WEBP version of [Profile image]'),
+    )
     body = models.TextField(_('Profile body'))
 
     # ? Activate/Deactivate Optional sections
     activate_stack = models.BooleanField(_('Activate stack section'), default=True)
     activate_trust_me = models.BooleanField(_('Activate trust me section'), default=True)
     activate_resume = models.BooleanField(_('Activate resume section'), default=True)
+
+    def save(self, *args, **kwargs):
+        # * ---- Before save model ----
+        # Auto-generate webp version of image field for web optimizations
+        self.profile_image_webp = convert_img_to_webp(self.profile_image) if bool(self.profile_image.name) else None
+
+        super(About, self).save(*args, **kwargs)
+        return
 
     class Meta:
         verbose_name = _('CMS - About')

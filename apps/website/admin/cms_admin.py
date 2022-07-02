@@ -12,7 +12,8 @@ class BaseAdmin(SingletonModelAdmin): pass
 
 # ? --------- Home model ---------
 @admin.register(Home)
-class HomeAdmin(SingletonModelAdmin): pass
+class HomeAdmin(SingletonModelAdmin):
+    readonly_fields = ('dev_photo_webp',)
 
 
 # ? --------- About model ---------
@@ -33,11 +34,15 @@ class ResumeEntryInline(admin.StackedInline):
 
 @admin.register(About)
 class AboutAdmin(SingletonModelAdmin):
+    readonly_fields = ('profile_image_webp',)
     inlines = [TechnologyInline, CompanyInline, ResumeEntryInline]
 
 
 # ? --------- Project model ---------
-admin.site.register(Project)
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    readonly_fields = ('cover_image_webp',)
+
 
 # ? --------- Shared models ---------
 admin.site.register(Technology)
