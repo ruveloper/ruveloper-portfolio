@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from django.utils.text import slugify
+from django.utils.text import slugify, Truncator
 from django.utils.translation import gettext_lazy as _
 
 from django.core.validators import FileExtensionValidator
@@ -25,12 +25,12 @@ class Project(models.Model):
         upload_to=upload_cms_image_location,
         help_text=_('Auto-generated WEBP version of [Cover image]')
     )
-    description = models.TextField(_('Description'))
+    description = models.TextField(_('Description'), help_text=_('Project summary to display in project list'))
 
     # ? Project details
     slug = models.SlugField(
         _('Slug'), max_length=255, unique=True, blank=True,
-        help_text=_('Url endpoint of this project, leave blank to auto-generate.')
+        help_text=_('Url endpoint of this project, leave blank to auto-generate')
     )
     detail = RichTextUploadingField(
         _('Project details'),
@@ -44,10 +44,15 @@ class Project(models.Model):
         # * ---- Before save model ----
         # Auto-generate webp version of image field for web optimizations
         self.cover_image_webp = convert_img_to_webp(self.cover_image) if bool(self.cover_image.name) else None
-
+        # Auto-generate slug if isn't set.
+        if not self.slug:
+            self.slug = slugify(self.title)
         super(Project, self).save(*args, **kwargs)
         return
 
     class Meta:
         verbose_name = _('CMS - Project')
         verbose_name_plural = _('CMS - Projects')
+
+    def __str__(self):
+        return Truncator(f'{_("Project")} {self.title}').chars(50, truncate='...')
