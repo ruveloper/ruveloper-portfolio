@@ -27,8 +27,9 @@ class HomeAdmin(SingletonModelAdmin):
 
 
 # ? --------- About model ---------
-class TechnologyInline(admin.TabularInline):
-    model = Technology
+class TechnologyAboutInline(admin.TabularInline):
+    # ManyToMany Relation managed by the through attribute
+    model = Technology.about.through
     extra = 0
 
 
@@ -49,23 +50,29 @@ class AboutAdmin(SingletonModelAdmin):
         (_('Profile'), {'fields':['profile_image', 'profile_image_webp', 'body']}),
         (_('Activate/Inactivate sections'), {'fields':['activate_stack', 'activate_trust_me', 'activate_resume']})
     ]
-    inlines = [TechnologyInline, CompanyInline, ResumeEntryInline]
+    inlines = [TechnologyAboutInline, CompanyInline, ResumeEntryInline]
 
 
 # ? --------- Project model ---------
+class TechnologyProjectInline(admin.TabularInline):
+    model = Technology.project.through
+    extra = 0
+
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     readonly_fields = ('cover_image_webp',)
     fieldsets = [
-        (None, {'fields': ['title', 'slug', 'cover_image', 'cover_image_webp']}),
-        (_('Project content'), {'fields': ['description', 'detail']})
+        (None, {'fields':['title', 'slug', 'cover_image', 'cover_image_webp']}),
+        (_('Project content'), {'fields':['description', 'detail']})
     ]
+    inlines = [TechnologyProjectInline, ]
 
 
 # ? --------- Shared models ---------
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
+    filter_horizontal = ('project', 'about')
     fieldsets = [
-        (None, {'fields': ['name', 'logo', 'priority_order', 'description']}),
-        (_('Relations'), {'fields': ['about', 'project_entry']})
+        (None, {'fields':['name', 'logo', 'priority_order', 'description']}),
     ]

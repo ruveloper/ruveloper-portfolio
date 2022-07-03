@@ -13,8 +13,8 @@ class Technology(models.Model):
     modified = models.DateTimeField(_('Modified on'), auto_now=True)
 
     # ? Relations
-    about = models.ForeignKey(About, null=True, on_delete=models.SET_NULL)
-    project_entry = models.ForeignKey(Project, null=True, on_delete=models.SET_NULL)
+    about = models.ManyToManyField(About, blank=True)
+    project = models.ManyToManyField(Project, blank=True)
 
     # ? Technology data
     name = models.CharField(_('Name'), max_length=30, unique=True)
