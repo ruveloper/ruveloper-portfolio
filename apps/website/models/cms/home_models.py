@@ -4,6 +4,7 @@ from django.core.validators import FileExtensionValidator
 
 from solo.models import SingletonModel
 from apps.website.utils import upload_cms_image_location, convert_img_to_webp
+from apps.website.validators import MaxFileSizeValidator
 
 
 class Home(SingletonModel):
@@ -18,7 +19,8 @@ class Home(SingletonModel):
     dev_photo = models.ImageField(
         _('Developer photo'), blank=True, null=True,
         upload_to=upload_cms_image_location,
-        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']), ],
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
+                    MaxFileSizeValidator(kilobytes=1000)],
     )
     dev_photo_webp = models.ImageField(
         _('Developer photo (Webp)'), blank=True, null=True, editable=False,

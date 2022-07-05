@@ -6,6 +6,7 @@ from apps.website.validators import validate_image_logo
 
 from solo.models import SingletonModel
 from apps.website.utils import upload_cms_image_location
+from apps.website.validators import MaxFileSizeValidator
 
 
 class Base(SingletonModel):
@@ -18,11 +19,13 @@ class Base(SingletonModel):
     logo = models.FileField(
         _('Logo'), upload_to=upload_cms_image_location,
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']),
-                    validate_image_logo, ],
+                    MaxFileSizeValidator(kilobytes=100), validate_image_logo,],
         help_text=_('Logo of your personal brand. Allow image files (JPG, PNG, GIF, WEBP) + SVG files')
     )
     favicon = models.ImageField(
-        _('favicon'), upload_to=upload_cms_image_location, help_text=_('Favicon of the website')
+        _('favicon'), upload_to=upload_cms_image_location,
+        validators=[MaxFileSizeValidator(kilobytes=10)],
+        help_text=_('Favicon of the website')
     )
 
     # ? Social networks

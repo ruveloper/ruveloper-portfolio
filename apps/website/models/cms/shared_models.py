@@ -6,6 +6,7 @@ from apps.website.validators import validate_image_logo
 
 from apps.website.models import About, Project
 from apps.website.utils import upload_cms_image_location
+from apps.website.validators import MaxFileSizeValidator
 
 
 class Technology(models.Model):
@@ -20,7 +21,8 @@ class Technology(models.Model):
     name = models.CharField(_('Name'), max_length=30, unique=True)
     logo = models.FileField(
         _('Logo'), upload_to=upload_cms_image_location,
-        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'])],
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']),
+                    MaxFileSizeValidator(kilobytes=100)],
         help_text=_('Allow image files (JPG, PNG, GIF, WEBP) + SVG files')
     )
     description = models.TextField(_('Description'), blank=True)

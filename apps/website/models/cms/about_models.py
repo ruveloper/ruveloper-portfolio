@@ -6,6 +6,7 @@ from apps.website.validators import validate_image_logo
 
 from solo.models import SingletonModel
 from apps.website.utils import upload_cms_image_location, convert_img_to_webp
+from apps.website.validators import MaxFileSizeValidator
 
 
 class About(SingletonModel):
@@ -16,7 +17,8 @@ class About(SingletonModel):
     profile_image = models.ImageField(
         _('Profile image'), blank=True, null=True,
         upload_to=upload_cms_image_location,
-        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])],
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png']),
+                    MaxFileSizeValidator(kilobytes=1000)],
     )
     profile_image_webp = models.ImageField(
         _('Profile image (Webp)'), blank=True, null=True, editable=False,
@@ -57,7 +59,7 @@ class Company(models.Model):
     logo = models.FileField(
         _('Logo'), upload_to=upload_cms_image_location,
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg']),
-                    validate_image_logo],
+                    MaxFileSizeValidator(kilobytes=100), validate_image_logo],
         help_text=_('Allow image files (JPG, PNG, GIF, WEBP) + SVG files')
     )
 
@@ -84,6 +86,7 @@ class ResumeEntry(models.Model):
 
     # ? Resume entry data
     title = models.CharField(_('Title'), max_length=255)
+    company = models.CharField(_('Company or institution'), max_length=255)
     start = models.DateField(_('Start date'))
     end = models.DateField(_('End date'), blank=True, null=True)
     description = models.TextField(_('Description'), blank=True)
