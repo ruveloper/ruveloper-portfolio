@@ -63,7 +63,7 @@ class Company(models.Model):
         help_text=_('Allow image files (JPG, PNG, GIF, WEBP) + SVG files')
     )
 
-    # ? Priority order
+    # ? Extra options
     priority_order = models.PositiveSmallIntegerField(
         _('Priority order'), default=0,
         help_text=_('Positive number used to order, the highest number is positioned first.')
@@ -72,6 +72,7 @@ class Company(models.Model):
     class Meta:
         verbose_name = _('Company')
         verbose_name_plural = _('Companies')
+        ordering = ['-priority_order']
 
     def __str__(self):
         return self.name

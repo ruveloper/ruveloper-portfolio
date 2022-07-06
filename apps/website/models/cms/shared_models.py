@@ -36,7 +36,7 @@ class Technology(models.Model):
     class Meta:
         verbose_name = _('CMS - Technology')
         verbose_name_plural = _('CMS - Technologies')
-        ordering = ['priority_order']
+        ordering = ['-priority_order']
 
     def __str__(self):
         return self.name

@@ -39,6 +39,12 @@ class Project(models.Model):
         help_text=_('Long description about the project, it is the content of the project endpoint')
     )
 
+    # ? Extra options
+    priority_order = models.PositiveSmallIntegerField(
+        _('Priority order'), default=0,
+        help_text=_('Positive number used to order, the highest number is positioned first.')
+    )
+
     def get_absolute_url(self):
         return reverse("website:project_detail", kwargs={'project_slug':self.slug})
 
@@ -54,6 +60,7 @@ class Project(models.Model):
     class Meta:
         verbose_name = _('CMS - Project')
         verbose_name_plural = _('CMS - Projects')
+        ordering = ['-priority_order']
 
     def __str__(self):
         return Truncator(f'{_("Project")} {self.title}').chars(50, truncate='...')

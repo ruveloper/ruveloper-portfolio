@@ -104,9 +104,11 @@ class TechnologyProjectInline(admin.TabularInline):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    readonly_fields = ('cover_image_webp', 'cover_image_preview')
+    readonly_fields = ('cover_image_webp', 'cover_image_preview', 'mini_cover_image_preview')
+    list_display = ('title', 'priority_order', 'mini_cover_image_preview')
     fieldsets = [
-        (None, {'fields':['title', 'slug', 'cover_image', 'cover_image_webp', 'cover_image_preview']}),
+        (None,
+         {'fields':['title', 'slug', 'priority_order', 'cover_image', 'cover_image_webp', 'cover_image_preview']}),
         (_('Project content'), {'fields':['description', 'detail']})
     ]
     inlines = [TechnologyProjectInline, ]
@@ -116,17 +118,26 @@ class ProjectAdmin(admin.ModelAdmin):
     @admin.display(description=_('Cover image preview'))
     def cover_image_preview(obj: Project): return html_img_preview(src_url=obj.cover_image.url)
 
+    @staticmethod
+    @admin.display(description=_('Cover image preview'))
+    def mini_cover_image_preview(obj: Project): return html_img_preview(src_url=obj.cover_image.url, max_height_px=50)
+
 
 # * ------------------ Shared models ------------------
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
-    readonly_fields = ('logo_preview',)
+    readonly_fields = ('logo_preview', 'mini_logo_preview')
+    list_display = ('name', 'priority_order', 'mini_logo_preview')
     filter_horizontal = ('project', 'about')
     fieldsets = [
-        (None, {'fields':['name', 'logo', 'logo_preview', 'priority_order', 'description']}),
+        (None, {'fields':['name', 'priority_order', 'logo', 'logo_preview', 'description']}),
     ]
 
     # * Image preview
     @staticmethod
     @admin.display(description=_('Logo preview'))
     def logo_preview(obj: Technology): return html_img_preview(src_url=obj.logo.url, max_height_px=100)
+
+    @staticmethod
+    @admin.display(description=_('Logo preview'))
+    def mini_logo_preview(obj: Technology): return html_img_preview(src_url=obj.logo.url, max_height_px=20)
