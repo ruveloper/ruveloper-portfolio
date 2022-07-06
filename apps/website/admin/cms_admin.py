@@ -4,38 +4,68 @@ from django.utils.translation import gettext_lazy as _
 from solo.admin import SingletonModelAdmin
 from apps.website.models import Base, Home, Project
 from apps.website.models import About, Technology, Company, ResumeEntry
+from apps.website.utils import html_img_preview
 
 
-# ? --------- Base model ---------
+# * ------------------ Base model ------------------
 @admin.register(Base)
 class BaseAdmin(SingletonModelAdmin):
+    readonly_fields = ('logo_preview', 'favicon_preview')
     fieldsets = [
         (None, {'fields':['email']}),
-        (_('Personal brand'), {'fields':['brand', 'logo', 'favicon']}),
+        (_('Personal brand'), {'fields':['brand', 'logo', 'logo_preview', 'favicon', 'favicon_preview']}),
         (_('Social networks'), {'fields':['github', 'linkedin']})
     ]
 
+    # * Image previews
+    @staticmethod
+    @admin.display(description=_('Logo preview'))
+    def logo_preview(self): return html_img_preview(src_url=self.logo.url, max_height_px=100)
 
-# ? --------- Home model ---------
+    @staticmethod
+    @admin.display(description=_('Favicon preview'))
+    def favicon_preview(self): return html_img_preview(src_url=self.favicon.url, max_height_px=100)
+
+
+# * ------------------ Home model ------------------
 @admin.register(Home)
 class HomeAdmin(SingletonModelAdmin):
-    readonly_fields = ('dev_photo_webp',)
+    readonly_fields = ('dev_photo_webp', 'dev_photo_preview')
     fieldsets = [
-        (None, {'fields':['dev_photo', 'dev_photo_webp']}),
+        (None, {'fields':['dev_photo', 'dev_photo_webp', 'dev_photo_preview']}),
         (_('Card'), {'fields':['card_title', 'card_body']}),
     ]
 
+    # * Image preview
+    @staticmethod
+    @admin.display(description=_('Developer photo preview'))
+    def dev_photo_preview(obj: Home): return html_img_preview(src_url=obj.dev_photo.url)
 
-# ? --------- About model ---------
+
+# * ------------------ About model ------------------
 class TechnologyAboutInline(admin.TabularInline):
-    # ManyToMany Relation managed by the through attribute
+    # ManyToMany Relation managed by the through attribute (the intermediary model)
     model = Technology.about.through
     extra = 0
+
+    # * Extra inline fields
+    readonly_fields = ('logo_preview',)
+
+    @staticmethod
+    @admin.display(description=_('Logo preview'))
+    def logo_preview(instance): return html_img_preview(src_url=instance.technology.logo.url, max_height_px=30)
 
 
 class CompanyInline(admin.TabularInline):
     model = Company
     extra = 0
+
+    # * Extra inline fields
+    readonly_fields = ('logo_preview',)
+
+    @staticmethod
+    @admin.display(description=_('Logo preview'))
+    def logo_preview(obj: Company): return html_img_preview(src_url=obj.logo.url, max_height_px=30)
 
 
 class ResumeEntryInline(admin.StackedInline):
@@ -45,34 +75,58 @@ class ResumeEntryInline(admin.StackedInline):
 
 @admin.register(About)
 class AboutAdmin(SingletonModelAdmin):
-    readonly_fields = ('profile_image_webp',)
+    readonly_fields = ('profile_image_webp', 'profile_image_preview')
     fieldsets = [
-        (_('Profile'), {'fields':['profile_image', 'profile_image_webp', 'body']}),
+        (_('Profile'), {'fields':['profile_image', 'profile_image_webp', 'profile_image_preview', 'body']}),
         (_('Activate/Inactivate sections'), {'fields':['activate_stack', 'activate_trust_me', 'activate_resume']})
     ]
     inlines = [TechnologyAboutInline, CompanyInline, ResumeEntryInline]
 
+    # * Image preview
+    @staticmethod
+    @admin.display(description=_('Profile image preview'))
+    def profile_image_preview(self): return html_img_preview(src_url=self.profile_image.url)
 
-# ? --------- Project model ---------
+
+# * ------------------ Project model ------------------
 class TechnologyProjectInline(admin.TabularInline):
+    # ManyToMany Relation managed by the through attribute (the intermediary model)
     model = Technology.project.through
     extra = 0
+
+    # * Extra inline fields
+    readonly_fields = ('logo_preview',)
+
+    @staticmethod
+    @admin.display(description=_('Logo preview'))
+    def logo_preview(instance): return html_img_preview(src_url=instance.technology.logo.url, max_height_px=30)
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    readonly_fields = ('cover_image_webp',)
+    readonly_fields = ('cover_image_webp', 'cover_image_preview')
     fieldsets = [
-        (None, {'fields':['title', 'slug', 'cover_image', 'cover_image_webp']}),
+        (None, {'fields':['title', 'slug', 'cover_image', 'cover_image_webp', 'cover_image_preview']}),
         (_('Project content'), {'fields':['description', 'detail']})
     ]
     inlines = [TechnologyProjectInline, ]
 
+    # * Image preview
+    @staticmethod
+    @admin.display(description=_('Cover image preview'))
+    def cover_image_preview(obj: Project): return html_img_preview(src_url=obj.cover_image.url)
 
-# ? --------- Shared models ---------
+
+# * ------------------ Shared models ------------------
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
+    readonly_fields = ('logo_preview',)
     filter_horizontal = ('project', 'about')
     fieldsets = [
-        (None, {'fields':['name', 'logo', 'priority_order', 'description']}),
+        (None, {'fields':['name', 'logo', 'logo_preview', 'priority_order', 'description']}),
     ]
+
+    # * Image preview
+    @staticmethod
+    @admin.display(description=_('Logo preview'))
+    def logo_preview(obj: Technology): return html_img_preview(src_url=obj.logo.url, max_height_px=100)
