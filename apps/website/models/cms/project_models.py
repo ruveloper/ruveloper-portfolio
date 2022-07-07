@@ -46,7 +46,7 @@ class Project(models.Model):
     )
 
     def get_absolute_url(self):
-        return reverse("website:project_detail", kwargs={'project_slug':self.slug})
+        return reverse("website:project_detail", kwargs={'slug':self.slug})
 
     def save(self, *args, **kwargs):
         # * ---- Before save model ----

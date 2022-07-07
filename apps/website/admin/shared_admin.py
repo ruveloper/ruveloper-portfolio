@@ -10,7 +10,6 @@ def get_technology_inline(_model):
     class TechnologyInline(admin.TabularInline):
         model = _model
         extra = 0
-        classes = ['collapse']
         verbose_name = _('Technology')
         verbose_name_plural = _('Technologies')
 

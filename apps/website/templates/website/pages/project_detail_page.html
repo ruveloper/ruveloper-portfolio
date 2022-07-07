@@ -2,13 +2,16 @@
 
 {% comment %}
 PARAMETERS:
+    * project: Project --> Selected project model
+    * prev_project: Project --> Previous project model of selected, None if not found
+    * next_project: Project --> Next project model of selected, None if not found
 {% endcomment %}
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
 
 {# Website title #}
-{% block title %}{{ block.super }} - Sobre mí{% endblock %}
+{% block title %}{{ project.title }} | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}
@@ -24,40 +27,35 @@ PARAMETERS:
 
         {# -------- Breadcrumb -------- #}
         <div class="w-full mb-10 flex flex-wrap items-center">
-            <div class="grow-0 text-lg md:text-3xl">
-                <a href=""><i class="fa-solid fa-arrow-left"></i></a>
-            </div>
+            {% if prev_project %}
+                <div class="grow-0 text-lg md:text-3xl">
+                    <a href="{{ prev_project.get_absolute_url }}"><i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+            {% endif %}
+
             <div class="grow flex justify-center items-center gap-x-1 md:gap-x-3
                         text-xs md:text-base text-gray-400">
-                <a href="{% url 'website:home' %}" class="hover:text-gray-900"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="{% url 'website:home' %}" class="hover:text-gray-900"><i class="fa-solid fa-house"></i>
+                    Home</a>
                 <i class="text-gray-400 fa-solid fa-angle-right"></i>
                 <a href="{% url 'website:projects' %}" class="hover:text-gray-900">Projects</a>
                 <i class="text-gray-400 fa-solid fa-angle-right"></i>
-                <a href="" class="text-blue-500">Project Name</a>
+                <a href="" class="text-blue-500">{{ project.title }}</a>
             </div>
-            <div class="grow-0 text-lg md:text-3xl">
-                <a href=""><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+
+            {% if next_project %}
+                <div class="grow-0 text-lg md:text-3xl">
+                    <a href="{{ next_project.get_absolute_url }}"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            {% endif %}
         </div>
 
         {# -------- Section Content -------- #}
 
         {# ---- Detail ---- #}
         <div class="text-content">
-            <h2 id="project-title" class="mb-2 font-bold text-2xl text-gray-800">Project Name</h2>
-            <div id="project-detail">
-                <p>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam,
-                        assumenda culpa dolore eos facere fugiat labore maiores nobis odit officiis perferendis
-                        quam reprehenderit rerum sit suscipit tempora unde voluptatem.</span>
-                    <span>Ad cupiditate distinctio dolor et eveniet facilis iusto labore necessitatibus nihil,
-                        quod repellendus saepe suscipit velit. Amet blanditiis, deserunt dolorum enim eveniet,
-                        expedita placeat quo quod reiciendis sint, tempore veritatis?</span>
-                    <span>Commodi debitis delectus facere id, iusto officiis ratione rerum sapiente similique ut.
-                        Aut dignissimos eaque error impedit, in ipsam nam nisi numquam placeat quaerat quas quos
-                        rem saepe temporibus, voluptas.</span>
-                </p>
-            </div>
+            <h2 id="project-title" class="mb-2 font-bold text-2xl text-gray-800">{{ project.title }}</h2>
+            <div id="project-detail"> {{ project.detail|safe }} </div>
         </div>
 
     </section>
