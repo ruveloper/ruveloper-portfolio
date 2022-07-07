@@ -4,7 +4,7 @@
 {% load static %}
 
 {# Website title #}
-{% block title %}{{ block.super }} - Home{% endblock %}
+{% block title %}Home | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}
@@ -33,18 +33,25 @@
                 bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg border border-white-100">
                     <p class="bg-white rounded-xl px-3 py-2
                     font-extrabold md:text-xl lg:text-2xl xl:text-3xl">
-                        Hi! here @developer
+                        {% if cms_home.card_title %}
+                            {{ cms_home.card_title|safe }}
+                        {% else %}
+                            Hi! here @developer
+                        {% endif %}
                     </p>
                     <p class="mt-3 font-bold text-white
                     md:text-lg ltg:text-xl xl:text-2xl">
-                        My name is John Doe , a Full-Stack web developer.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>
-                        I focus on
-                        <span class="typed"
-                              data-typed-items="
+                        {% if cms_home.card_body %}
+                            {{ cms_home.card_body|safe }}
+                        {% else %}
+                            My name is John Doe , a Full-Stack web developer.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>
+                            I focus on
+                            <span class="typed"
+                                  data-typed-items="
                               backend with <span class='font-extrabold bg-emerald-700 text-white px-2 py-1 rounded-lg'>Python</span>,
-                              frontend with <span class='font-extrabold bg-amber-500 text-white px-2 py-1 rounded-lg'>Javascript</span>">
-                        </span>
+                              frontend with <span class='font-extrabold bg-amber-500 text-white px-2 py-1 rounded-lg'>Javascript</span>"></span>
+                        {% endif %}
                     </p>
                 </div>
 
@@ -56,9 +63,11 @@
             <picture class="container md:h-screen mx-auto flex justify-center items-end overflow-hidden
                                 md:h-screen md:justify-end md:overflow-visible">
                 <!-- load webp if supported, otherwise load png-->
-                <source srcset="{% static 'img/profile_xl.webp' %}" type="image/webp">
+                <source srcset="{% if cms_home.dev_photo_webp %}{{ cms_home.dev_photo_webp.url }}
+                    {% else %}{% static 'img/profile_xl.webp' %} {% endif %}" type="image/webp">
                 <img class="min-w-fit h-96 md:h-5/6 drop-shadow-[-30px_35px_35px_rgba(0,0,0,0.5)]"
-                     src="{% static 'img/profile_md.png' %}" alt="developer image">
+                     src="{% if cms_home.dev_photo %} {{ cms_home.dev_photo.url }}
+                         {% else %}{% static 'img/profile_md.png' %} {% endif %}" alt="developer image">
             </picture>
         </div>
 
@@ -114,12 +123,14 @@
                         </p>
                         <div class="w-full flex flex-row flex-wrap gap-2 justify-center">
                             <div>
-                                <img class="h-8 md:h-10 mx-auto object-contain" src="{% static 'img/logos/python.svg' %}"
+                                <img class="h-8 md:h-10 mx-auto object-contain"
+                                     src="{% static 'img/logos/python.svg' %}"
                                      alt="python">
                                 <p class="px-2 pt-2 text-center">Python</p>
                             </div>
                             <div>
-                                <img class="h-8 md:h-10 mx-auto object-contain" src="{% static 'img/logos/django.svg' %}"
+                                <img class="h-8 md:h-10 mx-auto object-contain"
+                                     src="{% static 'img/logos/django.svg' %}"
                                      alt="python">
                                 <p class="px-2 pt-2 text-center">Django</p>
                             </div>
@@ -129,12 +140,14 @@
                                 <p class="px-2 pt-2 text-center">HTML, CSS, Javascript</p>
                             </div>
                             <div>
-                                <img class="h-8 md:h-10 mx-auto object-contain" src="{% static 'img/logos/tailwind.svg' %}"
+                                <img class="h-8 md:h-10 mx-auto object-contain"
+                                     src="{% static 'img/logos/tailwind.svg' %}"
                                      alt="python">
                                 <p class="px-2 pt-2 text-center">Tailwind</p>
                             </div>
                             <div>
-                                <img class="h-8 md:h-10 mx-auto object-contain" src="{% static 'img/logos/flowbite.svg' %}"
+                                <img class="h-8 md:h-10 mx-auto object-contain"
+                                     src="{% static 'img/logos/flowbite.svg' %}"
                                      alt="python">
                                 <p class="px-2 pt-2 text-center">Flowbite</p>
                             </div>
@@ -152,7 +165,8 @@
                                    target="_blank"
                                    class="font-medium text-blue-600 underline hover:no-underline">[Photo] Daniel
                                     Xavier</a>
-                                <a href="https://www.freepik.com/free-vector/contact-concept-landing-page_5155589.htm" target="_blank"
+                                <a href="https://www.freepik.com/free-vector/contact-concept-landing-page_5155589.htm"
+                                   target="_blank"
                                    class="font-medium text-blue-600 underline hover:no-underline">[Vector] Business
                                     email</a>
                             </div>

@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from apps.website.models import Base
+from apps.website.models import Base, Home
 
 from apps.website.utils import get_model_or_none
 
@@ -12,7 +12,7 @@ class HomePage(TemplateView):
         context = super(HomePage, self).get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context['cms_base']:Base = get_model_or_none(Base)
-
+        context['cms_home']:Home = get_model_or_none(Home)
         return context
 
 
