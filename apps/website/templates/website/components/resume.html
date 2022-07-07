@@ -1,0 +1,70 @@
+{% comment %}
+PARAMETERS
+    * resume_entries:QuerySet[ResumeEntry] --> QuerySet of ResumeEntry model objects
+{% endcomment %}
+
+{# ? -------------------------------- CONTENT ------------------------------- #}
+<div class="grid grid-cols-1 md:grid-cols-2 ">
+    <div>
+        <h2 class="mb-2 text-xl font-medium">Professional Experience</h2>
+
+        <div class="pl-1 bg-gradient-to-t from-blue-500 via-indigo-500 to-purple-500">
+            <ol class="relative w-full h-full bg-white">
+
+                {% for resume_entry in resume_entries %}
+                    {% if resume_entry.type == 'Experience' %}
+
+                        <li class="mb-10 ml-4">
+                            <div class="absolute w-3 h-3 bg-white rounded-full mt-2 -left-2 border border-indigo-600"></div>
+                            <h3 class="text-lg font-semibold text-indigo-800">
+                                {{ resume_entry.title }}
+                            </h3>
+                            <h3 class="font-semibold">
+                                {{ resume_entry.company }}
+                            </h3>
+                            <h4 class="inline-block my-2 px-3 py-1 rounded-lg text-sm font-normal text-gray-600 bg-gray-100">
+                                {{ resume_entry.start }} {% if resume_entry.end %} - {{ resume_entry.end }}{% endif %}
+                            </h4>
+                            <p class="mb-4 text-base font-normal text-gray-600">
+                                {{ resume_entry.description|safe }}
+                            </p>
+                        </li>
+
+                    {% endif %}
+                {% endfor %}
+
+            </ol>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="mb-2 text-xl font-medium">Education</h2>
+
+        <div class="pl-1 bg-gradient-to-t from-indigo-500 to-purple-500">
+            <ol class="relative w-full h-full bg-white">
+
+                {% for resume_entry in resume_entries %}
+                    {% if resume_entry.type == 'Education' %}
+                        <li class="mb-10 ml-4">
+                            <div class="absolute w-3 h-3 bg-white rounded-full mt-2 -left-2 border border-indigo-600"></div>
+                            <h3 class="text-lg font-semibold text-indigo-800">
+                                {{ resume_entry.title }}
+                            </h3>
+                            <h3 class="font-semibold">
+                                {{ resume_entry.company }}
+                            </h3>
+                            <h4 class="inline-block my-2 px-3 py-1 rounded-lg text-sm font-normal text-gray-600 bg-gray-100">
+                                {{ resume_entry.start|date:'Y' }} {% if resume_entry.end %} -
+                                {{ resume_entry.end|date:'Y' }}{% endif %}
+                            </h4>
+                            <p class="mb-4 text-base font-normal text-gray-600">
+                                {{ resume_entry.description|safe }}
+                            </p>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+
+</div>

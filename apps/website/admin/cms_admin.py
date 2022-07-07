@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from solo.admin import SingletonModelAdmin
 from apps.website.models import Base, Home, Project
 from apps.website.models import About, Technology, Company, ResumeEntry
+from apps.website.admin.shared_admin import get_technology_inline
 from apps.website.utils import html_img_preview
 
 
@@ -43,19 +44,6 @@ class HomeAdmin(SingletonModelAdmin):
 
 
 # * ------------------ About model ------------------
-class TechnologyAboutInline(admin.TabularInline):
-    # ManyToMany Relation managed by the through attribute (the intermediary model)
-    model = Technology.about.through
-    extra = 0
-
-    # * Extra inline fields
-    readonly_fields = ('logo_preview',)
-
-    @staticmethod
-    @admin.display(description=_('Logo preview'))
-    def logo_preview(instance): return html_img_preview(src_url=instance.technology.logo.url, max_height_px=30)
-
-
 class CompanyInline(admin.TabularInline):
     model = Company
     extra = 0
@@ -80,7 +68,8 @@ class AboutAdmin(SingletonModelAdmin):
         (_('Profile'), {'fields':['profile_image', 'profile_image_webp', 'profile_image_preview', 'body']}),
         (_('Activate/Inactivate sections'), {'fields':['activate_stack', 'activate_trust_me', 'activate_resume']})
     ]
-    inlines = [TechnologyAboutInline, CompanyInline, ResumeEntryInline]
+    # Inline ManyToMany Relation managed by the through attribute (the intermediary model)
+    inlines = [get_technology_inline(Technology.about.through), CompanyInline, ResumeEntryInline]
 
     # * Image preview
     @staticmethod
@@ -89,19 +78,6 @@ class AboutAdmin(SingletonModelAdmin):
 
 
 # * ------------------ Project model ------------------
-class TechnologyProjectInline(admin.TabularInline):
-    # ManyToMany Relation managed by the through attribute (the intermediary model)
-    model = Technology.project.through
-    extra = 0
-
-    # * Extra inline fields
-    readonly_fields = ('logo_preview',)
-
-    @staticmethod
-    @admin.display(description=_('Logo preview'))
-    def logo_preview(instance): return html_img_preview(src_url=instance.technology.logo.url, max_height_px=30)
-
-
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     readonly_fields = ('cover_image_webp', 'cover_image_preview', 'mini_cover_image_preview')
@@ -111,7 +87,8 @@ class ProjectAdmin(admin.ModelAdmin):
          {'fields':['title', 'slug', 'priority_order', 'cover_image', 'cover_image_webp', 'cover_image_preview']}),
         (_('Project content'), {'fields':['description', 'detail']})
     ]
-    inlines = [TechnologyProjectInline, ]
+    # Inline ManyToMany Relation managed by the through attribute (the intermediary model)
+    inlines = [get_technology_inline(Technology.project.through), ]
 
     # * Image preview
     @staticmethod

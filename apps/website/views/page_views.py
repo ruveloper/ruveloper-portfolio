@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from apps.website.models import Base, Home
+from apps.website.models import Base, Home, About, Technology
 
 from apps.website.utils import get_model_or_none
 
@@ -11,8 +11,8 @@ class HomePage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context['cms_base']:Base = get_model_or_none(Base)
-        context['cms_home']:Home = get_model_or_none(Home)
+        context['cms_base']: Base = get_model_or_none(Base)
+        context['cms_home']: Home = get_model_or_none(Home)
         return context
 
 
@@ -22,8 +22,8 @@ class AboutPage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(AboutPage, self).get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context['cms_base']:Base = get_model_or_none(Base)
-
+        context['cms_base']: Base = get_model_or_none(Base)
+        context['cms_about']: About = get_model_or_none(About)
         return context
 
 
@@ -33,7 +33,7 @@ class ProjectsPage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ProjectsPage, self).get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context['cms_base']:Base = get_model_or_none(Base)
+        context['cms_base']: Base = get_model_or_none(Base)
 
         return context
 
@@ -44,7 +44,7 @@ class ProjectDetailPage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ProjectDetailPage, self).get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context['cms_base']:Base = get_model_or_none(Base)
+        context['cms_base']: Base = get_model_or_none(Base)
 
         return context
 
@@ -55,6 +55,6 @@ class ContactPage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ContactPage, self).get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context['cms_base']:Base = get_model_or_none(Base)
+        context['cms_base']: Base = get_model_or_none(Base)
 
         return context
