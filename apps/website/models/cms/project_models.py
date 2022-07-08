@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 from django.core.validators import FileExtensionValidator
 
-from ckeditor_uploader.fields import RichTextUploadingField
+from tinymce.models import HTMLField
 from apps.website.utils import upload_cms_image_location, convert_img_to_webp
 from apps.website.validators import MaxFileSizeValidator
 
@@ -34,7 +34,7 @@ class Project(models.Model):
         _('Slug'), max_length=255, unique=True, blank=True,
         help_text=_('Url endpoint of this project, leave blank to auto-generate')
     )
-    detail = RichTextUploadingField(
+    detail = HTMLField(
         _('Project details'),
         help_text=_('Long description about the project, it is the content of the project endpoint')
     )
