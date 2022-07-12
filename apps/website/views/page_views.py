@@ -1,7 +1,8 @@
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, FormView
+from django.urls import reverse
 
 from apps.website.models import Base, Home, About, Technology, Project
-
+from apps.website.forms import ContactRecordForm
 from apps.website.utils import get_model_or_none
 
 
@@ -61,8 +62,18 @@ class ProjectDetailPage(DetailView):
         return context
 
 
-class ContactPage(TemplateView):
+class ContactPage(FormView):
     template_name = 'website/pages/contact_page.html'
+    form_class = ContactRecordForm
+
+    def form_valid(self, form):
+        # If form is valid, save record on database and send email
+        form.save()
+        form.send_email()
+        return super(ContactPage, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('website:contact_success')
 
     def get_context_data(self, **kwargs):
         context = super(ContactPage, self).get_context_data(**kwargs)

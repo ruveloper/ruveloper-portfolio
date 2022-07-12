@@ -10,4 +10,5 @@ urlpatterns = [
     path('projects/', ProjectsPage.as_view(), name='projects'),
     path('projects/<slug:slug>', ProjectDetailPage.as_view(), name='project_detail'),
     path('contact/', ContactPage.as_view(), name='contact'),
+    path('contact/success/', ContactPage.as_view(), name='contact_success'),
 ]

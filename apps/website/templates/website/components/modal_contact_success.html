@@ -1,0 +1,55 @@
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load compress %}
+
+{# ? -------------------------------- CONTENT ------------------------------- #}
+<div id="modal-contact-success" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50
+    bg-gray-600 bg-opacity-80 md:inset-0 h-modal md:h-full">
+    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+        <div class="relative bg-white rounded-lg shadow">
+            <button type="button"
+                    class="close-modal absolute top-3 right-2.5 p-1.5 ml-auto inline-flex items-center text-gray-400
+                    bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm ">
+                <img class="w-5 h-5" src="{% static 'img/icons/close.svg' %}" alt="close">
+                <span class="sr-only">Close</span>
+            </button>
+            <div class="p-6 text-center">
+                <img class="h-32 mx-auto mb-4 object-contain" src="{% static 'img/icons/mail.svg' %}" alt="mail icon">
+                <h3 class="text-xl font-bold text-gray-800">Message sent</h3>
+                <h3 class="mb-5 text-lg font-normal text-gray-500">
+                    Thanks for contacting me.
+                </h3>
+                <button type="button" class="close-modal px-10 py-2 rounded-lg border border-gray-200
+                        text-sm font-medium  text-gray-500 bg-white
+                        hover:bg-gray-100 hover:text-gray-900
+                        focus:ring-4 focus:outline-none focus:ring-gray-200 focus:z-10">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# ? --------------------------------- SCRIPT -------------------------------- #}
+<script>
+
+    window.addEventListener("load", function () {
+        // Modal
+        const modalContactEl = document.getElementById('modal-contact-success')
+        const closeModalContactBtnEls = document.getElementsByClassName('close-modal')
+        const modalContact = new Modal(modalContactEl)
+
+        // Add hide events to buttons
+        Array.from(closeModalContactBtnEls).forEach(btn => {
+            btn.addEventListener('click', (event) => modalContact.hide())
+        })
+
+        // Show modal on success and update url
+        const url = window.location.pathname
+        const regexSuccess = /success.*/i
+        if (regexSuccess.test(url)) {
+            modalContact.show()
+            window.history.replaceState({}, '', url.replace(regexSuccess, ''))
+        }
+    });
+</script>
