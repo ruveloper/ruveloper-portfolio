@@ -2,13 +2,14 @@
 
 {% comment %}
 PARAMETERS:
+    * cms_projects: QuerySet[Project] --> QuerySet of Project model objects
 {% endcomment %}
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
 
 {# Website title #}
-{% block title %}{{ block.super }} - Sobre mí{% endblock %}
+{% block title %}Projects | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}
@@ -16,7 +17,7 @@ PARAMETERS:
     <!------------------------------------------------------------------------------
     About Page Section
     -------------------------------------------------------------------------------->
-    <section class="container mx-auto mt-48 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    <section class="container mx-auto mt-40 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
     page-radial-cut">
 
         {# -------- Section icon -------- #}
@@ -27,29 +28,53 @@ PARAMETERS:
         {# ---- Cards ---- #}
         <div id="projects" class="w-full flex flex-row flex-wrap gap-y-5">
 
-            {# TODO: Remove FOR - Example simulating multiple projects #}
+            {% for project in cms_projects %}
 
-            {% for project_id in '012345678'|make_list %}
-
-                <div id="project-{{ project_id }}"
+                <div id="project-{{ project.id }}"
                      class="w-full px-3 group
                             md:w-1/3 md:h-52
                             md:focus-within:w-full md:focus-within:h-auto md:focus-within:mb-10
                             md:focus-within:flex md:focus-within:flex-row md:focus-within:order-first">
 
-                    <button class="w-full cursor-default
+                    <button class="w-full cursor-default rounded-t-lg shadow-lg relative overflow-hidden
                                     md:h-full md:cursor-pointer
+                                    md:rounded-lg md:drop-shadow-sm
                                     md:hover:scale-105 md:duration-300 md:ease-in-out
-                                    md:group-focus-within:hover:scale-100 md:group-focus-within:transition-none
-                                    md:group-focus-within:justify-self-stretch
-                                    md:group-focus-within:cursor-default md:group-focus-within:w-1/3"
-                            onfocus='scrollToIdWithDelay("project-{{ project_id }}", 300)'>
-                        <img class="w-full h-full object-cover rounded-t-lg shadow-lg shimmer-loading-background
-                                    md:rounded-lg md:shadow-none
+                                    md:group-focus-within:cursor-default md:group-focus-within:w-1/3
                                     md:group-focus-within:rounded-none md:group-focus-within:rounded-l-lg
-                                    md:group-focus-within:shadow-lg"
-                             src="https://picsum.photos/50{{ project_id }}/300"
-                             alt="">
+                                    md:group-focus-within:shadow-lg
+                                    md:group-focus-within:hover:scale-100 md:group-focus-within:transition-none"
+                            onfocus='scrollToIdWithDelay("project-{{ project.id }}", 300)'>
+
+                        {# ---- Project image ---- #}
+                        <picture>
+                            <source srcset="
+                                    {% if project.cover_image_webp %}{{ project.cover_image_webp.url }}{% endif %}"
+                                    type="image/webp">
+                            <img class="w-full h-full object-cover shimmer-loading-background"
+                                 src="{{ project.cover_image.url }}" alt="">
+                        </picture>
+
+
+                        {# ---- Project Card info ---- #}
+                        <div class="hidden absolute inset-0
+                                    md:flex md:flex-col md:justify-between
+                                    md:group-focus-within:hidden">
+
+                            {# Title #}
+                            <h2 class="w-full h-fit p-2 font-bold text-white bg-gray-800 bg-opacity-50">
+                                {{ project.title }}</h2>
+
+                            {# Technologies #}
+                            <div class="w-full h-fit p-2 flex flex-row flex-wrap gap-2 justify-end items-center">
+                                {% for technology in project.technology_set.all %}
+                                    <img class="h-8 object-contain"
+                                         src="{{ technology.logo.url }}"
+                                         alt="{{ technology.name }}">
+                                {% endfor %}
+                            </div>
+
+                        </div>
                     </button>
 
                     <div class="w-full p-6 flex flex-col text-gray-600 text-left rounded-b-lg shadow-lg
@@ -58,31 +83,36 @@ PARAMETERS:
                                 md:group-focus-within:flex md:group-focus-within:flex-col md:group-focus-within:justify-evenly
                                 md:group-focus-within:rounded-r-lg md:group-focus-within:shadow-lg">
 
-                        <div class="text-content">
-                            <h2 id="project-title" class="mb-2 font-bold text-2xl text-gray-800">Project Name</h2>
-                            <div id="project-detail">
-                                <p>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad beatae deserunt
-                                        eos error iusto minima tempore. Alias, culpa deserunt distinctio, earum, et in
-                                        ipsa nesciunt non nulla officia unde vel!</span>
-                                    <span>Autem distinctio expedita fuga fugiat hic, ipsam itaque molestias mollitia
-                                        neque obcaecati omnis ratione saepe suscipit. Alias autem deleniti enim hic
-                                        laboriosam molestiae obcaecati odio possimus quam ut veniam, veritatis?</span>
-                                </p>
-                            </div>
+                        {# ---- Title ---- #}
+                        <h2 class="mb-2 font-bold text-2xl text-gray-800">{{ project.title }}</h2>
+
+                        {# ---- Description ---- #}
+                        <div id="project-detail" class="text-content">
+                            <p>{{ project.description|safe }}</p>
                         </div>
 
+                        {# Technologies #}
+                        <div class="w-full p-5 flex flex-row flex-wrap gap-2 justify-end items-center">
+                            {% for technology in project.technology_set.all %}
+                                <div>
+                                    <img class="h-8 mx-auto object-contain"
+                                         src="{{ technology.logo.url }}"
+                                         alt="{{ technology.name|lower }}">
+                                    <p class="px-2 pt-2 text-sm text-center font-semibold">
+                                        {{ technology.name }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
 
-                        <div class="mt-5 h-auto flex justify-center items-center">
+                        <div class="flex justify-center items-center">
                             <a class="py-2 px-8 font-medium border border-blue-600 text-blue-600 rounded-xl
                                         hover:bg-blue-600 hover:text-white transition-all duration-300"
-                               href="{% url 'website:project_detail' project_slug='project_example' %}">
-                                <i class="fa-solid fa-circle-plus mr-2"></i>Ver más</a>
+                               href="{{ project.get_absolute_url }}">
+                                <i class="fa-solid fa-circle-plus mr-2"></i>See more</a>
                         </div>
                     </div>
 
                 </div>
-
 
             {% endfor %}
 

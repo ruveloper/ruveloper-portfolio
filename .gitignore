@@ -1,6 +1,11 @@
 # ! ------- DJANGO SPECIFIC --------
 # Ignore staticfiles since these fill on production with the command collectstatic. Is not neccesary on development
 /static
+# Ignore media folder except uploads folder as it's used for Django File Browser package.
+/media/*
+!/media/uploads/
+/media/uploads/*
+!/media/uploads/.gitkeep
 
 # Dabatase
 db.sqlite3

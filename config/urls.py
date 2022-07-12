@@ -18,20 +18,25 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views import defaults as default_views
+from django.utils.translation import gettext_lazy as _
 
-from apps.website import urls
+from filebrowser.sites import site as fb_site
 
 # ? Change titles
-admin.site.site_header = "RUVELOPER ADMINISTRACIÓN"
-admin.site.site_title = "RUVELOPER"
-admin.site.index_title = "Portal de administración"
+admin.site.site_header = str(_('DEV ADMINISTRATION'))
+admin.site.site_title = str(_('DEVELOPER'))
+admin.site.index_title = str(_('ADMIN PORTAL'))
 
 # ? ---------- URLs -------------
 urlpatterns = [
+    path('admin/filebrowser/', fb_site.urls),
     path(settings.ADMIN_URL, admin.site.urls),
 
     # Django Browser Reload
     path("__reload__/", include("django_browser_reload.urls")),
+
+    # ? TinyCME
+    path('tinymce/', include('tinymce.urls')),
 
     # Website URLs
     path('', include('apps.website.urls', namespace='website')),
