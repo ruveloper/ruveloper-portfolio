@@ -1,14 +1,11 @@
 from pathlib import Path
 from typing import Union
-from PIL import Image
-
-from django.utils.translation import gettext_lazy as _
 
 from django.core.exceptions import ValidationError
-from django.utils.deconstruct import deconstructible
 from django.db.models.fields.files import FieldFile, ImageFieldFile
-from django.core.files import File
-from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.utils.deconstruct import deconstructible
+from django.utils.translation import gettext_lazy as _
+from PIL import Image
 
 
 def validate_image_logo(obj: FieldFile):
@@ -19,11 +16,11 @@ def validate_image_logo(obj: FieldFile):
     """
     img = obj.file
     img_extension: str = Path(img.name).suffix
-    if img_extension != '.svg':
+    if img_extension != ".svg":
         try:
             Image.open(img.file)
-        except IOError:
-            raise ValidationError(_('The image file is invalid or corrupt'))
+        except OSError:
+            raise ValidationError(_("The image file is invalid or corrupt"))
 
 
 @deconstructible
@@ -34,6 +31,7 @@ class MaxFileSizeValidator:
     :param message: Optional; custom message.
     :raises ValidationError: If the file size is greater than [kilobytes]
     """
+
     message = _(
         "File size %(file_size).2f KB is not allowed. "
         "Max file size is: %(kilobytes).2f KB."
@@ -52,7 +50,7 @@ class MaxFileSizeValidator:
             raise ValidationError(
                 self.message,
                 params={
-                    'file_size':file_size,
-                    'kilobytes':self.kilobytes,
+                    "file_size": file_size,
+                    "kilobytes": self.kilobytes,
                 },
             )

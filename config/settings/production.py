@@ -9,7 +9,7 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS")
 
 # DATABASES
 # ------------------------------------------------------------------------------
-DATABASES = {"default":env.db_url("DATABASE_URL")}
+DATABASES = {"default": env.db_url("DATABASE_URL")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True  # noqa F405
 DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # noqa F405
 
@@ -21,9 +21,12 @@ INSTALLED_APPS += []  # noqa F405
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL")
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL")
-EMAIL_SUBJECT_PREFIX = env("DJANGO_EMAIL_SUBJECT_PREFIX", default="[Django] ", )
+EMAIL_SUBJECT_PREFIX = env(
+    "DJANGO_EMAIL_SUBJECT_PREFIX",
+    default="[Django] ",
+)
 # Custom list setting, who which receive not automatic email from platform
-RECIPIENT_ADDRESS = env.list('RECIPIENT_ADDRESS')
+RECIPIENT_ADDRESS = env.list("RECIPIENT_ADDRESS")
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 # Use SMTP server on port 587 TLS
@@ -32,24 +35,28 @@ EMAIL_BACKEND = env(
     default="django.core.mail.backends.smtp.EmailBackend",
 )
 EMAIL_HOST = env("DJANGO_EMAIL_HOST")
-EMAIL_PORT = env("DJANGO_EMAIL_PORT", default=587)  # Recommend use always 587 for TLS connection
-EMAIL_USE_TLS = env("DJANGO_EMAIL_TLS", default=True)  # If port is 587 use TLS, if port is 465 use EMAIL_USE_SSL
+EMAIL_PORT = env(
+    "DJANGO_EMAIL_PORT", default=587
+)  # Recommend use always 587 for TLS connection
+EMAIL_USE_TLS = env(
+    "DJANGO_EMAIL_TLS", default=True
+)  # If port is 587 use TLS, if port is 465 use EMAIL_USE_SSL
 EMAIL_HOST_USER = env("DJANGO_EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD")
 
 EMAIL_TIMEOUT = 5
 
-# ? SECURE CONFIG
+# * SECURE CONFIG
 # ! APPLY ONLY when the entire website is correctly runnning over HTTPS Secure on production
-# ? ------------------------------------------------------------------------------
-# ? Prevent send cookies over , only HTTPS and prevent read from Javascript with HTTOnly
+# * ------------------------------------------------------------------------------
+# * Prevent send cookies over , only HTTPS and prevent read from Javascript with HTTOnly
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
-# ? Redirect all HTTP to HTTPS
+# * Redirect all HTTP to HTTPS
 # SECURE_SSL_REDIRECT = True # if NGINX manage redirects, Don't use this.
-# # ? Referrer-Policy
+# # * Referrer-Policy
 # SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 # # ! HSTS
 # # ! BEWARE: After seeing the header, browsers will NOT EASILY LET YOU REVERSE that decision and will

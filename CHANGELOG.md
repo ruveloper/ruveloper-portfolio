@@ -68,5 +68,3 @@
 - Added requirements
 - Config tailwind and browser-reload.
 - Config basic url patterns, the "website" app and initial templates (**base.html**, errors **[400|403|404|500].html**).
-
-
