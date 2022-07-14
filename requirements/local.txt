@@ -1,3 +1,6 @@
+# -----------------------------------------
+# PYTHON==3.9
+# -----------------------------------------
 -r base.txt
 
 # * ---- Specific Local Development Requirements ----
@@ -10,3 +13,7 @@ flake8==4.0.1  # https://github.com/PyCQA/flake8
 black==22.6.0  # https://github.com/psf/black
 isort==5.10.1  # https://github.com/pycqa/isort
 pre-commit==2.20.0 # https://github.com/pre-commit/pre-commit
+
+# * Type check
+# * ----------------------
+django-stubs[compatible-mypy]==1.12.0

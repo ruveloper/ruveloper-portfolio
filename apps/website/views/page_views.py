@@ -12,8 +12,8 @@ class HomePage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context["cms_base"]: Base = get_model_or_none(Base)
-        context["cms_home"]: Home = get_model_or_none(Home)
+        context["cms_base"] = get_model_or_none(Base)
+        context["cms_home"] = get_model_or_none(Home)
         return context
 
 
@@ -23,8 +23,8 @@ class AboutPage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context["cms_base"]: Base = get_model_or_none(Base)
-        context["cms_about"]: About = get_model_or_none(About)
+        context["cms_base"] = get_model_or_none(Base)
+        context["cms_about"] = get_model_or_none(About)
         return context
 
 
@@ -36,7 +36,7 @@ class ProjectsPage(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context["cms_base"]: Base = get_model_or_none(Base)
+        context["cms_base"] = get_model_or_none(Base)
         return context
 
 
@@ -48,7 +48,7 @@ class ProjectDetailPage(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context["cms_base"]: Base = get_model_or_none(Base)
+        context["cms_base"] = get_model_or_none(Base)
         # * Get previous and next project
         _prev, _next = None, None
         projects = Project.objects.all()
@@ -57,8 +57,8 @@ class ProjectDetailPage(DetailView):
                 _prev = projects[i - 1] if (i - 1) >= 0 else None
                 _next = projects[i + 1] if (i + 1) < projects.count() else None
                 break
-        context["prev_project"]: Project = _prev
-        context["next_project"]: Project = _next
+        context["prev_project"] = _prev
+        context["next_project"] = _next
         return context
 
 
@@ -78,6 +78,6 @@ class ContactPage(FormView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
-        context["cms_base"]: Base = get_model_or_none(Base)
+        context["cms_base"] = get_model_or_none(Base)
 
         return context

@@ -26,6 +26,4 @@ def error_404(request, exception=None):
 
 
 def error_500(request, exception=None):
-    context = {}
-
-    return render(request, "website/errors/500.html", context, status=500)
+    return render(request, "website/errors/500.html", {}, status=500)

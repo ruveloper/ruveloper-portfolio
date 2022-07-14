@@ -1,19 +1,18 @@
 from io import BytesIO
 from pathlib import Path
-from typing import Union
 from uuid import uuid4
 
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.images import ImageFile
-from django.db import models
 from django.db.models.fields.files import ImageFieldFile
 from django.utils.html import format_html
 from PIL import Image
 
 
-def get_model_or_none(model: type[models.Model]) -> Union[None, type[models.Model]]:
+def get_model_or_none(model):
     try:
         return model.objects.get()
-    except models.ObjectDoesNotExist:
+    except ObjectDoesNotExist:
         return None
 
 
@@ -24,7 +23,7 @@ def upload_cms_image_location(instance, filename: str) -> str:
 
 
 def convert_img_to_webp(obj: ImageFieldFile) -> ImageFile:
-    new_name: str = Path(obj.name).with_suffix(".webp").name
+    new_name: str = Path(str(obj.name)).with_suffix(".webp").name
     # Convert image to webp version
     image = Image.open(obj.file)
     webp_image = BytesIO()
