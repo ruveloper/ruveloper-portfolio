@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.website.models import ContactRecord
+from apps.core.models import ContactRecord
 
 
 # * --------------- Contact Record model ------------------

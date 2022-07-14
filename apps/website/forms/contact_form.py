@@ -2,7 +2,7 @@ from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
 
-from apps.website.models import ContactRecord
+from apps.core.models import ContactRecord
 
 
 class ContactRecordForm(forms.ModelForm):

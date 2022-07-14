@@ -3,8 +3,8 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from solo.models import SingletonModel
 
-from apps.website.utils import convert_img_to_webp, upload_cms_image_location
-from apps.website.validators import MaxFileSizeValidator, validate_image_logo
+from apps.core.utils import convert_img_to_webp, upload_cms_image_location
+from apps.core.validators import MaxFileSizeValidator, validate_image_logo
 
 
 class About(SingletonModel):

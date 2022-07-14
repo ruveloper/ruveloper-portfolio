@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 from solo.admin import SingletonModelAdmin
 
-from apps.website.admin.shared_admin import get_technology_inline
-from apps.website.models import (
+from apps.core.admin.shared_admin import get_technology_inline
+from apps.core.models import (
     About,
     Base,
     Company,
@@ -12,7 +12,7 @@ from apps.website.models import (
     ResumeEntry,
     Technology,
 )
-from apps.website.utils import html_img_preview
+from apps.core.utils import html_img_preview
 
 
 # * ------------------ Base model ------------------

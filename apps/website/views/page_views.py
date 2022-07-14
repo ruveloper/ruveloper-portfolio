@@ -1,9 +1,9 @@
 from django.urls import reverse
 from django.views.generic import DetailView, FormView, ListView, TemplateView
 
+from apps.core.models import About, Base, Home, Project
+from apps.core.utils import get_model_or_none
 from apps.website.forms import ContactRecordForm
-from apps.website.models import About, Base, Home, Project
-from apps.website.utils import get_model_or_none
 
 
 class HomePage(TemplateView):

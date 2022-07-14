@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import gettext_lazy as _
 
-from apps.website.utils import html_img_preview
+from apps.core.utils import html_img_preview
 
 
 def get_technology_inline(_model):

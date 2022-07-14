@@ -43,7 +43,10 @@ THIRD_PARTY_APPS = [
     # CMS - TinyMCE
     "tinymce",
 ]
-LOCAL_APPS = ["apps.website.apps.WebsiteConfig"]
+LOCAL_APPS = [
+    "apps.website.apps.WebsiteConfig",
+    "apps.core.apps.CoreConfig",
+]
 
 INSTALLED_APPS = PRE_THIRD_PARTY_APPS + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -68,7 +71,11 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [Path(APPS_DIR, "templates"), Path(APPS_DIR, "website", "templates")],
+        "DIRS": [
+            Path(APPS_DIR, "templates"),
+            Path(APPS_DIR, "website", "templates"),
+            Path(APPS_DIR, "core", "templates"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             # https://docs.djangoproject.com/en/dev/ref/templates/api/#built-in-template-context-processors
