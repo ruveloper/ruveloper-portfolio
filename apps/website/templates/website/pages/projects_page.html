@@ -29,13 +29,13 @@ PARAMETERS:
         <div id="projects" class="w-full flex flex-row flex-wrap gap-y-5">
 
             {% for project in cms_projects %}
-
                 <div id="project-{{ project.id }}"
                      class="w-full px-3 group
                             md:w-1/3 md:h-52
                             md:focus-within:w-full md:focus-within:h-auto md:focus-within:mb-10
                             md:focus-within:flex md:focus-within:flex-row md:focus-within:order-first">
 
+                    {# * ------- Project button -------- #}
                     <button class="w-full cursor-default rounded-t-lg shadow-lg relative overflow-hidden
                                     md:h-full md:cursor-pointer
                                     md:rounded-lg md:drop-shadow-sm
@@ -44,7 +44,7 @@ PARAMETERS:
                                     md:group-focus-within:rounded-none md:group-focus-within:rounded-l-lg
                                     md:group-focus-within:shadow-lg
                                     md:group-focus-within:hover:scale-100 md:group-focus-within:transition-none"
-                            onfocus='scrollToIdWithDelay("project-{{ project.id }}", 300)'>
+                            onfocus='scrollToIdWithDelay("project-{{ project.id }}", 100)'>
 
                         {# ---- Project image ---- #}
                         <picture>
@@ -62,21 +62,16 @@ PARAMETERS:
                                     md:group-focus-within:hidden">
 
                             {# Title #}
-                            <h2 class="w-full h-fit p-2 font-bold text-white bg-gray-800 bg-opacity-50">
-                                {{ project.title }}</h2>
-
-                            {# Technologies #}
-                            <div class="w-full h-fit p-2 flex flex-row flex-wrap gap-2 justify-end items-center">
-                                {% for technology in project.technology_set.all %}
-                                    <img class="h-8 object-contain"
-                                         src="{{ technology.logo.url }}"
-                                         alt="{{ technology.name }}">
-                                {% endfor %}
+                            <div class="w-full h-fit p-2
+                                        font-bold text-white bg-gray-800 bg-opacity-50">
+                                <h2>{{ project.title }}</h2>
                             </div>
+
 
                         </div>
                     </button>
 
+                    {# * ------- Expanded project information -------- #}
                     <div class="w-full p-6 flex flex-col text-gray-600 text-left rounded-b-lg shadow-lg
                                 md:hidden md:rounded-b-none md:shadow-none
                                 md:group-focus-within:block md:group-focus-within:w-2/3 md:group-focus-within:min-h-[200px]

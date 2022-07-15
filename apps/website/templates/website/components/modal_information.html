@@ -1,0 +1,104 @@
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+
+{# * -------------------------------- CONTENT ------------------------------- #}
+<button class="fixed bottom-5 right-5 z-30 px-5 py-2.5 rounded-lg bg-gray-200 bg-opacity-80
+                hover:bg-gray-300 hover:bg-opacity-80
+                focus:ring-2 focus:outline-none focus:ring-gray-100
+                text-gray-900 font-medium text-sm text-center"
+        type="button"
+        data-tooltip-target="tooltip-info" data-tooltip-placement="top" data-tooltip-style="light"
+        data-modal-toggle="information-modal">
+    <i class="fa-solid fa-info"></i>
+    <div id="tooltip-info" role="tooltip"
+         class="inline-block absolute invisible z-30 py-2 px-3 text-sm font-medium text-gray-900 bg-white
+                        rounded-lg border border-gray-200 shadow-sm opacity-0 tooltip">
+        Information
+        <div class="tooltip-arrow" data-popper-arrow></div>
+    </div>
+</button>
+{# ---- modal ---- #}
+<div id="information-modal" tabindex="-1" aria-hidden="true"
+     class="hidden z-50 w-full h-full md:inset-0 overflow-y-auto overflow-x-hidden
+                    fixed top-0 right-0 left-0 bg-black bg-opacity-60">
+    <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+            <!-- Modal header -->
+            <div class="flex justify-between items-start p-4 rounded-t border-b">
+                <h3 class="text-xl font-semibold text-gray-900">
+                    Portfolio Project
+                </h3>
+                <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                        data-modal-toggle="information-modal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+                <p class="text-base leading-relaxed">
+                    This project was developed by
+                    <a href="https://www.ruveloper.dev" target="_blank"
+                       class="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-violet-700
+                                        hover:underline hover:underline-offset-4">
+                        @ruveloper</a>
+                    using the following technologies:
+                </p>
+                <div class="w-full flex flex-row flex-wrap gap-2 justify-center">
+                    <div>
+                        <img class="h-8 md:h-10 mx-auto object-contain"
+                             src="{% static 'img/logos/python.svg' %}"
+                             alt="python">
+                        <p class="px-2 pt-2 text-center">Python</p>
+                    </div>
+                    <div>
+                        <img class="h-8 md:h-10 mx-auto object-contain"
+                             src="{% static 'img/logos/django.svg' %}"
+                             alt="python">
+                        <p class="px-2 pt-2 text-center">Django</p>
+                    </div>
+                    <div>
+                        <img class="h-8 md:h-10 mx-auto object-contain" src="{% static 'img/logos/web.svg' %}"
+                             alt="python">
+                        <p class="px-2 pt-2 text-center">HTML, CSS, Javascript</p>
+                    </div>
+                    <div>
+                        <img class="h-8 md:h-10 mx-auto object-contain"
+                             src="{% static 'img/logos/tailwind.svg' %}"
+                             alt="python">
+                        <p class="px-2 pt-2 text-center">Tailwind</p>
+                    </div>
+                    <div>
+                        <img class="h-8 md:h-10 mx-auto object-contain"
+                             src="{% static 'img/logos/flowbite.svg' %}"
+                             alt="python">
+                        <p class="px-2 pt-2 text-center">Flowbite</p>
+                    </div>
+                </div>
+                <hr class="w-48 mx-auto h-1 bg-gray-200 rounded border-0">
+                <div>
+                    <p class=" font-semibold">Credits:</p>
+                    <div class="mx-5 flex flex-row flex-wrap justify-center gap-2">
+                        <a href="https://www.iconfinder.com/icons/4394314/dev_logo_logos_icon" target="_blank"
+                           class="font-medium text-blue-600 underline hover:no-underline">[Icon] Dev</a>
+                        <a href="https://www.pexels.com/es-es/foto/profundidad-de-campo-foto-de-un-hombre-sentado-en-una-silla-mientras-sostiene-la-taza-frente-a-la-mesa-927451/"
+                           target="_blank"
+                           class="font-medium text-blue-600 underline hover:no-underline">[Photo] Andrea
+                            Piacquadio</a>
+                        <a href="https://www.freepik.com/free-vector/contact-concept-landing-page_5155589.htm"
+                           target="_blank"
+                           class="font-medium text-blue-600 underline hover:no-underline">[Vector] Business
+                            email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

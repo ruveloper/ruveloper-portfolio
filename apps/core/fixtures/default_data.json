@@ -1,0 +1,380 @@
+[
+  {
+    "model": "core.about",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-04T00:24:13.156Z",
+      "modified": "2022-07-05T16:59:05.924Z",
+      "profile_image": "default/profile.jpg",
+      "profile_image_webp": "default/profile.webp",
+      "body": "<strong>I am John Doe and I work as a software developer</strong>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci asperiores atque autem blanditiis consectetur doloribus fugit in ipsam itaque labore molestias nam obcaecati, praesentium qui totam vero voluptates voluptatum! Ab, ad adipisci aperiam aspernatur atque autem commodi culpa deserunt dolore doloribus enim eos excepturi facere fuga id laudantium molestias nemo nesciunt obcaecati ratione, rem repellat rerum, soluta temporibus velit!",
+      "activate_stack": true,
+      "activate_trust_me": true,
+      "activate_resume": true
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-04T18:37:14.582Z",
+      "modified": "2022-07-04T18:37:14.583Z",
+      "about": 1,
+      "name": "Facebook",
+      "logo": "default/logos/brands/facebook.svg",
+      "priority_order": 10
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 2,
+    "fields": {
+      "created": "2022-07-04T18:37:14.585Z",
+      "modified": "2022-07-04T18:37:14.585Z",
+      "about": 1,
+      "name": "Google",
+      "logo": "default/logos/brands/google.svg",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 3,
+    "fields": {
+      "created": "2022-07-04T18:37:14.587Z",
+      "modified": "2022-07-04T18:37:14.587Z",
+      "about": 1,
+      "name": "AWS",
+      "logo": "default/logos/brands/aws.svg",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 4,
+    "fields": {
+      "created": "2022-07-04T18:37:14.589Z",
+      "modified": "2022-07-04T18:37:14.589Z",
+      "about": 1,
+      "name": "Dribbble",
+      "logo": "default/logos/brands/dribbble.svg",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.company",
+    "pk": 5,
+    "fields": {
+      "created": "2022-07-04T18:37:14.591Z",
+      "modified": "2022-07-04T18:37:14.591Z",
+      "about": 1,
+      "name": "Behance",
+      "logo": "default/logos/brands/behance.svg",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.resumeentry",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-04T18:40:13.382Z",
+      "modified": "2022-07-04T18:40:13.382Z",
+      "about": 1,
+      "title": "Lead web developer",
+      "company": "Company #3",
+      "start": "2022-01-01",
+      "end": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum id placeat quae, quisquam voluptatum. Aliquam debitis dignissimos ducimus explicabo id magni minima modi neque non quidem similique, sit voluptates!",
+      "type": "Experience"
+    }
+  },
+  {
+    "model": "core.resumeentry",
+    "pk": 2,
+    "fields": {
+      "created": "2022-07-04T18:40:13.383Z",
+      "modified": "2022-07-04T18:40:13.383Z",
+      "about": 1,
+      "title": "Senior web developer",
+      "company": "Company #2",
+      "start": "2021-01-01",
+      "end": "2021-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum id placeat quae, quisquam voluptatum. Aliquam debitis dignissimos ducimus explicabo id magni minima modi neque non quidem similique, sit voluptates!",
+      "type": "Experience"
+    }
+  },
+  {
+    "model": "core.resumeentry",
+    "pk": 3,
+    "fields": {
+      "created": "2022-07-04T18:40:13.383Z",
+      "modified": "2022-07-04T18:40:13.383Z",
+      "about": 1,
+      "title": "Web developer",
+      "company": "Company #1",
+      "start": "2020-06-01",
+      "end": "2020-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum id placeat quae, quisquam voluptatum. Aliquam debitis dignissimos ducimus explicabo id magni minima modi neque non quidem similique, sit voluptates!",
+      "type": "Experience"
+    }
+  },
+  {
+    "model": "core.resumeentry",
+    "pk": 4,
+    "fields": {
+      "created": "2022-07-04T18:40:13.384Z",
+      "modified": "2022-07-04T18:40:13.384Z",
+      "about": 1,
+      "title": "Master in web services",
+      "company": "Institution #2",
+      "start": "2019-01-01",
+      "end": "2021-12-30",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum id placeat quae, quisquam voluptatum.",
+      "type": "Education"
+    }
+  },
+  {
+    "model": "core.resumeentry",
+    "pk": 5,
+    "fields": {
+      "created": "2022-07-04T18:40:13.384Z",
+      "modified": "2022-07-04T18:40:13.384Z",
+      "about": 1,
+      "title": "Bachelor in computer engineering",
+      "company": "Institution #1",
+      "start": "2015-01-01",
+      "end": "2019-12-31",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorum id placeat quae, quisquam voluptatum.",
+      "type": "Education"
+    }
+  },
+  {
+    "model": "core.base",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-04T00:24:31.602Z",
+      "modified": "2022-07-04T21:51:20.416Z",
+      "email": "contact@developer.com",
+      "brand": "developer",
+      "logo": "default/logo.svg",
+      "favicon": "default/favicon.png",
+      "github": "https://github.com/myuserdeveloper",
+      "linkedin": "https://www.linkedin.com/in/myuserdeveloper"
+    }
+  },
+  {
+    "model": "core.home",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-04T00:24:33.866Z",
+      "modified": "2022-07-05T15:31:31.135Z",
+      "card_title": "Hi! here @developer",
+      "card_body": "My name is John Doe , a Full-Stack web developer. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>\r\nI focus on <span class=\"typed\" data-typed-items=\"\r\nbackend with <span style='padding: 0.25rem 0.5rem; color: #ffffff; font-weight: 800; border-radius: 0.5rem; background-color: rgb(4 120 87);'>Python</span>,frontend with <span style='padding: 0.25rem 0.5rem; color: #ffffff; font-weight: 800; border-radius: 0.5rem; background-color: rgb(245 158 11);'>Javascript</span>\"></span>",
+      "dev_photo": "default/developer.png",
+      "dev_photo_webp": "default/developer.webp"
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-05T16:00:04.363Z",
+      "modified": "2022-07-05T16:17:21.597Z",
+      "title": "Cowork Website Application",
+      "cover_image": "default/projects/project_cowork.jpg",
+      "cover_image_webp": "default/projects/project_cowork.webp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.",
+      "slug": "cowork-website-application",
+      "detail": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(230, 126, 35);\">Cowork Website Application</span></h2>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 8pt;\"><a href=\"https://dribbble.com/shots/19295272-Coworking-Space-Website-design\" target=\"_blank\" rel=\"noopener\">Dribble project - Click to see more!</a></span></p>\r\n<hr>\r\n<p><strong><img style=\"padding: 5px 15px; float: right;\" src=\"../../../../../media/default/projects/project_cowork.jpg\" alt=\"cowork\" width=\"427\" height=\"336\"></strong></p>\r\n<p style=\"text-align: justify;\"><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque sodales ut etiam sit amet nisl purus in. Dui sapien eget mi proin sed libero enim sed. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. <strong><span style=\"color: rgb(230, 126, 35);\">Pellentesque diam volutpat commodo sed egestas</span></strong>. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Felis bibendum ut tristique et egestas quis ipsum. <strong>Nisl condimentum id venenatis a condimentum</strong> vitae sapien. Metus vulputate eu scelerisque felis.</p>\r\n<blockquote>\r\n<p><strong><span style=\"color: rgb(185, 106, 217);\"><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.</em></span></strong></p>\r\n</blockquote>\r\n<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 2,
+    "fields": {
+      "created": "2022-07-05T16:16:32.604Z",
+      "modified": "2022-07-05T16:23:39.012Z",
+      "title": "Lime Admin Dashboard",
+      "cover_image": "default/projects/project_dashboard.jpg",
+      "cover_image_webp": "default/projects/project_dashboard.webp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.",
+      "slug": "lime-admin-dashboard",
+      "detail": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(45, 194, 107);\">Lime Admin Dashboard</span></h2>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 8pt;\"><a href=\"https://dribbble.com/shots/18438025-Finance-Dashboard\" target=\"_blank\" rel=\"noopener\">Dribble project - Click to see more!</a></span></p>\r\n<hr>\r\n<p><strong><img style=\"padding: 5px 15px; display: block; margin-left: auto; margin-right: auto;\" src=\"../../../../../media/default/projects/project_dashboard.jpg\" alt=\"cowork\" width=\"427\" height=\"336\"></strong></p>\r\n<p style=\"text-align: justify;\"><strong><span style=\"color: rgb(45, 194, 107);\">Pellentesque diam volutpat commodo sed egestas. </span></strong>Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Felis bibendum ut tristique et egestas quis ipsum. <strong>Nisl condimentum id venenatis a condimentum</strong> vitae sapien. Metus vulputate eu scelerisque felis.</p>\r\n<blockquote>\r\n<p><strong><span style=\"color: rgb(45, 194, 107);\"><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.</em></span></strong></p>\r\n</blockquote>\r\n<p><img style=\"padding: 5px 30px; float: left;\" src=\"../../../../../media/default/projects/project_dashboard_menu.jpg\" alt=\"\" width=\"282\" height=\"211\"></p>\r\n<p>&nbsp;</p>\r\n<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 3,
+    "fields": {
+      "created": "2022-07-05T16:25:50.984Z",
+      "modified": "2022-07-05T16:28:31.276Z",
+      "title": "Kids E-Learning Platform",
+      "cover_image": "default/projects/project_elearning.jpg",
+      "cover_image_webp": "default/projects/project_elearning.webp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.",
+      "slug": "kids-e-learning-platform",
+      "detail": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(106, 26, 174);\">kids-e-learning-platform</span></h2>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 8pt;\"><a href=\"https://dribbble.com/shots/19295114-eLearning-Website\" target=\"_blank\" rel=\"noopener\">Dribble project - Click to see more!</a></span></p>\r\n<p><img src=\"../../../../../media/default/projects/project_elearning_i.jpg\" alt=\"\" width=\"1024\" height=\"4320\"></p>",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 4,
+    "fields": {
+      "created": "2022-07-05T16:29:46.872Z",
+      "modified": "2022-07-05T16:46:35.868Z",
+      "title": "BlackX GraphQL Utility",
+      "cover_image": "default/projects/project_graphql.jpg",
+      "cover_image_webp": "default/projects/project_graphql.webp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.",
+      "slug": "blackx-graphql-utility",
+      "detail": "<h2 style=\"text-align: center;\">BlackX GraphQL Utility</h2>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 8pt;\"><a href=\"https://dribbble.com/shots/16133424-GraphQL-Converter-Platform\" target=\"_blank\" rel=\"noopener\">Dribble project - Click to see more!</a></span></p>\r\n<hr>\r\n<p><strong><img style=\"padding: 5px 15px; float: right;\" src=\"../../../../../media/default/projects/project_GraphQL.jpg\" alt=\"cowork\" width=\"385\" height=\"282\"></strong></p>\r\n<p style=\"text-align: justify;\"><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque sodales ut etiam sit amet nisl purus in. Dui sapien eget mi proin sed libero enim sed. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. <strong><span style=\"color: rgb(22, 145, 121);\">Pellentesque diam volutpat commodo sed egestas</span></strong>. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Felis bibendum ut tristique et egestas quis ipsum. <strong>Nisl condimentum id venenatis a condimentum</strong> vitae sapien. Metus vulputate eu scelerisque felis.</p>\r\n<blockquote>\r\n<p><strong><span style=\"color: rgb(22, 145, 121);\"><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.</em></span></strong></p>\r\n</blockquote>\r\n<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 5,
+    "fields": {
+      "created": "2022-07-05T16:49:59.080Z",
+      "modified": "2022-07-05T16:58:18.320Z",
+      "title": "Onumi Bank Application",
+      "cover_image": "default/projects/project_mobile.jpg",
+      "cover_image_webp": "default/projects/project_mobile.webp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.",
+      "slug": "onumi-bank-application",
+      "detail": "<h2 style=\"text-align: center;\"><span style=\"color: rgb(185, 106, 217);\">Onumi Bank Application</span></h2>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 8pt;\"><a href=\"https://dribbble.com/shots/19123173-Onumi-Financial-Management-App\" target=\"_blank\" rel=\"noopener\">Dribble project - Click to see more!</a></span></p>\r\n<hr>\r\n<p><strong><img style=\"padding: 5px 15px; display: block; margin-left: auto; margin-right: auto;\" src=\"../../../../../media/default/projects/project_mobile_screens.jpg\" alt=\"cowork\" width=\"728\" height=\"546\"></strong></p>\r\n<p style=\"text-align: justify;\"><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque sodales ut etiam sit amet nisl purus in. Dui sapien eget mi proin sed libero enim sed. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus. <strong><span style=\"color: rgb(185, 106, 217);\">Pellentesque diam volutpat commodo sed egestas.</span></strong> Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Felis bibendum ut tristique et egestas quis ipsum. <strong>Nisl condimentum id venenatis a condimentum</strong> vitae sapien. Metus vulputate eu scelerisque felis.</p>\r\n<blockquote>\r\n<p><strong><span style=\"color: rgb(185, 106, 217);\"><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.</em></span></strong></p>\r\n</blockquote>\r\n<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.project",
+    "pk": 6,
+    "fields": {
+      "created": "2022-07-05T16:53:06.080Z",
+      "modified": "2022-07-05T16:57:52.363Z",
+      "title": "Splite Mobile Application",
+      "cover_image": "default/projects/project_website.jpg",
+      "cover_image_webp": "default/projects/project_website.webp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.",
+      "slug": "splite-mobile-application",
+      "detail": "<h2 style=\"text-align: center;\">Splite Mobile Application</h2>\r\n<p style=\"text-align: center;\"><span style=\"font-size: 8pt;\"><a href=\"https://dribbble.com/shots/19295941-Splite-BNPL-Landing-Page\" target=\"_blank\" rel=\"noopener\">Dribble project - Click to see more!</a></span></p>\r\n<hr>\r\n<p><strong><img style=\"padding: 5px 15px; display: block; margin-left: auto; margin-right: auto;\" src=\"../../../../../media/default/projects/project_website.jpg\" alt=\"cowork\" width=\"592\" height=\"426\"></strong></p>\r\n<p style=\"text-align: justify;\"><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque sodales ut etiam sit amet nisl purus in. Dui sapien eget mi proin sed libero enim sed. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus.<span style=\"background-color: rgb(53, 152, 219);\"><span style=\"color: rgb(255, 255, 255);\"> <strong>Pellentesque diam volutpat commodo sed egestas</strong>.</span> </span>Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Leo duis ut diam quam nulla porttitor massa id. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi etiam. Felis bibendum ut tristique et egestas quis ipsum. <strong>Nisl condimentum id venenatis a condimentum</strong> vitae sapien. Metus vulputate eu scelerisque felis.</p>\r\n<blockquote>\r\n<p><span style=\"color: rgb(0, 0, 0);\"><strong><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Amet est placerat in egestas erat imperdiet sed euismod.</em></strong></span></p>\r\n</blockquote>\r\n<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+      "priority_order": 0
+    }
+  },
+  {
+    "model": "core.technology",
+    "pk": 1,
+    "fields": {
+      "created": "2022-07-04T18:16:50.021Z",
+      "modified": "2022-07-05T14:56:46.514Z",
+      "name": "Python",
+      "logo": "default/logos/python.svg",
+      "description": "<strong> Python is a multipurpose programming language</strong> and is one of the most widely used languages in the world. It is used in automation processes, desktop applications, machine learning, data science, backend development, among others.",
+      "priority_order": 10,
+      "about": [
+        1
+      ],
+      "project": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.technology",
+    "pk": 2,
+    "fields": {
+      "created": "2022-07-04T18:18:46.248Z",
+      "modified": "2022-07-04T18:20:27.371Z",
+      "name": "Django",
+      "logo": "default/logos/django.svg",
+      "description": "<strong class=\"font-medium text-gray-800\">Django is a high-level Python web framework that encourages rapid development, clean and pragmatic design</strong>, with more than 15 years in the market, it is widely used by companies like Google, Instagram, Spotify and Mozilla who rely on it to build web applications today.",
+      "priority_order": 9,
+      "about": [
+        1
+      ],
+      "project": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.technology",
+    "pk": 3,
+    "fields": {
+      "created": "2022-07-04T18:28:28.447Z",
+      "modified": "2022-07-04T18:28:28.447Z",
+      "name": "Web",
+      "logo": "default/logos/web.svg",
+      "description": "<strong class=\"font-medium text-gray-800\">HTML, CSS and Javascript is the set of technologies that underpin the web</strong>, with them we can structure, style and give functionality to each page on Internet .",
+      "priority_order": 8,
+      "about": [
+        1
+      ],
+      "project": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "core.technology",
+    "pk": 4,
+    "fields": {
+      "created": "2022-07-04T18:33:01.138Z",
+      "modified": "2022-07-05T16:54:05.303Z",
+      "name": "PostgreSQL",
+      "logo": "default/logos/postgresql.svg",
+      "description": "<strong class=\"font-medium text-gray-800\">PostgreSQL, also called Postgres, is an open source object-oriented relational (SQL) database management system</strong>, with over 30 years of active development, it has earned a strong reputation for reliability, feature robustness, and performance.",
+      "priority_order": 5,
+      "about": [
+        1
+      ],
+      "project": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "core.technology",
+    "pk": 5,
+    "fields": {
+      "created": "2022-07-05T14:53:12.407Z",
+      "modified": "2022-07-05T14:53:50.574Z",
+      "name": "Tailwind",
+      "logo": "default/logos/tailwind.svg",
+      "description": "<strong class=\"font-medium text-gray-800\">Tailwind CSS is a \"utility-first\" CSS framework</strong> that provides a deep catalog of CSS classes and tools that lets you easily get started styling your website or application directly in your markup.",
+      "priority_order": 6,
+      "about": [
+        1
+      ],
+      "project": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "core.technology",
+    "pk": 6,
+    "fields": {
+      "created": "2022-07-05T16:57:19.058Z",
+      "modified": "2022-07-05T16:57:19.058Z",
+      "name": "Flutter",
+      "logo": "default/logos/flutter.svg",
+      "description": "<strong>>Flutter is a Dart framework created by Google to create beautiful, natively compiled apps for mobile, web, and desktop from a single code base</strong>. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.",
+      "priority_order": 7,
+      "about": [
+        1
+      ],
+      "project": [
+        5,
+        6
+      ]
+    }
+  }
+]

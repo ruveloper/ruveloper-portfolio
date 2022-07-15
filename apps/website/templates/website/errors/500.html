@@ -1,29 +1,29 @@
 {% extends 'website/base.html' %}
 
-{# ? LOAD PACKAGES/TAGs #}
+{# *LOAD PACKAGES/TAGs #}
 {% load static %}
 {% load compress %}
 
-{# ? Website Title #}
+{# *Website Title #}
 {% block title %}{{ block.super }} - 400 {% endblock title %}
 
-{# ? STATIC CSS | JS #}
+{# *STATIC CSS | JS #}
 {% block css %}
     {{ block.super }}
-    {# ? ---- COMPONENTS STYLES ---- #}
+    {# *---- COMPONENTS STYLES ---- #}
     {% compress css %}
     {% endcompress %}
 {% endblock %}
 
 {% block javascript %}
     {{ block.super }}
-    {# ? ------ COMPONENTS JS ------ #}
+    {# *------ COMPONENTS JS ------ #}
     {% compress js %}
     {% endcompress %}
 {% endblock %}
 
 
-{# ? ------------------------------- WEBPAGE CONTENT ------------------------------- #}
+{# *------------------------------- WEBPAGE CONTENT ------------------------------- #}
 {% block main-content %}
 
     <!----------------------------------------------------------
@@ -40,4 +40,4 @@
     </section>
 
 {% endblock %}
-{# ? ------------------------------------------------------------------------------- #}
+{# *------------------------------------------------------------------------------- #}
