@@ -1,19 +1,18 @@
 {% comment %}
 PARAMETERS
-- templates:
-        - section_title:str
+    * section_title:str
 {% endcomment %}
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
 {% load compress %}
 
-{# ? -------------------------------- CONTENT -------------------------------- #}
+{# * -------------------------------- CONTENT -------------------------------- #}
 <div class="section-title mb-10 text-md uppercase font-medium">
     <h1 class="relative pb-5">{{ section_title }}</h1>
 </div>
 
-{# ? --------------------------------- STYLES -------------------------------- #}
+{# * --------------------------------- STYLES -------------------------------- #}
 {% compress css %}
     <style>
         .section-title h1::before {

@@ -7,9 +7,6 @@ PARAMETERS:
     * next_project: Project --> Next project model of selected, None if not found
 {% endcomment %}
 
-{# LOAD PACKAGES/TAGs #}
-{% load static %}
-
 {# Website title #}
 {% block title %}{{ project.title }} | {{ block.super }}{% endblock %}
 
@@ -53,7 +50,7 @@ PARAMETERS:
         {# -------- Section Content -------- #}
 
         {# * ---- Project Detail ---- #}
-        <div id="project-detail" class="prose prose-slate max-w-[80ch] mx-auto"> {{ project.detail|safe }} </div>
+        <div id="project-detail" class="prose prose-slate max-w-[100ch] mx-auto"> {{ project.detail|safe }} </div>
 
     </section>
 

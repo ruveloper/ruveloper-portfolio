@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% load compress %}
-{% load static tailwind_tags %}
+{% load tailwind_tags %}
 
 {% get_current_language as LANGUAGE_CODE %}
 
@@ -13,11 +13,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Welcome to my website - Developer!">
-    <meta name="author" content="Developer">
+    <meta name="description" content="{{ cms_base.brand }} portfolio website">
+    <meta name="author" content="{{ cms_base.brand }}">
 
     {# Block title with default #}
-    <title>{% block title %}Developer{% endblock title %}</title>
+    <title>{% block title %}{{ cms_base.brand }}{% endblock title %}</title>
 
     {# Favicon #}
     <link rel="icon"
@@ -70,12 +70,12 @@
                 {# -------- Developer link -------- #}
                 <a href="/" class="flex items-center">
                     <span class="self-center">
-                        {% if cms_base.brand %} {{ cms_base.brand }} {% else %} developer {% endif %}
+                        {{ cms_base.brand }}
                     </span>
                 </a>
                 <div class="flex items-center gap-x-3 md:order-2">
                     {# -------- Social links -------- #}
-                    <a href="{% if cms_base.github %} {{ cms_base.github }} {% else %} https://github.com/dev-user {% endif %}"
+                    <a href="{{ cms_base.github }}"
                        target="_blank"
                        data-tooltip-target="tooltip-github" data-tooltip-placement="bottom" data-tooltip-style="light">
                         <i class="fa-brands fa-github fa-lg"></i>
@@ -85,7 +85,7 @@
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
                     </a>
-                    <a href="{% if cms_base.linkedin %} {{ cms_base.linkedin }} {% else %} https://www.linkedin.com/in/dev-user {% endif %}"
+                    <a href="{{ cms_base.linkedin }}"
                        target="_blank"
                        data-tooltip-target="tooltip-linkedin" data-tooltip-placement="bottom"
                        data-tooltip-style="light">

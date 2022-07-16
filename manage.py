@@ -2,8 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import environ
 from pathlib import Path
+
+import environ
 
 
 def main():
@@ -13,8 +14,8 @@ def main():
     # ---------------------------------------------------------------------------
     # get and set casting, default value
     env = environ.Env()
-    env.read_env(os.path.join(Path(__file__).resolve().parent, '.env'))
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', env("DJANGO_SETTINGS_MODULE"))
+    env.read_env(os.path.join(Path(__file__).resolve().parent, ".env"))
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", env("DJANGO_SETTINGS_MODULE"))
 
     try:
         from django.core.management import execute_from_command_line
@@ -27,5 +28,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

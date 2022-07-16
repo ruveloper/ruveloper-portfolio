@@ -1,12 +1,11 @@
 from django import forms
-from django.core.mail import send_mail
 from django.conf import settings
+from django.core.mail import send_mail
 
-from apps.website.models import ContactRecord
+from apps.core.models import ContactRecord
 
 
 class ContactRecordForm(forms.ModelForm):
-
     def send_email(self):
         data = self.cleaned_data
         msg = f'Name: {data["name"]}\n'
@@ -24,6 +23,5 @@ class ContactRecordForm(forms.ModelForm):
 
     class Meta:
         model = ContactRecord
-        fields = ['name', 'email', 'subject', 'message']
-        exclude = ['created', 'modified']
-
+        fields = ["name", "email", "subject", "message"]
+        exclude = ["created", "modified"]

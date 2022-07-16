@@ -3,6 +3,7 @@
 /static
 # Ignore media folder except uploads folder as it's used for Django File Browser package.
 /media/*
+!/media/default/
 !/media/uploads/
 /media/uploads/*
 !/media/uploads/.gitkeep

@@ -1,9 +1,5 @@
 {% extends 'website/base.html' %}
 
-{% comment %}
-PARAMETERS:
-{% endcomment %}
-
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
 
@@ -29,10 +25,10 @@ PARAMETERS:
             {# Card image #}
             <picture class="w-96 md:w-2/6">
                 <source srcset="{% if cms_about.profile_image_webp %} {{ cms_about.profile_image_webp.url }}
-                                    {% else %}{% static 'img/profile_alt.webp' %}{% endif %}">
+                                    {% else %}{% static 'img/profile.webp' %}{% endif %}">
                 <img class="w-full rounded-t-md md:rounded-md"
                      src="{% if cms_about.profile_image %} {{ cms_about.profile_image.url }}
-                           {% else %} {% static 'img/profile_alt.jpg' %} {% endif %}" alt="profile image">
+                           {% else %} {% static 'img/profile.jpg' %} {% endif %}" alt="profile image">
             </picture>
             {# Card content #}
             <div class="w-96 md:w-3/6 p-5 rounded-b-2xl md:rounded-2xl
@@ -45,9 +41,6 @@ PARAMETERS:
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci asperiores
                         atque autem blanditiis consectetur doloribus fugit in ipsam itaque labore molestias nam
                         obcaecati, praesentium qui totam vero voluptates voluptatum!</span>
-                        <span>Ab, ad adipisci aperiam aspernatur atque autem commodi culpa deserunt dolore doloribus enim
-                        eos excepturi facere fuga id laudantium molestias nemo nesciunt obcaecati ratione, rem repellat
-                        rerum, soluta temporibus velit!</span>
                     {% endif %}
                 </p>
             </div>

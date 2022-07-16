@@ -9,12 +9,12 @@ PARAMETERS
 {% load static %}
 {% load compress %}
 
-{# ? -------------------------------- CONTENT ------------------------------- #}
+{# * -------------------------------- CONTENT ------------------------------- #}
 <div id="" class="">
 
 </div>
 
-{# ? --------------------------------- STYLES -------------------------------- #}
+{# * --------------------------------- STYLES -------------------------------- #}
 {# ! WARNING: if use any django template variable {{ any }} inside the compress tag, remove this tag or check docs to handle it #}
 {% compress css %}
 <style>
@@ -22,7 +22,7 @@ PARAMETERS
 </style>
 {% endcompress %}
 
-{# ? --------------------------------- SCRIPT -------------------------------- #}
+{# * --------------------------------- SCRIPT -------------------------------- #}
 {# ! WARNING: if use any django template variable {{ any }} inside the compress tag, remove this tag or check docs to handle it #}
 {% compress js %}
 <script>
