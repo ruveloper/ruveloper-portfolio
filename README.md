@@ -2,7 +2,8 @@
 
 [![GitHub](https://img.shields.io/github/license/ruveloper/django-portfolio-project)](https://www.mit.edu/~amini/LICENSE.md)
 
-![Project preview](/media/default/porfolio_preview/home.jpg "Project preview")
+![Home preview](/media/default/porfolio_preview/home.jpg "Home preview")
+![Admin preview](/media/default/porfolio_preview/admin.jpg "Admin preview")
 
 ### Build with:
 
@@ -20,15 +21,19 @@
 - WYSIWYG editor to manage the project content
 - Save record and send email on contact form success
 
-** ✨ GETTING STARTED WITH DEV MODE**
+## ✨ GETTING STARTED WITH DEV MODE
 
-1. Create a python virtualenv and activate
-
-
-2. Install requirements:
+1. Create a python virtualenv and install requirements:
    ```
-   pip requirements -r ./requirements/local.txt
+   python -m venv .venv
+   (windows) .\.venv\Scripts\activate
+   pip install -r .\requirements\local.txt
    ```
+
+2. Set the environment variables:
+   - Copy or rename **.env-dev-template** to **.env**
+   - Set the NPM_BIN_PATH variable
+
 
 3. Init Django:
    ```
@@ -36,7 +41,6 @@
    python manage.py migrate
    python manage.py createsuperuser
    ```
-
 
 4. [Optional] Load default/test data:
    ```
@@ -52,10 +56,12 @@
    python manage.py tailwind install
    ```
 
-5. Run both tailwind and dev server on port:
+5. Run both tailwind and dev server:
    ```
-   python manage.py runserver
    python manage.py tailwind start
+   python manage.py runserver
    ```
 
 6. Visit: http://127.0.0.1:8000/
+
+7. Change: http://127.0.0.1:8000/admin/
