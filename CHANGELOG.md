@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 1.0.0 - 15/07/2022
+
+### Added
+
+- Default data fixture to be used as initial data or test data.
+- Support to pre_commit hooks and configured with Flake9, Black and Isort.
+
+### Changed
+
+- Updated README.
+- Moved admin and models to core app.
+
 ## [0.5.0-dev] - 11/07/2022
 
 ### Added
