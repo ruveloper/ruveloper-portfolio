@@ -18,10 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.utils.translation import gettext_lazy as _
-from django.views import defaults as default_views
 from filebrowser.sites import site as fb_site
 
 # * Change titles
+import apps.website.views
+
 admin.site.site_header = str(_("DEV ADMINISTRATION"))
 admin.site.site_title = str(_("DEVELOPER"))
 admin.site.index_title = str(_("ADMIN PORTAL"))
@@ -39,10 +40,10 @@ urlpatterns = [
 ]
 
 # * -------- ERROR VIEWS --------
-handler400 = "apps.website.views.error_400"
-handler403 = "apps.website.views.error_403"
-handler404 = "apps.website.views.error_404"
-handler500 = "apps.website.views.error_500"
+handler400 = apps.website.views.error_400_bad_request
+handler403 = apps.website.views.error_403_permission_denied
+handler404 = apps.website.views.error_404_page_not_found
+handler500 = apps.website.views.error_500_server_error
 
 # * -------- DEBUG URLs --------
 if settings.DEBUG:
@@ -56,18 +57,18 @@ if settings.DEBUG:
     urlpatterns += [
         path(
             "400/",
-            default_views.bad_request,
+            handler400,
             kwargs={"exception": Exception("Bad Request!")},
         ),
         path(
             "403/",
-            default_views.permission_denied,
+            handler403,
             kwargs={"exception": Exception("Permission Denied")},
         ),
         path(
             "404/",
-            default_views.page_not_found,
+            handler404,
             kwargs={"exception": Exception("Page not Found")},
         ),
-        path("500/", default_views.server_error),
+        path("500/", handler500),
     ]
