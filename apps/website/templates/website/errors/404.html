@@ -5,39 +5,26 @@
 {% load compress %}
 
 {# * Website Title #}
-{% block title %}{{ block.super }} - 400 {% endblock title %}
-
-{# * STATIC CSS | JS #}
-{% block css %}
-    {{ block.super }}
-    {# * ---- COMPONENTS STYLES ---- #}
-    {% compress css %}
-    {% endcompress %}
-{% endblock %}
-
-{% block javascript %}
-    {{ block.super }}
-    {# * ------ COMPONENTS JS ------ #}
-    {% compress js %}
-    {% endcompress %}
-{% endblock %}
+{% block title %}Error 404 | {{ block.super }}{% endblock title %}
 
 
 {# * ------------------------------- WEBPAGE CONTENT ------------------------------- #}
+
 {% block main-content %}
 
     <!----------------------------------------------------------
     Content Error Section
     ------------------------------------------------------------>
-    <section id="error-content">
+    <section class="container mx-auto mt-40 mb-10 px-5 md:px-10 py-20 rounded-xl bg-white shadow-xl">
 
-        <div id="message">
-            <h2>Error 404</h2>
-            <h1>Página no encontrada</h1>
-            <p>La página solicitada no existe. Por favor comprueba la URL y vuelve a intentarlo.</p>
+        <div class="w-fit h-fit mx-auto text-center">
+            <i class="fa-solid fa-circle-exclamation text-8xl text-amber-700 m-5"></i>
+            <h1 class="text-xl font-semibold">PAGE NOT FOUND</h1>
+            <h2 class="w-full rounded-xl bg-amber-300 font-extrabold">Error 404</h2>
+            <p class="px-2">You requested a URL that is not on this server.</p>
         </div>
 
     </section>
 
-{% endblock %}
+{% endblock main-content %}
 {# * ------------------------------------------------------------------------------- #}

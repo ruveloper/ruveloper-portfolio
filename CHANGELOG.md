@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 1.0.1 - 08/08/2022
+
+### Changed
+
+- HTTP error templates (400, 403, 404 and 500).
+
+### Fixed
+
+- Fixed HTTP error test urls in debug mode pointing to the wrong view.
+
 ## 1.0.0 - 15/07/2022
 
 ### Added
