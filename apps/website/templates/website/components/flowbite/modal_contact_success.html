@@ -29,27 +29,3 @@
         </div>
     </div>
 </div>
-
-{# * --------------------------------- SCRIPT -------------------------------- #}
-<script>
-
-    window.addEventListener("load", function () {
-        // Modal
-        const modalContactEl = document.getElementById('modal-contact-success')
-        const closeModalContactBtnEls = document.getElementsByClassName('close-modal')
-        const modalContact = new Modal(modalContactEl)
-
-        // Add hide events to buttons
-        Array.from(closeModalContactBtnEls).forEach(btn => {
-            btn.addEventListener('click', (event) => modalContact.hide())
-        })
-
-        // Show modal on success and update url
-        const url = window.location.pathname
-        const regexSuccess = /success.*/i
-        if (regexSuccess.test(url)) {
-            modalContact.show()
-            window.history.replaceState({}, '', url.replace(regexSuccess, ''))
-        }
-    });
-</script>

@@ -51,7 +51,7 @@
             {% with cms_about.technology_set.all as technologies %}
                 <section class="w-full h-fit my-14">
                     {% include 'website/components/section_title.html' with section_title="My tech stack" %}
-                    {% include 'website/components/tech_stack.html' with technologies=technologies %}
+                    {% include 'website/components/flowbite/tech_stack.html' with technologies=technologies %}
                 </section>
             {% endwith %}
         {% endif %}

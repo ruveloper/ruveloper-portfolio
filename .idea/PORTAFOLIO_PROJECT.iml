@@ -16,13 +16,14 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/apps/website/static/css/dist" />
       <excludeFolder url="file://$MODULE_DIR$/.mypy_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/website/static/js/tinymce_v6" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (PortfolioEnv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="flowbite" level="application" />
-  </component>
-  <component name="PackageRequirementsSettings">
-    <option name="requirementsPath" value="" />
+    <orderEntry type="library" name="swup" level="application" />
+    <orderEntry type="library" name="gsap" level="application" />
+    <orderEntry type="library" name="@barba" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
