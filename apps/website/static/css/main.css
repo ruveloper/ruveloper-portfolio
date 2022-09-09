@@ -1,10 +1,31 @@
+/* * ----- SCROLLBAR ----- */
+body {
+    scrollbar-gutter: stable;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(34, 0, 255, 0.4);
+    border-radius: 10rem;
+    border: 1px solid #fff;
+}
+
+body::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+}
+
 /* --------- Base styles --------- */
 /* Navbar - active page style */
 #navbar a[aria-current="page"] {
-    border-style: solid;
-    border-radius: 0.75rem;
-    border-width: 1px;
-    border-color: white;
+    border-bottom: 1px solid #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -29,7 +50,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgb(249,250,251);
+    background: rgb(249, 250, 251);
     clip-path: polygon(0 90%, 100% 65%, 100% 100%, 0% 100%);
 }
 
@@ -54,11 +75,11 @@
     position: relative;
 }
 
-@keyframes shimmerAnimation{
-    0%{
+@keyframes shimmerAnimation {
+    0% {
         background-position: -468px 0
     }
-    100%{
+    100% {
         background-position: 468px 0
     }
 }
