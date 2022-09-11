@@ -24,6 +24,8 @@
     <orderEntry type="library" name="swup" level="application" />
     <orderEntry type="library" name="gsap" level="application" />
     <orderEntry type="library" name="@barba" level="application" />
+    <orderEntry type="library" name="@barba/core" level="application" />
+    <orderEntry type="library" name="@lottiefiles/lottie-player" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

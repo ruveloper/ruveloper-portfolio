@@ -3,8 +3,9 @@
 {% load compress %}
 
 {# * -------------------------------- CONTENT ------------------------------- #}
-<div id="modal-contact-success" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50
-    bg-gray-600 bg-opacity-80 md:inset-0 h-modal md:h-full">
+<div id="modal-contact-success" tabindex="-1"
+     class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 z-50
+            bg-gray-600 bg-opacity-95">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
         <div class="relative bg-white rounded-lg shadow">
             <button type="button"
@@ -14,7 +15,12 @@
                 <span class="sr-only">Close</span>
             </button>
             <div class="p-6 text-center">
-                <img class="h-32 mx-auto mb-4 object-contain" src="{% static 'img/icons/mail.svg' %}" alt="mail icon">
+                <lottie-player
+                        src="{% static 'lottie/email-sent.json' %}"
+                        style="height: 300px;"
+                        background="transparent"
+                        autoplay speed="1"
+                ></lottie-player>
                 <h3 class="text-xl font-bold text-gray-800">Message sent</h3>
                 <h3 class="mb-5 text-lg font-normal text-gray-500">
                     Thanks for contacting me.

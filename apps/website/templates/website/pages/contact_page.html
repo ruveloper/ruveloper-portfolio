@@ -40,7 +40,12 @@
                 </div>
 
                 <div class="mt-8 text-center">
-                    <img src="{% static 'img/contact.svg' %}" alt="">
+                    <lottie-player
+                            src="{% static 'lottie/send-email.json' %}"
+                            style="height: 400px;"
+                            background="transparent"
+                            autoplay loop speed="1"
+                    ></lottie-player>
                 </div>
             </div>
 
@@ -49,10 +54,10 @@
                 {% include 'website/components/contact_form.html' with form=form %}
             </div>
 
-            {# * ----------- MODAL CONTACT ON SUCCESS ------------ #}
-            {% include 'website/components/flowbite/modal_contact_success.html' %}
-
         </div>
+
+        {# * ----------- MODAL CONTACT ON SUCCESS ------------ #}
+        {% include 'website/components/flowbite/modal_contact_success.html' %}
 
     </section>
 
