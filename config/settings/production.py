@@ -67,8 +67,11 @@ SESSION_COOKIE_HTTPONLY = True
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# * Google Analytics / Tag Manager
+# * ------------------------------------------------------------------------------
+GOOGLE_TAG_ID = env("GOOGLE_TAG_ID")
 
-# * reCaptcha v3
+# * Google reCaptcha v3
 # * ------------------------------------------------------------------------------
 RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY")
 RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY")

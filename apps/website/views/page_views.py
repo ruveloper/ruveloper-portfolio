@@ -17,6 +17,8 @@ class HomePage(TemplateView):
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
         context["cms_home"] = get_model_or_none(Home)
+        # ! ---- Google Services  ----
+        context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
 
 
@@ -28,6 +30,8 @@ class AboutPage(TemplateView):
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
         context["cms_about"] = get_model_or_none(About)
+        # ! ---- Google Services  ----
+        context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
 
 
@@ -40,6 +44,8 @@ class ProjectsPage(ListView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
+        # ! ---- Google Services  ----
+        context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
 
 
@@ -62,6 +68,8 @@ class ProjectDetailPage(DetailView):
                 break
         context["prev_project"] = _prev
         context["next_project"] = _next
+        # ! ---- Google Services  ----
+        context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
 
 
@@ -89,8 +97,7 @@ class ContactPage(FormView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
-
-        # ! ---- reCAPTCHA Public Key ----
+        # ! ---- Google Services  ----
+        context["g_tag_id"] = settings.GOOGLE_TAG_ID
         context["g_recaptcha_publickey"] = settings.RECAPTCHA_PUBLIC_KEY
-
         return context
