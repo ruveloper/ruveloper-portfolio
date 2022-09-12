@@ -1,9 +1,12 @@
+from django.conf import settings
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, FormView, ListView, TemplateView
 
 from apps.core.models import About, Base, Home, Project
 from apps.core.utils import get_model_or_none
 from apps.website.forms import ContactRecordForm
+from apps.website.utils import validate_recaptcha_token
 
 
 class HomePage(TemplateView):
@@ -67,10 +70,17 @@ class ContactPage(FormView):
     form_class = ContactRecordForm
 
     def form_valid(self, form):
-        # If form is valid, save record on database and send email
-        form.save()
-        form.send_email()
-        return super().form_valid(form)
+        # * ---- reCaptcha validation ----
+        recaptcha_token: str = self.request.POST.get("g-recaptcha-response")
+        success, score = validate_recaptcha_token(recaptcha_token)
+        if success and score >= settings.RECAPTCHA_REQUIRED_SCORE:
+            # On form and reCaptcha valid, save record on database and send email
+            form.save()
+            form.send_email()
+            return super().form_valid(form)
+        # ! On reCaptcha not valid, return a non field error
+        form.add_error(None, _("Invalid reCaptcha, please try again."))
+        return super().form_invalid(form)
 
     def get_success_url(self):
         return reverse("website:contact_success")
@@ -79,5 +89,8 @@ class ContactPage(FormView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
+
+        # ! ---- reCAPTCHA Public Key ----
+        context["g_recaptcha_publickey"] = settings.RECAPTCHA_PUBLIC_KEY
 
         return context

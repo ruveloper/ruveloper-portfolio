@@ -112,6 +112,15 @@ function InitScripts() {
  */
 InitScripts();
 
+/* * ---- Reload Scripts ----*/
+function reloadHeadSourceScripts(scriptEl) {
+    scriptEl.remove()
+    let scriptTag = document.createElement("script")
+    scriptTag.src = scriptEl.src
+    scriptTag.setAttribute("data-script-reload", "active")
+    document.head.appendChild(scriptTag)
+}
+
 /**
  * Barba config
  */
@@ -156,6 +165,10 @@ InitScripts();
         /* * -------- RELOAD JAVASCRIPTS ELEMENTS ---------- */
         // Reload InitScripts
         InitScripts();
+
+        // Reload source scripts in head tagged with data-script-reload="true"
+        const taggedScriptEls = document.head.querySelectorAll('script[data-script-reload="active"]')
+        Array.from(taggedScriptEls).forEach((scriptEl) => reloadHeadSourceScripts(scriptEl))
 
         // Reload inline scripts from fetched container
         const containerScriptEls = data.next.container.getElementsByTagName('script')
