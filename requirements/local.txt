@@ -17,3 +17,4 @@ pre-commit==2.20.0 # https://github.com/pre-commit/pre-commit
 # * Type check
 # * ----------------------
 django-stubs[compatible-mypy]==1.12.0
+types-requests

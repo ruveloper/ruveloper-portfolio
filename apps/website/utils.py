@@ -1,8 +1,10 @@
-import requests.exceptions
+from typing import Optional
+
+import requests
 from django.conf import settings
 
 
-def validate_recaptcha_token(token: str) -> tuple[bool, float]:
+def validate_recaptcha_token(token: Optional[str]) -> tuple[bool, float]:
     """
     Validate the reCaptcha response token on form submit
     :param token: (str) response token from post

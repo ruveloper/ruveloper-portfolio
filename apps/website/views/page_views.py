@@ -1,3 +1,5 @@
+from typing import Optional
+
 from django.conf import settings
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -79,7 +81,7 @@ class ContactPage(FormView):
 
     def form_valid(self, form):
         # * ---- reCaptcha validation ----
-        recaptcha_token: str = self.request.POST.get("g-recaptcha-response")
+        recaptcha_token: Optional[str] = self.request.POST.get("g-recaptcha-response")
         success, score = validate_recaptcha_token(recaptcha_token)
         if success and score >= settings.RECAPTCHA_REQUIRED_SCORE:
             # On form and reCaptcha valid, save record on database and send email
