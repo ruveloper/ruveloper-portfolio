@@ -37,5 +37,17 @@ PASSWORD_HASHERS = ["django.contrib.auth.hashers.MD5PasswordHasher"]
 
 # EMAIL
 # ------------------------------------------------------------------------------
+DEFAULT_FROM_EMAIL = env("DJANGO_DEFAULT_FROM_EMAIL", default="noreply@test.com")
+SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default="root@test.com")
+EMAIL_SUBJECT_PREFIX = env(
+    "DJANGO_EMAIL_SUBJECT_PREFIX",
+    default="[Django Test] ",
+)
+# Custom setting, who which receive not automatic email from platform
+RECIPIENT_ADDRESS = env.list(
+    "RECIPIENT_ADDRESS",
+    default=["contact@test.com"],
+)
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
