@@ -55,12 +55,3 @@ if EMAIL_BACKEND == "django.core.mail.backends.smtp.EmailBackend":
     EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD")
 
 EMAIL_TIMEOUT = 5
-
-# ---------------------------------------------------------------------------
-# Tailwind
-# ---------------------------------------------------------------------------
-TAILWIND_APP_NAME = "apps.website"
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-NPM_BIN_PATH = env.path("NPM_BIN_PATH")  # windows: NodeJS\path\npm.cmd without spaces
