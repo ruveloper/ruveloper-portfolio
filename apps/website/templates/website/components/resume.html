@@ -3,10 +3,13 @@ PARAMETERS
     * resume_entries:QuerySet[ResumeEntry] --> QuerySet of ResumeEntry model objects
 {% endcomment %}
 
+{# LOAD PACKAGES/TAGs #}
+{% load i18n %}
+
 {# * -------------------------------- CONTENT ------------------------------- #}
 <div class="grid grid-cols-1 md:grid-cols-2 ">
     <div>
-        <h2 class="mb-2 text-xl font-medium">Professional Experience</h2>
+        <h2 class="mb-2 text-xl font-medium">{% translate "Professional Experience" %}</h2>
 
         <div class="pl-1 bg-gradient-to-t from-blue-500 via-indigo-500 to-purple-500">
             <ol class="relative w-full h-full bg-white">
@@ -38,7 +41,7 @@ PARAMETERS
     </div>
 
     <div>
-        <h2 class="mb-2 text-xl font-medium">Education</h2>
+        <h2 class="mb-2 text-xl font-medium">{% translate "Education" %}</h2>
 
         <div class="pl-1 bg-gradient-to-t from-indigo-500 to-purple-500">
             <ol class="relative w-full h-full bg-white">

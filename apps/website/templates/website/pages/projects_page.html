@@ -7,9 +7,10 @@ PARAMETERS:
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 
 {# Website title #}
-{% block title %}Projects | {{ block.super }}{% endblock %}
+{% block title %}{% translate "Projects" %} | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}

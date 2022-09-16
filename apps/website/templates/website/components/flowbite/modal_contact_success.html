@@ -1,5 +1,6 @@
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 {% load compress %}
 
 {# * -------------------------------- CONTENT ------------------------------- #}
@@ -23,13 +24,13 @@
                 ></lottie-player>
                 <h3 class="text-xl font-bold text-gray-800">Message sent</h3>
                 <h3 class="mb-5 text-lg font-normal text-gray-500">
-                    Thanks for contacting me.
+                    {% translate "Thanks for contacting me." %}
                 </h3>
                 <button type="button" class="close-modal px-10 py-2 rounded-lg border border-gray-200
                         text-sm font-medium  text-gray-500 bg-white
                         hover:bg-gray-100 hover:text-gray-900
                         focus:ring-4 focus:outline-none focus:ring-gray-200 focus:z-10">
-                    Close
+                    {% translate "Close" %}
                 </button>
             </div>
         </div>

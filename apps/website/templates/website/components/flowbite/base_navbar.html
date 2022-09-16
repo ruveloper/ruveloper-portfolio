@@ -8,6 +8,7 @@ PARAMETERS
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
 {% load compress %}
+{% load i18n %}
 
 {# * -------------------------------- CONTENT ------------------------------- #}
 <nav id="navbar"
@@ -63,28 +64,28 @@ PARAMETERS
                                 py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                 {% if view_name == 'website:home' %} aria-current="page" {% endif %}
-                        >Home</a>
+                        >{% translate "Home" %}</a>
                     </li>
                     <li>
                         <a href="{% url 'website:about' %}" class="block
                                 py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                 {% if view_name == 'website:about' %} aria-current="page" {% endif %}
-                        >About</a>
+                        >{% translate "About" %}</a>
                     </li>
                     <li>
                         <a href="{% url 'website:projects' %}" class="block
                                 py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-2 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                 {% if view_name == 'website:projects' %} aria-current="page" {% endif %}
-                        >Projects</a>
+                        >{% translate "Projects" %}</a>
                     </li>
                     <li>
                         <a href="{% url 'website:contact' %}" class="block
                                 py-2 pr-4 pl-3 border-b hover:bg-white hover:bg-opacity-30
                                 md:px-3 md:py-1 md:border-0 md:hover:border-b md:hover:bg-transparent md:hover:drop-shadow-lg"
                                 {% if view_name == 'website:contact' %} aria-current="page" {% endif %}
-                        >Contact</a>
+                        >{% translate "Contact" %}</a>
                     </li>
                 {% endwith %}
             </ul>

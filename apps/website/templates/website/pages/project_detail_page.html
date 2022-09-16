@@ -7,6 +7,9 @@ PARAMETERS:
     * next_project: Project --> Next project model of selected, None if not found
 {% endcomment %}
 
+{# LOAD PACKAGES/TAGs #}
+{% load i18n %}
+
 {# Website title #}
 {% block title %}{{ project.title }} | {{ block.super }}{% endblock %}
 
@@ -33,9 +36,9 @@ PARAMETERS:
             <div class="grow flex justify-center items-center gap-x-1 md:gap-x-3
                         text-xs md:text-base text-gray-400">
                 <a href="{% url 'website:home' %}" class="hover:text-gray-900"><i class="fa-solid fa-house"></i>
-                    Home</a>
+                    {% translate "Home" %}</a>
                 <i class="text-gray-400 fa-solid fa-angle-right"></i>
-                <a href="{% url 'website:projects' %}" class="hover:text-gray-900">Projects</a>
+                <a href="{% url 'website:projects' %}" class="hover:text-gray-900">{% translate "Projects" %}</a>
                 <i class="text-gray-400 fa-solid fa-angle-right"></i>
                 <a href="" class="text-blue-500">{{ project.title }}</a>
             </div>

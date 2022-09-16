@@ -7,6 +7,7 @@ PARAMETERS:
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 {% load widget_tweaks %}
 
 {# * -------------------------------- CONTENT ------------------------------- #}
@@ -54,7 +55,7 @@ PARAMETERS:
                 {% endif %}
 
                 {# Field #}
-                {{ field | add_class:"block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500" | attr:"rows:5" }}
+                {{ field | add_class:"block w-full p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500" | attr:"rows:3" }}
             </div>
 
         {% endif %}
@@ -65,9 +66,10 @@ PARAMETERS:
     <div class="w-full mb-5 flex flex-row items-center">
         <img class="h-10 border rounded-md " src="{% static 'img/logos/recaptcha.svg' %}" alt="reCaptcha logo">
         <p class="pl-2 text-xs">
-            This site is protected by Google reCaptcha, you can see the
-            <a class="text-indigo-500" href="https://policies.google.com/privacy">Privacy Policy</a>
-            and <a class="text-indigo-500" href="https://policies.google.com/terms">Service Terms</a>.
+            {% translate "This site is protected by Google reCaptcha, you can see the" %}
+            <a class="text-indigo-500" href="https://policies.google.com/privacy">{% translate "Privacy Policy" %}</a>
+            {% translate "and" %}
+            <a class="text-indigo-500" href="https://policies.google.com/terms">{% translate "Service Terms" %}</a>.
         </p>
     </div>
 
@@ -79,7 +81,7 @@ PARAMETERS:
             data-sitekey="{{ g_recaptcha_publickey }}"
             data-callback='onSubmit'
             data-action='submit'>
-        Send message
+        {% translate "Send message" %}
     </button>
 
 </form>

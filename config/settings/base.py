@@ -55,6 +55,7 @@ INSTALLED_APPS = PRE_THIRD_PARTY_APPS + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_A
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -166,6 +167,7 @@ LANGUAGE_CODE = "en"
 TIME_ZONE = "America/Bogota"
 USE_I18N = True
 USE_TZ = True
+LANGUAGES = [("en", "English"), ("es", "Spanish")]
 
 # STATIC FILES
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

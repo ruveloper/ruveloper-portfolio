@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -28,6 +29,7 @@ admin.site.site_title = str(_("DEVELOPER"))
 admin.site.index_title = str(_("ADMIN PORTAL"))
 
 # * ---------- URLs -------------
+# * Static url patterns
 urlpatterns = [
     path("admin/filebrowser/", fb_site.urls),
     path(settings.ADMIN_URL, admin.site.urls),
@@ -35,9 +37,13 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     # * TinyCME
     path("tinymce/", include("tinymce.urls")),
+]
+
+# * I18N patterns
+urlpatterns += i18n_patterns(
     # Website URLs
     path("", include("apps.website.urls", namespace="website")),
-]
+)
 
 # * -------- ERROR VIEWS --------
 handler400 = apps.website.views.error_400_bad_request

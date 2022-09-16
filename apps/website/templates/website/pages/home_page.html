@@ -2,9 +2,10 @@
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 
 {# Website title #}
-{% block title %}Home | {{ block.super }}{% endblock %}
+{% block title %}{% translate "Home" %} | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}

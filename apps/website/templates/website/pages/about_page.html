@@ -2,9 +2,10 @@
 
 {# LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 
 {# Website title #}
-{% block title %}About | {{ block.super }}{% endblock %}
+{% block title %}{% translate "Home" %} | {{ block.super }}{% endblock %}
 
 {# -------------------------------- WEBPAGE CONTENT -------------------------------- #}
 {% block main-content %}
@@ -50,7 +51,8 @@
         {% if cms_about.activate_stack and cms_about.technology_set.count >= 1 %}
             {% with cms_about.technology_set.all as technologies %}
                 <section class="w-full h-fit my-14">
-                    {% include 'website/components/section_title.html' with section_title="My tech stack" %}
+                    {% translate "My tech stack" as my_tech_stack_title %}
+                    {% include 'website/components/section_title.html' with section_title=my_tech_stack_title %}
                     {% include 'website/components/flowbite/tech_stack.html' with technologies=technologies %}
                 </section>
             {% endwith %}
@@ -60,7 +62,8 @@
         {% if cms_about.activate_trust_me and cms_about.company_set.count >= 1 %}
             {% with cms_about.company_set.all as companies %}
                 <section class="w-full h-fit my-14">
-                    {% include 'website/components/section_title.html' with section_title="They trusted me" %}
+                    {% translate "They trusted me" as trus_me_title %}
+                    {% include 'website/components/section_title.html' with section_title=trus_me_title %}
                     {% include 'website/components/brand_slider.html' with companies=companies %}
                 </section>
             {% endwith %}
@@ -70,7 +73,8 @@
         {% if cms_about.activate_resume and cms_about.resumeentry_set.count >= 1 %}
             {% with cms_about.resumeentry_set.all as resume_entries %}
                 <section>
-                    {% include 'website/components/section_title.html' with section_title="Resume" %}
+                    {% translate "Resume" as resume_title %}
+                    {% include 'website/components/section_title.html' with section_title=resume_title %}
                     {% include 'website/components/resume.html' with resume_entries=resume_entries %}
                 </section>
             {% endwith %}
