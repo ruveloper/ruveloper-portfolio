@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 1.0.3 - 15/09/2022
+
+### Added
+
+- Tests for models, views and forms.
+- Badges to README file.
+
+## 1.0.2 - 12/09/2022
+
+### Changed
+
+- Remove unused templates.
+
 ## 1.0.1 - 08/08/2022
 
 ### Changed

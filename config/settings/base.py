@@ -187,6 +187,17 @@ MEDIA_ROOT = Path(BASE_DIR, "media")
 # ---------------------------------------------------------------------------
 GET_SOLO_TEMPLATE_TAG_NAME = "get_singleton"
 
+# ---------------------------------------------------------------------------
+# Tailwind
+# ---------------------------------------------------------------------------
+TAILWIND_APP_NAME = "apps.website"
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+NPM_BIN_PATH = env.path(
+    "NPM_BIN_PATH", default=""
+)  # windows: NodeJS\path\npm.cmd without spaces
+
 # Filebrowser
 # ---------------------------------------------------------------------------
 # Used by TinyMCE to upload files
