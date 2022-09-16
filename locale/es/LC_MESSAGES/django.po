@@ -1,0 +1,470 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-16 11:27-0500\n"
+"PO-Revision-Date: 2022-09-16 11:27-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: .\apps\core\admin\cms_admin.py:25
+msgid "Personal brand"
+msgstr "Marca personal"
+
+#: .\apps\core\admin\cms_admin.py:28
+msgid "Social networks"
+msgstr "Redes sociales"
+
+#: .\apps\core\admin\cms_admin.py:33 .\apps\core\admin\cms_admin.py:68
+#: .\apps\core\admin\cms_admin.py:177 .\apps\core\admin\cms_admin.py:182
+#: .\apps\core\admin\shared_admin.py:18
+msgid "Logo preview"
+msgstr "Vista previa del logo"
+
+#: .\apps\core\admin\cms_admin.py:38
+msgid "Favicon preview"
+msgstr "Vista previa de Favicon"
+
+#: .\apps\core\admin\cms_admin.py:49
+msgid "Card"
+msgstr "Tarjeta"
+
+#: .\apps\core\admin\cms_admin.py:54
+msgid "Developer photo preview"
+msgstr "Vista previa de la foto del desarrollador"
+
+#: .\apps\core\admin\cms_admin.py:83
+msgid "Profile"
+msgstr "Perfil"
+
+#: .\apps\core\admin\cms_admin.py:94
+msgid "Activate/Inactivate sections"
+msgstr "Activar/desactivar secciones"
+
+#: .\apps\core\admin\cms_admin.py:107
+msgid "Profile image preview"
+msgstr "Vista previa de la imagen del perfil"
+
+#: .\apps\core\admin\cms_admin.py:135
+msgid "Project content"
+msgstr "Contenido del proyecto"
+
+#: .\apps\core\admin\cms_admin.py:144 .\apps\core\admin\cms_admin.py:149
+msgid "Cover image preview"
+msgstr "Vista previa de la imagen de portada"
+
+#: .\apps\core\admin\shared_admin.py:11
+msgid "Technology"
+msgstr "Tecnología"
+
+#: .\apps\core\admin\shared_admin.py:12
+msgid "Technologies"
+msgstr "Tecnologías"
+
+#: .\apps\core\models\cms\about_models.py:11
+#: .\apps\core\models\cms\about_models.py:62
+#: .\apps\core\models\cms\about_models.py:102
+#: .\apps\core\models\cms\base_models.py:11
+#: .\apps\core\models\cms\home_models.py:11
+#: .\apps\core\models\cms\project_models.py:13
+#: .\apps\core\models\cms\shared_models.py:11
+#: .\apps\core\models\contact_model.py:6
+msgid "Created on"
+msgstr "Creado"
+
+#: .\apps\core\models\cms\about_models.py:12
+#: .\apps\core\models\cms\about_models.py:63
+#: .\apps\core\models\cms\about_models.py:103
+#: .\apps\core\models\cms\base_models.py:12
+#: .\apps\core\models\cms\home_models.py:12
+#: .\apps\core\models\cms\project_models.py:14
+#: .\apps\core\models\cms\shared_models.py:12
+#: .\apps\core\models\contact_model.py:7
+msgid "Modified on"
+msgstr "Modificado"
+
+#: .\apps\core\models\cms\about_models.py:16
+msgid "Profile image"
+msgstr "Imagen de perfil"
+
+#: .\apps\core\models\cms\about_models.py:26
+msgid "Profile image (Webp)"
+msgstr "Image de perfil (webp)"
+
+#: .\apps\core\models\cms\about_models.py:31
+msgid "Auto-generated WEBP version of [Profile image]"
+msgstr "Version WEBP auto-generada de [Imagen de perfil]"
+
+#: .\apps\core\models\cms\about_models.py:33
+msgid "Profile body"
+msgstr "Contenido del perfil"
+
+#: .\apps\core\models\cms\about_models.py:36
+msgid "Activate stack section"
+msgstr "Activar sección Mi Stack"
+
+#: .\apps\core\models\cms\about_models.py:38
+msgid "Activate trust me section"
+msgstr "Activar sección Confían en mí"
+
+#: .\apps\core\models\cms\about_models.py:40
+msgid "Activate resume section"
+msgstr "Activar sección Trayectoria"
+
+#: .\apps\core\models\cms\about_models.py:55
+#: .\apps\core\models\cms\about_models.py:58
+msgid "CMS - About"
+msgstr "CMS - Sobre mí"
+
+#: .\apps\core\models\cms\about_models.py:69
+#: .\apps\core\models\cms\shared_models.py:19
+#: .\apps\core\models\contact_model.py:10
+msgid "Name"
+msgstr "Nombre"
+
+#: .\apps\core\models\cms\about_models.py:71
+#: .\apps\core\models\cms\base_models.py:20
+#: .\apps\core\models\cms\shared_models.py:21
+msgid "Logo"
+msgstr "Logo"
+
+#: .\apps\core\models\cms\about_models.py:80
+#: .\apps\core\models\cms\shared_models.py:29
+msgid "Allow image files (JPG, PNG, GIF, WEBP) + SVG files"
+msgstr "Permite archivos de imágenes (JPG, PNG, GIF, WEBP) + archivos SVG"
+
+#: .\apps\core\models\cms\about_models.py:85
+#: .\apps\core\models\cms\project_models.py:57
+#: .\apps\core\models\cms\shared_models.py:35
+msgid "Priority order"
+msgstr "Orden de prioridad"
+
+#: .\apps\core\models\cms\about_models.py:88
+#: .\apps\core\models\cms\project_models.py:60
+#: .\apps\core\models\cms\shared_models.py:38
+msgid "Positive number used to order, the highest number is positioned first."
+msgstr ""
+"Número positivo usado para ordenar la lista, el número mas grande es "
+"posicionado primero."
+
+#: .\apps\core\models\cms\about_models.py:93
+msgid "Company"
+msgstr "Compañía"
+
+#: .\apps\core\models\cms\about_models.py:94
+msgid "Companies"
+msgstr "Compañías"
+
+#: .\apps\core\models\cms\about_models.py:109
+#: .\apps\core\models\cms\project_models.py:17
+msgid "Title"
+msgstr "Título"
+
+#: .\apps\core\models\cms\about_models.py:110
+msgid "Company or institution"
+msgstr "Compañía o institución"
+
+#: .\apps\core\models\cms\about_models.py:111
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#: .\apps\core\models\cms\about_models.py:112
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#: .\apps\core\models\cms\about_models.py:113
+#: .\apps\core\models\cms\project_models.py:37
+#: .\apps\core\models\cms\shared_models.py:31
+msgid "Description"
+msgstr "Descripción"
+
+#: .\apps\core\models\cms\about_models.py:117
+msgid "Experience"
+msgstr "Experiencia"
+
+#: .\apps\core\models\cms\about_models.py:118
+#: .\apps\website\templates\website\components\resume.html:44
+msgid "Education"
+msgstr "Educación"
+
+#: .\apps\core\models\cms\about_models.py:121
+msgid "Type of entry"
+msgstr "Tipo de entrada"
+
+#: .\apps\core\models\cms\about_models.py:128
+msgid "Resume entry"
+msgstr "Entrada de trayectoria"
+
+#: .\apps\core\models\cms\about_models.py:129
+msgid "Resume entries"
+msgstr "Entradas de trayectoria"
+
+#: .\apps\core\models\cms\base_models.py:15
+#: .\apps\core\models\contact_model.py:11
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: .\apps\core\models\cms\base_models.py:15
+msgid "Contact email"
+msgstr "Correo electrónico de contacto"
+
+#: .\apps\core\models\cms\base_models.py:17
+msgid "Brand"
+msgstr "Marca"
+
+#: .\apps\core\models\cms\base_models.py:17
+msgid "Name of your personal brand"
+msgstr "Nombre de tu marca personal"
+
+#: .\apps\core\models\cms\base_models.py:30
+msgid ""
+"Logo of your personal brand. Allow image files (JPG, PNG, GIF, WEBP) + SVG "
+"files"
+msgstr ""
+"Logo de tu marca personal. Permite archivos de imagen (JPG, PNG, GIF, WEBP) "
+"+ archivos SVG"
+
+#: .\apps\core\models\cms\base_models.py:34
+msgid "favicon"
+msgstr "favicon"
+
+#: .\apps\core\models\cms\base_models.py:37
+msgid "Favicon of the website"
+msgstr "Favicon del sitio web"
+
+#: .\apps\core\models\cms\base_models.py:42
+msgid "Github profile url"
+msgstr "URL del perfil de GitHub"
+
+#: .\apps\core\models\cms\base_models.py:42
+msgid "Example: https://github.com/dev-user"
+msgstr "Ejemplo: https://github.com/dev-user"
+
+#: .\apps\core\models\cms\base_models.py:45
+msgid "Linkedin profile url"
+msgstr "URL del perfil de Linkedin"
+
+#: .\apps\core\models\cms\base_models.py:46
+msgid "Example: https://www.linkedin.com/in/dev-user"
+msgstr "Ejemplo: https://www.linkedin.com/in/dev-user"
+
+#: .\apps\core\models\cms\base_models.py:50
+#: .\apps\core\models\cms\base_models.py:51
+#: .\apps\core\models\cms\base_models.py:54
+msgid "CMS - Base"
+msgstr "CMS - Base"
+
+#: .\apps\core\models\cms\home_models.py:15
+msgid "Card title"
+msgstr "Título de la tarjeta"
+
+#: .\apps\core\models\cms\home_models.py:16
+msgid "Card Body"
+msgstr "Contenido de la tarjeta"
+
+#: .\apps\core\models\cms\home_models.py:20
+msgid "Developer photo"
+msgstr "Foto de desarrollador"
+
+#: .\apps\core\models\cms\home_models.py:30
+msgid "Developer photo (Webp)"
+msgstr "Foto de desarrollador (Webp)"
+
+#: .\apps\core\models\cms\home_models.py:35
+msgid "Auto-generated WEBP version of [Developer photo]"
+msgstr "Version WEBP auto-generada de [Foto de desarrollador]"
+
+#: .\apps\core\models\cms\home_models.py:49
+#: .\apps\core\models\cms\home_models.py:50
+#: .\apps\core\models\cms\home_models.py:53
+msgid "CMS - Home"
+msgstr "CMS - Inicio"
+
+#: .\apps\core\models\cms\project_models.py:19
+msgid "Cover image"
+msgstr "Imagen de portada"
+
+#: .\apps\core\models\cms\project_models.py:29
+msgid "Cover image (Webp)"
+msgstr "Imagen de portada (Webp)"
+
+#: .\apps\core\models\cms\project_models.py:34
+msgid "Auto-generated WEBP version of [Cover image]"
+msgstr "Version WEBP auto-generada de [Imagen de portada]"
+
+#: .\apps\core\models\cms\project_models.py:37
+msgid "Project summary to display in project list"
+msgstr "Resumen corto del proyecto para mostrar en la lista de proyectos"
+
+#: .\apps\core\models\cms\project_models.py:42
+msgid "Slug"
+msgstr "Slug"
+
+#: .\apps\core\models\cms\project_models.py:46
+msgid "Url endpoint of this project, leave blank to auto-generate"
+msgstr "Ruta URL para este proyecto, dejalo en blanco para ser auto-generado"
+
+#: .\apps\core\models\cms\project_models.py:49
+msgid "Project details"
+msgstr "Detalles del proyecto"
+
+#: .\apps\core\models\cms\project_models.py:51
+msgid ""
+"Long description about the project, it is the content of the project endpoint"
+msgstr ""
+"Descripción larga acerca del proyecto, este sera el contenido de la URL del "
+"proyecto"
+
+#: .\apps\core\models\cms\project_models.py:82
+msgid "CMS - Project"
+msgstr "CMS - Proyecto"
+
+#: .\apps\core\models\cms\project_models.py:83
+msgid "CMS - Projects"
+msgstr "CMS - Proyectos"
+
+#: .\apps\core\models\cms\shared_models.py:43
+msgid "CMS - Technology"
+msgstr "CMS - Tecnología"
+
+#: .\apps\core\models\cms\shared_models.py:44
+msgid "CMS - Technologies"
+msgstr "CMS - Tecnologías"
+
+#: .\apps\core\models\contact_model.py:12
+msgid "Subject"
+msgstr "Asunto"
+
+#: .\apps\core\models\contact_model.py:13
+msgid "Message"
+msgstr "Mensaje"
+
+#: .\apps\core\models\contact_model.py:16
+msgid "Contact record"
+msgstr "Registro de contacto"
+
+#: .\apps\core\models\contact_model.py:17
+msgid "Contact records"
+msgstr "Registros de contacto"
+
+#: .\apps\core\validators.py:23
+msgid "The image file is invalid or corrupt"
+msgstr "El archivo de imagen es invalido o está corrupto"
+
+#: .\apps\core\validators.py:36
+#, python-format
+msgid ""
+"File size %(file_size).2f KB is not allowed. Max file size is: "
+"%(kilobytes).2f KB."
+msgstr ""
+"El tamaño del archivo %(file_size).2f KB no está permitido. El tamaño máximo "
+"es: %(kilobytes).2f KB."
+
+#: .\apps\website\templates\website\components\contact_form.html:69
+msgid "This site is protected by Google reCaptcha, you can see the"
+msgstr "Este sitio web está protegido por Google reCaptcha, puedes ver la"
+
+#: .\apps\website\templates\website\components\contact_form.html:70
+msgid "Privacy Policy"
+msgstr "Política de privacidad"
+
+#: .\apps\website\templates\website\components\contact_form.html:71
+msgid "and"
+msgstr "y"
+
+#: .\apps\website\templates\website\components\contact_form.html:72
+msgid "Service Terms"
+msgstr "Términos de servicio"
+
+#: .\apps\website\templates\website\components\contact_form.html:84
+msgid "Send message"
+msgstr "Enviar mensaje"
+
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:67
+#: .\apps\website\templates\website\pages\about_page.html:8
+#: .\apps\website\templates\website\pages\home_page.html:8
+#: .\apps\website\templates\website\pages\project_detail_page.html:39
+msgid "Home"
+msgstr "Inicio"
+
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:74
+msgid "About"
+msgstr "Sobre mí"
+
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:81
+#: .\apps\website\templates\website\pages\project_detail_page.html:41
+#: .\apps\website\templates\website\pages\projects_page.html:13
+msgid "Projects"
+msgstr "Proyectos"
+
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:88
+#: .\apps\website\templates\website\pages\contact_page.html:8
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\apps\website\templates\website\components\flowbite\modal_contact_success.html:25
+msgid "Message sent"
+msgstr "Mensaje enviado"
+
+#: .\apps\website\templates\website\components\flowbite\modal_contact_success.html:27
+msgid "Thanks for contacting me."
+msgstr "Gracias por contactarme."
+
+#: .\apps\website\templates\website\components\flowbite\modal_contact_success.html:33
+msgid "Close"
+msgstr "Cerrar"
+
+#: .\apps\website\templates\website\components\resume.html:12
+msgid "Professional Experience"
+msgstr "Experiencia Profesional"
+
+#: .\apps\website\templates\website\pages\about_page.html:54
+msgid "My tech stack"
+msgstr "Mi stack de tecnologías"
+
+#: .\apps\website\templates\website\pages\about_page.html:65
+msgid "They trusted me"
+msgstr "He trabajado con"
+
+#: .\apps\website\templates\website\pages\about_page.html:76
+msgid "Resume"
+msgstr "Trayectoria"
+
+#: .\apps\website\templates\website\pages\contact_page.html:25
+msgid "Let's talk!"
+msgstr "Hablemos!"
+
+#: .\apps\website\templates\website\pages\contact_page.html:32
+msgid "Prefer email me?"
+msgstr "Prefieres enviarme un correo?"
+
+#: .\apps\website\templates\website\pages\projects_page.html:120
+msgid "See more"
+msgstr "Ver más"
+
+#: .\apps\website\views\page_views.py:92
+msgid "Invalid reCaptcha, please try again."
+msgstr "ReCaptcha invalida, por favor vuelva a intentarlo."
+
+#: .\config\urls.py:27
+msgid "DEV ADMINISTRATION"
+msgstr "DEV ADMINISTRACIÓN"
+
+#: .\config\urls.py:28
+msgid "DEVELOPER"
+msgstr "DESARROLLADOR"
+
+#: .\config\urls.py:29
+msgid "ADMIN PORTAL"
+msgstr "PORTAL DE ADMINISTRACIÓN"
