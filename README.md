@@ -1,8 +1,11 @@
 # 🐱‍💻 Ruveloper Portfolio
 
 [![GitHub](https://img.shields.io/github/license/ruveloper/django-portfolio-project)](https://www.mit.edu/~amini/LICENSE.md)
+![Coverage Status](./media/default/coverage-badge.svg?dummy=8484744)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ruveloper/ruveloper-portfolio/main.svg)](https://results.pre-commit.ci/latest/github/ruveloper/ruveloper-portfolio/main)
 
-### Personal portfolio based on [Portfolio Project](https://github.com/ruveloper/django-portfolio-project)
+### Personal portfolio based on [Portfolio Project](https://github.com/ruveloper/django-portfolio-project), see more in the previous link.
 
 ### Build with:
 

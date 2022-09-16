@@ -187,6 +187,17 @@ MEDIA_ROOT = Path(BASE_DIR, "media")
 # ---------------------------------------------------------------------------
 GET_SOLO_TEMPLATE_TAG_NAME = "get_singleton"
 
+# ---------------------------------------------------------------------------
+# Tailwind
+# ---------------------------------------------------------------------------
+TAILWIND_APP_NAME = "apps.website"
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+NPM_BIN_PATH = env.path(
+    "NPM_BIN_PATH", default=""
+)  # windows: NodeJS\path\npm.cmd without spaces
+
 # Filebrowser
 # ---------------------------------------------------------------------------
 # Used by TinyMCE to upload files
@@ -247,3 +258,13 @@ TINYMCE_DEFAULT_CONFIG = {
     "quickbars_insert_toolbar": "false",  # Ex: 'quickimage quicktable | hr pagebreak',
     "quickbars_image_toolbar": "alignleft aligncenter alignright | rotateleft rotateright | imageoptions",
 }
+
+# * Google Analytics / Tag Manager
+# * ------------------------------------------------------------------------------
+GOOGLE_TAG_ID = env("GOOGLE_TAG_ID")
+
+# * Google reCaptcha v3
+# * ------------------------------------------------------------------------------
+RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY")
+RECAPTCHA_REQUIRED_SCORE = env.float("RECAPTCHA_REQUIRED_SCORE")
