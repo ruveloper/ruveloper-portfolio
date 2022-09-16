@@ -11,6 +11,11 @@ function scrollToIdWithDelay(id, delay) {
         }, delay);
 }
 
+// * reCaptcha Callback Function
+function onSubmitFormContact(token) {
+    document.getElementById("contact-form").submit();
+}
+
 /**
  * Init Scripts Function
  */
