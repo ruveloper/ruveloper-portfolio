@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-16 22:55-0500\n"
-"PO-Revision-Date: 2022-09-16 22:56-0500\n"
+"POT-Creation-Date: 2022-09-17 08:04-0500\n"
+"PO-Revision-Date: 2022-09-17 08:12-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -414,10 +414,12 @@ msgid "Contact"
 msgstr "Contacto"
 
 #: .\apps\website\templates\website\components\flowbite\lang_selector.html:27
+#: .\config\settings\base.py:172
 msgid "English"
 msgstr "Inglés"
 
 #: .\apps\website\templates\website\components\flowbite\lang_selector.html:31
+#: .\config\settings\base.py:173
 msgid "Spanish"
 msgstr "Español"
 
@@ -436,6 +438,38 @@ msgstr "Cerrar"
 #: .\apps\website\templates\website\components\resume.html:12
 msgid "Professional Experience"
 msgstr "Experiencia Profesional"
+
+#: .\apps\website\templates\website\errors\400.html:23
+msgid "BAD REQUEST"
+msgstr "SOLICITUD INVALIDA"
+
+#: .\apps\website\templates\website\errors\400.html:25
+msgid "You sent an invalid request, this server cannot understand you."
+msgstr "Enviaste una solicitud invalida, este servidor no puede entenderte."
+
+#: .\apps\website\templates\website\errors\403.html:23
+msgid "PERMISSION DENIED"
+msgstr "PERMISO DENEGADO"
+
+#: .\apps\website\templates\website\errors\403.html:25
+msgid "You are not allowed to access this resource."
+msgstr "No tienes permitido acceder a este recurso."
+
+#: .\apps\website\templates\website\errors\404.html:23
+msgid "PAGE NOT FOUND"
+msgstr "PAGINA NO ENCONTRADA"
+
+#: .\apps\website\templates\website\errors\404.html:25
+msgid "You requested a URL that is not on this server."
+msgstr "Solicitaste una página que no se encuentra en este servidor."
+
+#: .\apps\website\templates\website\errors\500.html:23
+msgid "SERVER ERROR"
+msgstr "ERROR DE SERVIDOR"
+
+#: .\apps\website\templates\website\errors\500.html:25
+msgid "There is something wrong with this server."
+msgstr "Hay algún error en este servidor."
 
 #: .\apps\website\templates\website\pages\about_page.html:54
 msgid "My tech stack"
@@ -476,3 +510,6 @@ msgstr "DESARROLLADOR"
 #: .\config\urls.py:29
 msgid "ADMIN PORTAL"
 msgstr "PORTAL DE ADMINISTRACIÓN"
+
+#~ msgid "Say"
+#~ msgstr "Dice"

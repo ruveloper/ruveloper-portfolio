@@ -7,6 +7,7 @@ from pathlib import Path
 
 import environ
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 # DIRECTORIES
 # ---------------------------------------------------------------------------
@@ -163,11 +164,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # INTERNATIONALIZATIONS
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 # ---------------------------------------------------------------------------
-LANGUAGE_CODE = "es"
+LANGUAGE_CODE = "en"
 TIME_ZONE = "America/Bogota"
 USE_I18N = True
 USE_TZ = True
-LANGUAGES = [("en", "English"), ("es", "Spanish")]
+LANGUAGES = [
+    ("en", _("English")),
+    ("es", _("Spanish")),
+]
 LOCALE_PATHS = [
     Path(BASE_DIR, "locale"),
 ]

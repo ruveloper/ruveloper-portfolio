@@ -2,6 +2,7 @@
 
 {# * LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 {% load compress %}
 
 {# * Website Title #}
@@ -19,9 +20,9 @@
 
         <div class="w-fit h-fit mx-auto text-center">
             <i class="fa-solid fa-bug text-8xl text-red-700 m-5"></i>
-            <h1 class="text-xl font-semibold">SERVER ERROR</h1>
+            <h1 class="text-xl font-semibold">{% translate "SERVER ERROR" %}</h1>
             <h2 class="w-full rounded-xl bg-red-300 font-extrabold">Error 500</h2>
-            <p class="px-2">There is something wrong with this server.</p>
+            <p class="px-2">{% translate "There is something wrong with this server." %}</p>
         </div>
 
     </section>

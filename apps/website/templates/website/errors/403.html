@@ -2,6 +2,7 @@
 
 {# * LOAD PACKAGES/TAGs #}
 {% load static %}
+{% load i18n %}
 {% load compress %}
 
 {# * Website Title #}
@@ -19,9 +20,9 @@
 
         <div class="w-fit h-fit mx-auto text-center">
             <i class="fa-solid fa-triangle-exclamation text-8xl text-amber-700 m-5"></i>
-            <h1 class="text-xl font-semibold">PERMISSION DENIED</h1>
+            <h1 class="text-xl font-semibold">{% translate "PERMISSION DENIED" %}</h1>
             <h2 class="w-full rounded-xl bg-amber-300 font-extrabold">Error 403</h2>
-            <p class="px-2">You are not allowed to access this resource.</p>
+            <p class="px-2">{% translate "You are not allowed to access this resource." %}</p>
         </div>
 
     </section>
