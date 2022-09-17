@@ -34,6 +34,7 @@
       <list>
         <option value="$MODULE_DIR$/apps/website/templates" />
         <option value="$MODULE_DIR$/apps/website/templates/website" />
+        <option value="$MODULE_DIR$/apps/website/templates/website/components/flowbite" />
       </list>
     </option>
   </component>

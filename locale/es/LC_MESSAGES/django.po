@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-16 11:27-0500\n"
-"PO-Revision-Date: 2022-09-16 11:27-0500\n"
+"POT-Creation-Date: 2022-09-16 22:55-0500\n"
+"PO-Revision-Date: 2022-09-16 22:56-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -387,31 +387,39 @@ msgstr "y"
 msgid "Service Terms"
 msgstr "Términos de servicio"
 
-#: .\apps\website\templates\website\components\contact_form.html:84
+#: .\apps\website\templates\website\components\contact_form.html:93
 msgid "Send message"
 msgstr "Enviar mensaje"
 
-#: .\apps\website\templates\website\components\flowbite\base_navbar.html:67
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:70
 #: .\apps\website\templates\website\pages\about_page.html:8
 #: .\apps\website\templates\website\pages\home_page.html:8
 #: .\apps\website\templates\website\pages\project_detail_page.html:39
 msgid "Home"
 msgstr "Inicio"
 
-#: .\apps\website\templates\website\components\flowbite\base_navbar.html:74
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:77
 msgid "About"
 msgstr "Sobre mí"
 
-#: .\apps\website\templates\website\components\flowbite\base_navbar.html:81
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:84
 #: .\apps\website\templates\website\pages\project_detail_page.html:41
 #: .\apps\website\templates\website\pages\projects_page.html:13
 msgid "Projects"
 msgstr "Proyectos"
 
-#: .\apps\website\templates\website\components\flowbite\base_navbar.html:88
+#: .\apps\website\templates\website\components\flowbite\base_navbar.html:91
 #: .\apps\website\templates\website\pages\contact_page.html:8
 msgid "Contact"
 msgstr "Contacto"
+
+#: .\apps\website\templates\website\components\flowbite\lang_selector.html:27
+msgid "English"
+msgstr "Inglés"
+
+#: .\apps\website\templates\website\components\flowbite\lang_selector.html:31
+msgid "Spanish"
+msgstr "Español"
 
 #: .\apps\website\templates\website\components\flowbite\modal_contact_success.html:25
 msgid "Message sent"

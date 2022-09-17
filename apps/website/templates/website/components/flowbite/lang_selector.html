@@ -1,0 +1,62 @@
+{# LOAD PACKAGES/TAGs #}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load compress %}
+
+{# * -------------------------------- CONTENT ------------------------------- #}
+<div id="language-selector"
+     class="language-selector">
+
+    <button id="langSelectorDropdownButton" data-dropdown-toggle="langSelectorDropdownMenu"
+            class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-gray-900
+            text-white border-b border-b-transparent
+            hover:border-white hover:drop-shadow-lg
+            focus:border-white focus:drop-shadow-lg"
+            type="button">
+        <p><i class="fa-solid fa-earth-americas fa-lg"></i>
+            <span id="language-selector-content">{{ LANGUAGE_CODE | upper }}</span>
+            <i class="fa-solid fa-chevron-down fa-md"></i></p>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="langSelectorDropdownMenu"
+         class="hidden z-10 w-24 bg-white rounded divide-y divide-gray-100 shadow">
+        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="langSelectorDropdownButton">
+            <li>
+                <button onclick="changeLanguageCookie('en');"
+                        class="block w-full py-2 px-4 hover:bg-gray-100">{% translate "English" %}</button>
+            </li>
+            <li>
+                <button onclick="changeLanguageCookie('es');"
+                        class="block w-full py-2 px-4 hover:bg-gray-100">{% translate "Spanish" %}</button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+{# * --------------------------------- SCRIPT -------------------------------- #}
+{% compress js %}
+<script type="text/javascript">
+
+    const langSelectorContentEl = document.getElementById("language-selector-content")
+
+    function getDateUTCFullYear() {
+        let newDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+        return newDate.toUTCString()
+    }
+
+    function changeLanguageCookie(language) {
+        // Update selector text
+        langSelectorContentEl.innerText = language.toUpperCase()
+        // Set cookie
+        document.cookie = `django_language=${language}; expires=${getDateUTCFullYear()}; path=/`;
+        // Reload page
+        {#location.reload()#}
+        const regex = /(\/en\/|\/es\/)/; // regex: select first /en/ or /es/
+        newUrl = window.location.href.replace(regex, "/")
+        console.log(newUrl)
+        window.location = newUrl
+    }
+</script>
+{% endcompress %}

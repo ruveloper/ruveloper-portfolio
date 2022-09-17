@@ -73,6 +73,12 @@ function InitScripts() {
     // * Component declaration
     const navbarCollapse = new Collapse(navbarTargetEl, navbarOptions);
 
+    // * ---- Language Selector ----
+    const langSelectorTriggerEl = document.getElementById("langSelectorDropdownButton")
+    const langSelectorTargetEl = document.getElementById("langSelectorDropdownMenu")
+    // * Component declaration
+    const langSelectorDropdown = new Dropdown(langSelectorTargetEl, langSelectorTriggerEl);
+
     // * ---- Tech Stack ----
     const techStackEl = document.getElementById('techStack')
     if (techStackEl) {
