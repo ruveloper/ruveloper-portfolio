@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, FormView, ListView, TemplateView
 
 from apps.core.models import About, Base, Home, Project
-from apps.core.utils import get_model_or_none
+from apps.core.utils import get_model_or_none, get_model_with_lang
 from apps.website.forms import ContactRecordForm
 from apps.website.utils import validate_recaptcha_token
 
@@ -18,7 +18,9 @@ class HomePage(TemplateView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
-        context["cms_home"] = get_model_or_none(Home)
+        context["cms_home"] = get_model_with_lang(
+            Home, self.request.LANGUAGE_CODE  # type: ignore
+        )
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -31,7 +33,9 @@ class AboutPage(TemplateView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
-        context["cms_about"] = get_model_or_none(About)
+        context["cms_about"] = get_model_with_lang(
+            About, self.request.LANGUAGE_CODE  # type: ignore
+        )
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -41,6 +45,9 @@ class ProjectsPage(ListView):
     template_name = "website/pages/projects_page.html"
     model = Project
     context_object_name = "cms_projects"
+
+    def get_queryset(self):
+        return self.model.objects.filter(language=self.request.LANGUAGE_CODE)  # type: ignore
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -62,7 +69,7 @@ class ProjectDetailPage(DetailView):
         context["cms_base"] = get_model_or_none(Base)
         # * Get previous and next project
         _prev, _next = None, None
-        projects = Project.objects.all()
+        projects = Project.objects.filter(language=self.request.LANGUAGE_CODE)  # type: ignore
         for i in range(projects.count()):
             if projects[i] == context["project"]:
                 _prev = projects[i - 1] if (i - 1) >= 0 else None

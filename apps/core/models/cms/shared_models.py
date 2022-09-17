@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -11,12 +12,20 @@ class Technology(models.Model):
     created = models.DateTimeField(_("Created on"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified on"), auto_now=True)
 
+    # * Language selector
+    language = models.CharField(
+        _("Language"),
+        max_length=30,
+        choices=settings.LANGUAGES,
+        default=settings.LANGUAGE_CODE,
+    )
+
     # * Relations
     about = models.ManyToManyField(About, blank=True)
     project = models.ManyToManyField(Project, blank=True)
 
     # * Technology data
-    name = models.CharField(_("Name"), max_length=30, unique=True)
+    name = models.CharField(_("Name"), max_length=30)
     logo = models.FileField(
         _("Logo"),
         upload_to=upload_cms_image_location,
@@ -42,7 +51,7 @@ class Technology(models.Model):
     class Meta:
         verbose_name = _("CMS - Technology")
         verbose_name_plural = _("CMS - Technologies")
-        ordering = ["-priority_order"]
+        ordering = ["language", "-priority_order"]
 
     def __str__(self):
-        return self.name
+        return f"{self.language}: {self.name}"

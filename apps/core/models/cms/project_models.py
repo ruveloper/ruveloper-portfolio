@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.urls import reverse
@@ -12,6 +13,14 @@ from apps.core.validators import MaxFileSizeValidator
 class Project(models.Model):
     created = models.DateTimeField(_("Created on"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified on"), auto_now=True)
+
+    # * Language selector
+    language = models.CharField(
+        _("Language"),
+        max_length=30,
+        choices=settings.LANGUAGES,
+        default=settings.LANGUAGE_CODE,
+    )
 
     # * Project entry data
     title = models.CharField(_("Title"), max_length=255, unique=True)
@@ -81,7 +90,9 @@ class Project(models.Model):
     class Meta:
         verbose_name = _("CMS - Project")
         verbose_name_plural = _("CMS - Projects")
-        ordering = ["-priority_order"]
+        ordering = ["language", "-priority_order"]
 
     def __str__(self):
-        return Truncator(f'{_("Project")} {self.title}').chars(50, truncate="...")
+        return Truncator(f'{self.language}: {_("Project")} {self.title}').chars(
+            50, truncate="..."
+        )

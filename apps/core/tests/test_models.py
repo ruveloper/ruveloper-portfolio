@@ -111,10 +111,6 @@ class HomeModelTests(TestCase):
     def test_create_model(self):
         self.assertEqual(Home.objects.count(), 1)
 
-    def test_singleton_model(self):
-        # Check raise exception when triying to create a second model object.
-        self.assertRaises(IntegrityError, HomeFactory.create)
-
     def test_auto_generate_webp(self):
         # Test if the webp version of dev_photo is autogenerate
         webp_img = self.home.dev_photo_webp
@@ -144,9 +140,6 @@ class AboutModelsTests(TestCase):
         self.assertEqual(About.objects.count(), 1)
         self.assertEqual(Company.objects.count(), 7)
         self.assertEqual(ResumeEntry.objects.count(), 7)
-
-    def test_singleton_model(self):
-        self.assertRaises(IntegrityError, AboutFactory.create)
 
     def test_max_file_size(self):
         upload_img = SimpleUploadedFile(
@@ -230,7 +223,7 @@ class TechnologyModelTests(TestCase):
             tech: Technology = TechnologyFactory.create()
             tech.about.add(about)
             tech.project.add(*ProjectFactory.create_batch(2))
-        cls.about = About.get_solo()
+        cls.about = About.objects.first()
         cls.project = Project.objects.first()
         cls.technology = Technology.objects.first()
 

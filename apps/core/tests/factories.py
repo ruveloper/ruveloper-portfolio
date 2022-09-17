@@ -62,7 +62,7 @@ class AboutFactory(DjangoModelFactory):
 
 
 class CompanyFactory(DjangoModelFactory):
-    about = About.get_solo()
+    about = About.objects.first()
     name = Faker("company")
     logo = SimpleUploadedFile(
         name="image.jpg",
@@ -75,7 +75,7 @@ class CompanyFactory(DjangoModelFactory):
 
 
 class ResumeEntryFactory(DjangoModelFactory):
-    about = About.get_solo()
+    about = About.objects.first()
     title = Faker("sentences", nb=1)
     company = Faker("company")
     start = Faker("date_between")

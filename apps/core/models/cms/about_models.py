@@ -1,15 +1,23 @@
+from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from solo.models import SingletonModel
 
 from apps.core.utils import convert_img_to_webp, upload_cms_image_location
 from apps.core.validators import MaxFileSizeValidator, validate_image_logo
 
 
-class About(SingletonModel):
+class About(models.Model):
     created = models.DateTimeField(_("Created on"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified on"), auto_now=True)
+
+    # * Language selector
+    language = models.CharField(
+        _("Language"),
+        max_length=30,
+        choices=settings.LANGUAGES,
+        default=settings.LANGUAGE_CODE,
+    )
 
     # * Profile section
     profile_image = models.ImageField(
@@ -53,6 +61,8 @@ class About(SingletonModel):
 
     class Meta:
         verbose_name = _("CMS - About")
+        verbose_name_plural = _("CMS - About")
+        ordering = ["language", "-modified"]
 
     def __str__(self):
         return str(_("CMS - About"))

@@ -9,11 +9,16 @@ from django.utils.html import format_html
 from PIL import Image
 
 
+# * -------- MODEL UTILS --------
 def get_model_or_none(model):
     try:
         return model.objects.get()
     except ObjectDoesNotExist:
         return None
+
+
+def get_model_with_lang(model, lang: str):
+    return model.objects.filter(language=lang).first()
 
 
 # * -------- IMAGE UTILS --------

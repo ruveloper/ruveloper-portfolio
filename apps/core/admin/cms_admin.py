@@ -42,10 +42,21 @@ class BaseAdmin(SingletonModelAdmin):
 
 # * ------------------ Home model ------------------
 @admin.register(Home)
-class HomeAdmin(SingletonModelAdmin):
-    readonly_fields = ("dev_photo_webp", "dev_photo_preview")
+class HomeAdmin(admin.ModelAdmin):
+    readonly_fields = ("id", "dev_photo_webp", "dev_photo_preview")
+    list_display = ("__str__", "id", "language")
     fieldsets = [
-        (None, {"fields": ["dev_photo", "dev_photo_webp", "dev_photo_preview"]}),
+        (
+            None,
+            {
+                "fields": [
+                    ("id", "language"),
+                    "dev_photo",
+                    "dev_photo_webp",
+                    "dev_photo_preview",
+                ]
+            },
+        ),
         (_("Card"), {"fields": ["card_title", "card_body"]}),
     ]
 
@@ -76,9 +87,11 @@ class ResumeEntryInline(admin.StackedInline):
 
 
 @admin.register(About)
-class AboutAdmin(SingletonModelAdmin):
-    readonly_fields = ("profile_image_webp", "profile_image_preview")
+class AboutAdmin(admin.ModelAdmin):
+    readonly_fields = ("id", "profile_image_webp", "profile_image_preview")
+    list_display = ("__str__", "id", "language")
     fieldsets = [
+        (None, {"fields": [("id", "language")]}),
         (
             _("Profile"),
             {
@@ -113,16 +126,18 @@ class AboutAdmin(SingletonModelAdmin):
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     readonly_fields = (
+        "id",
         "cover_image_webp",
         "cover_image_preview",
         "mini_cover_image_preview",
     )
-    list_display = ("title", "priority_order", "mini_cover_image_preview")
+    list_display = ("title", "language", "priority_order", "mini_cover_image_preview")
     fieldsets = [
         (
             None,
             {
                 "fields": [
+                    ("id", "language"),
                     "title",
                     "slug",
                     "priority_order",
@@ -154,14 +169,15 @@ class ProjectAdmin(admin.ModelAdmin):
 # * ------------------ Shared models ------------------
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
-    readonly_fields = ("logo_preview", "mini_logo_preview")
-    list_display = ("name", "priority_order", "mini_logo_preview")
+    readonly_fields = ("id", "logo_preview", "mini_logo_preview")
+    list_display = ("name", "language", "priority_order", "mini_logo_preview")
     filter_horizontal = ("project", "about")
     fieldsets = [
         (
             None,
             {
                 "fields": [
+                    ("id", "language"),
                     "name",
                     "priority_order",
                     "logo",
