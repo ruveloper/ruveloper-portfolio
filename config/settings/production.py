@@ -54,9 +54,22 @@ CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
+
 # * Redirect all HTTP to HTTPS
 # SECURE_SSL_REDIRECT = True # if NGINX manage redirects, Don't use this.
-# # * Referrer-Policy
+
+# * X-XSS-Protection
+# Don't use this header --> https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+
+# * X-Content-Type-Options
+# https://docs.djangoproject.com/en/dev/ref/middleware/#x-content-type-options-nosniff
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Django default -> True
+
+# * Clickjacking Protection
+# https://docs.djangoproject.com/en/stable/ref/clickjacking/
+X_FRAME_OPTIONS = "DENY"  # Django default -> 'DENY'
+
+# * Referrer-Policy
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 # ! HSTS
 # ! BEWARE: After seeing the header, browsers will NOT EASILY LET YOU REVERSE that decision and will
@@ -65,4 +78,7 @@ SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+# * SECURE_PROXY_SSL_HEADER
+# https://docs.djangoproject.com/en/stable/ref/settings/#secure-proxy-ssl-header
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
