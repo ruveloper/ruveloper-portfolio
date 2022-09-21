@@ -57,12 +57,12 @@ SESSION_COOKIE_HTTPONLY = True
 # * Redirect all HTTP to HTTPS
 # SECURE_SSL_REDIRECT = True # if NGINX manage redirects, Don't use this.
 # # * Referrer-Policy
-# SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
-# # ! HSTS
-# # ! BEWARE: After seeing the header, browsers will NOT EASILY LET YOU REVERSE that decision and will
-# # ! insist on HTTPS over HTTP for the seconds we specify.
-# # For testing SECURE_HSTS_SECONDS = 30, for production 2592000 (30 days) or 31536000 (1 year - recommend by Django)
-# SECURE_HSTS_SECONDS = 30
-# SECURE_HSTS_PRELOAD = True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+# ! HSTS
+# ! BEWARE: After seeing the header, browsers will NOT EASILY LET YOU REVERSE that decision and will
+# ! insist on HTTPS over HTTP for the seconds we specify.
+# For testing SECURE_HSTS_SECONDS = 30, for production 2592000 (30 days) or 31536000 (1 year - recommend by Django)
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
