@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 08:04-0500\n"
-"PO-Revision-Date: 2022-09-17 08:12-0500\n"
+"POT-Creation-Date: 2022-09-20 16:48-0500\n"
+"PO-Revision-Date: 2022-09-20 16:48-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -26,8 +26,8 @@ msgstr "Marca personal"
 msgid "Social networks"
 msgstr "Redes sociales"
 
-#: .\apps\core\admin\cms_admin.py:33 .\apps\core\admin\cms_admin.py:68
-#: .\apps\core\admin\cms_admin.py:177 .\apps\core\admin\cms_admin.py:182
+#: .\apps\core\admin\cms_admin.py:33 .\apps\core\admin\cms_admin.py:79
+#: .\apps\core\admin\cms_admin.py:193 .\apps\core\admin\cms_admin.py:198
 #: .\apps\core\admin\shared_admin.py:18
 msgid "Logo preview"
 msgstr "Vista previa del logo"
@@ -36,31 +36,31 @@ msgstr "Vista previa del logo"
 msgid "Favicon preview"
 msgstr "Vista previa de Favicon"
 
-#: .\apps\core\admin\cms_admin.py:49
+#: .\apps\core\admin\cms_admin.py:60
 msgid "Card"
 msgstr "Tarjeta"
 
-#: .\apps\core\admin\cms_admin.py:54
+#: .\apps\core\admin\cms_admin.py:65
 msgid "Developer photo preview"
 msgstr "Vista previa de la foto del desarrollador"
 
-#: .\apps\core\admin\cms_admin.py:83
+#: .\apps\core\admin\cms_admin.py:96
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\apps\core\admin\cms_admin.py:94
+#: .\apps\core\admin\cms_admin.py:107
 msgid "Activate/Inactivate sections"
 msgstr "Activar/desactivar secciones"
 
-#: .\apps\core\admin\cms_admin.py:107
+#: .\apps\core\admin\cms_admin.py:120
 msgid "Profile image preview"
 msgstr "Vista previa de la imagen del perfil"
 
-#: .\apps\core\admin\cms_admin.py:135
+#: .\apps\core\admin\cms_admin.py:150
 msgid "Project content"
 msgstr "Contenido del proyecto"
 
-#: .\apps\core\admin\cms_admin.py:144 .\apps\core\admin\cms_admin.py:149
+#: .\apps\core\admin\cms_admin.py:159 .\apps\core\admin\cms_admin.py:164
 msgid "Cover image preview"
 msgstr "Vista previa de la imagen de portada"
 
@@ -73,140 +73,148 @@ msgid "Technologies"
 msgstr "Tecnologías"
 
 #: .\apps\core\models\cms\about_models.py:11
-#: .\apps\core\models\cms\about_models.py:62
-#: .\apps\core\models\cms\about_models.py:102
+#: .\apps\core\models\cms\about_models.py:72
+#: .\apps\core\models\cms\about_models.py:112
 #: .\apps\core\models\cms\base_models.py:11
 #: .\apps\core\models\cms\home_models.py:11
-#: .\apps\core\models\cms\project_models.py:13
-#: .\apps\core\models\cms\shared_models.py:11
+#: .\apps\core\models\cms\project_models.py:14
+#: .\apps\core\models\cms\shared_models.py:12
 #: .\apps\core\models\contact_model.py:6
 msgid "Created on"
 msgstr "Creado"
 
 #: .\apps\core\models\cms\about_models.py:12
-#: .\apps\core\models\cms\about_models.py:63
-#: .\apps\core\models\cms\about_models.py:103
+#: .\apps\core\models\cms\about_models.py:73
+#: .\apps\core\models\cms\about_models.py:113
 #: .\apps\core\models\cms\base_models.py:12
 #: .\apps\core\models\cms\home_models.py:12
-#: .\apps\core\models\cms\project_models.py:14
-#: .\apps\core\models\cms\shared_models.py:12
+#: .\apps\core\models\cms\project_models.py:15
+#: .\apps\core\models\cms\shared_models.py:13
 #: .\apps\core\models\contact_model.py:7
 msgid "Modified on"
 msgstr "Modificado"
 
 #: .\apps\core\models\cms\about_models.py:16
+#: .\apps\core\models\cms\home_models.py:16
+#: .\apps\core\models\cms\project_models.py:19
+#: .\apps\core\models\cms\shared_models.py:17
+msgid "Language"
+msgstr "Idioma"
+
+#: .\apps\core\models\cms\about_models.py:24
 msgid "Profile image"
 msgstr "Imagen de perfil"
 
-#: .\apps\core\models\cms\about_models.py:26
+#: .\apps\core\models\cms\about_models.py:34
 msgid "Profile image (Webp)"
 msgstr "Image de perfil (webp)"
 
-#: .\apps\core\models\cms\about_models.py:31
+#: .\apps\core\models\cms\about_models.py:39
 msgid "Auto-generated WEBP version of [Profile image]"
 msgstr "Version WEBP auto-generada de [Imagen de perfil]"
 
-#: .\apps\core\models\cms\about_models.py:33
+#: .\apps\core\models\cms\about_models.py:41
 msgid "Profile body"
 msgstr "Contenido del perfil"
 
-#: .\apps\core\models\cms\about_models.py:36
+#: .\apps\core\models\cms\about_models.py:44
 msgid "Activate stack section"
 msgstr "Activar sección Mi Stack"
 
-#: .\apps\core\models\cms\about_models.py:38
+#: .\apps\core\models\cms\about_models.py:46
 msgid "Activate trust me section"
 msgstr "Activar sección Confían en mí"
 
-#: .\apps\core\models\cms\about_models.py:40
+#: .\apps\core\models\cms\about_models.py:48
 msgid "Activate resume section"
 msgstr "Activar sección Trayectoria"
 
-#: .\apps\core\models\cms\about_models.py:55
-#: .\apps\core\models\cms\about_models.py:58
+#: .\apps\core\models\cms\about_models.py:63
+#: .\apps\core\models\cms\about_models.py:64
+#: .\apps\core\models\cms\about_models.py:68
 msgid "CMS - About"
 msgstr "CMS - Sobre mí"
 
-#: .\apps\core\models\cms\about_models.py:69
-#: .\apps\core\models\cms\shared_models.py:19
+#: .\apps\core\models\cms\about_models.py:79
+#: .\apps\core\models\cms\shared_models.py:28
 #: .\apps\core\models\contact_model.py:10
 msgid "Name"
 msgstr "Nombre"
 
-#: .\apps\core\models\cms\about_models.py:71
+#: .\apps\core\models\cms\about_models.py:81
 #: .\apps\core\models\cms\base_models.py:20
-#: .\apps\core\models\cms\shared_models.py:21
+#: .\apps\core\models\cms\shared_models.py:30
 msgid "Logo"
 msgstr "Logo"
 
-#: .\apps\core\models\cms\about_models.py:80
-#: .\apps\core\models\cms\shared_models.py:29
+#: .\apps\core\models\cms\about_models.py:90
+#: .\apps\core\models\cms\shared_models.py:38
 msgid "Allow image files (JPG, PNG, GIF, WEBP) + SVG files"
 msgstr "Permite archivos de imágenes (JPG, PNG, GIF, WEBP) + archivos SVG"
 
-#: .\apps\core\models\cms\about_models.py:85
-#: .\apps\core\models\cms\project_models.py:57
-#: .\apps\core\models\cms\shared_models.py:35
+#: .\apps\core\models\cms\about_models.py:95
+#: .\apps\core\models\cms\project_models.py:66
+#: .\apps\core\models\cms\shared_models.py:44
 msgid "Priority order"
 msgstr "Orden de prioridad"
 
-#: .\apps\core\models\cms\about_models.py:88
-#: .\apps\core\models\cms\project_models.py:60
-#: .\apps\core\models\cms\shared_models.py:38
+#: .\apps\core\models\cms\about_models.py:98
+#: .\apps\core\models\cms\project_models.py:69
+#: .\apps\core\models\cms\shared_models.py:47
 msgid "Positive number used to order, the highest number is positioned first."
 msgstr ""
 "Número positivo usado para ordenar la lista, el número mas grande es "
 "posicionado primero."
 
-#: .\apps\core\models\cms\about_models.py:93
+#: .\apps\core\models\cms\about_models.py:103
 msgid "Company"
 msgstr "Compañía"
 
-#: .\apps\core\models\cms\about_models.py:94
+#: .\apps\core\models\cms\about_models.py:104
 msgid "Companies"
 msgstr "Compañías"
 
-#: .\apps\core\models\cms\about_models.py:109
-#: .\apps\core\models\cms\project_models.py:17
+#: .\apps\core\models\cms\about_models.py:119
+#: .\apps\core\models\cms\project_models.py:26
 msgid "Title"
 msgstr "Título"
 
-#: .\apps\core\models\cms\about_models.py:110
+#: .\apps\core\models\cms\about_models.py:120
 msgid "Company or institution"
 msgstr "Compañía o institución"
 
-#: .\apps\core\models\cms\about_models.py:111
+#: .\apps\core\models\cms\about_models.py:121
 msgid "Start date"
 msgstr "Fecha de inicio"
 
-#: .\apps\core\models\cms\about_models.py:112
+#: .\apps\core\models\cms\about_models.py:122
 msgid "End date"
 msgstr "Fecha de finalización"
 
-#: .\apps\core\models\cms\about_models.py:113
-#: .\apps\core\models\cms\project_models.py:37
-#: .\apps\core\models\cms\shared_models.py:31
+#: .\apps\core\models\cms\about_models.py:123
+#: .\apps\core\models\cms\project_models.py:46
+#: .\apps\core\models\cms\shared_models.py:40
 msgid "Description"
 msgstr "Descripción"
 
-#: .\apps\core\models\cms\about_models.py:117
+#: .\apps\core\models\cms\about_models.py:127
 msgid "Experience"
 msgstr "Experiencia"
 
-#: .\apps\core\models\cms\about_models.py:118
+#: .\apps\core\models\cms\about_models.py:128
 #: .\apps\website\templates\website\components\resume.html:44
 msgid "Education"
 msgstr "Educación"
 
-#: .\apps\core\models\cms\about_models.py:121
+#: .\apps\core\models\cms\about_models.py:131
 msgid "Type of entry"
 msgstr "Tipo de entrada"
 
-#: .\apps\core\models\cms\about_models.py:128
+#: .\apps\core\models\cms\about_models.py:138
 msgid "Resume entry"
 msgstr "Entrada de trayectoria"
 
-#: .\apps\core\models\cms\about_models.py:129
+#: .\apps\core\models\cms\about_models.py:139
 msgid "Resume entries"
 msgstr "Entradas de trayectoria"
 
@@ -265,80 +273,80 @@ msgstr "Ejemplo: https://www.linkedin.com/in/dev-user"
 msgid "CMS - Base"
 msgstr "CMS - Base"
 
-#: .\apps\core\models\cms\home_models.py:15
+#: .\apps\core\models\cms\home_models.py:23
 msgid "Card title"
 msgstr "Título de la tarjeta"
 
-#: .\apps\core\models\cms\home_models.py:16
+#: .\apps\core\models\cms\home_models.py:24
 msgid "Card Body"
 msgstr "Contenido de la tarjeta"
 
-#: .\apps\core\models\cms\home_models.py:20
+#: .\apps\core\models\cms\home_models.py:28
 msgid "Developer photo"
 msgstr "Foto de desarrollador"
 
-#: .\apps\core\models\cms\home_models.py:30
+#: .\apps\core\models\cms\home_models.py:38
 msgid "Developer photo (Webp)"
 msgstr "Foto de desarrollador (Webp)"
 
-#: .\apps\core\models\cms\home_models.py:35
+#: .\apps\core\models\cms\home_models.py:43
 msgid "Auto-generated WEBP version of [Developer photo]"
 msgstr "Version WEBP auto-generada de [Foto de desarrollador]"
 
-#: .\apps\core\models\cms\home_models.py:49
-#: .\apps\core\models\cms\home_models.py:50
-#: .\apps\core\models\cms\home_models.py:53
+#: .\apps\core\models\cms\home_models.py:57
+#: .\apps\core\models\cms\home_models.py:58
+#: .\apps\core\models\cms\home_models.py:62
 msgid "CMS - Home"
 msgstr "CMS - Inicio"
 
-#: .\apps\core\models\cms\project_models.py:19
+#: .\apps\core\models\cms\project_models.py:28
 msgid "Cover image"
 msgstr "Imagen de portada"
 
-#: .\apps\core\models\cms\project_models.py:29
+#: .\apps\core\models\cms\project_models.py:38
 msgid "Cover image (Webp)"
 msgstr "Imagen de portada (Webp)"
 
-#: .\apps\core\models\cms\project_models.py:34
+#: .\apps\core\models\cms\project_models.py:43
 msgid "Auto-generated WEBP version of [Cover image]"
 msgstr "Version WEBP auto-generada de [Imagen de portada]"
 
-#: .\apps\core\models\cms\project_models.py:37
+#: .\apps\core\models\cms\project_models.py:46
 msgid "Project summary to display in project list"
 msgstr "Resumen corto del proyecto para mostrar en la lista de proyectos"
 
-#: .\apps\core\models\cms\project_models.py:42
+#: .\apps\core\models\cms\project_models.py:51
 msgid "Slug"
 msgstr "Slug"
 
-#: .\apps\core\models\cms\project_models.py:46
+#: .\apps\core\models\cms\project_models.py:55
 msgid "Url endpoint of this project, leave blank to auto-generate"
 msgstr "Ruta URL para este proyecto, dejalo en blanco para ser auto-generado"
 
-#: .\apps\core\models\cms\project_models.py:49
+#: .\apps\core\models\cms\project_models.py:58
 msgid "Project details"
 msgstr "Detalles del proyecto"
 
-#: .\apps\core\models\cms\project_models.py:51
+#: .\apps\core\models\cms\project_models.py:60
 msgid ""
 "Long description about the project, it is the content of the project endpoint"
 msgstr ""
 "Descripción larga acerca del proyecto, este sera el contenido de la URL del "
 "proyecto"
 
-#: .\apps\core\models\cms\project_models.py:82
+#: .\apps\core\models\cms\project_models.py:91
 msgid "CMS - Project"
 msgstr "CMS - Proyecto"
 
-#: .\apps\core\models\cms\project_models.py:83
+#: .\apps\core\models\cms\project_models.py:92
 msgid "CMS - Projects"
 msgstr "CMS - Proyectos"
 
-#: .\apps\core\models\cms\shared_models.py:43
+#: .\apps\core\models\cms\shared_models.py:52
 msgid "CMS - Technology"
 msgstr "CMS - Tecnología"
 
-#: .\apps\core\models\cms\shared_models.py:44
+#: .\apps\core\models\cms\shared_models.py:53
 msgid "CMS - Technologies"
 msgstr "CMS - Tecnologías"
 
@@ -495,7 +503,7 @@ msgstr "Prefieres enviarme un correo?"
 msgid "See more"
 msgstr "Ver más"
 
-#: .\apps\website\views\page_views.py:92
+#: .\apps\website\views\page_views.py:99
 msgid "Invalid reCaptcha, please try again."
 msgstr "ReCaptcha invalida, por favor vuelva a intentarlo."
 
