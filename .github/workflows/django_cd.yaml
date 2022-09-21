@@ -1,0 +1,45 @@
+name: Django CD
+
+on:
+  workflow_run:
+    workflows: [ "Django CI" ]
+    types: [ completed ]
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    # Set GitHub environment (access its secrets)
+    environment: CD
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo 'Django CI success, continue to deploy'
+
+      - name: Deploy to Production Server
+        uses: appleboy/ssh-action@master
+        env:
+          PROJECT_FOLDER: ${{ secrets.PROJECT_FOLDER }}
+          PROJECT_ENV: ${{ secrets.PROJECT_ENV }}
+          FINISH_CMD: ${{ secrets.FINISH_CMD }}
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_KEY }}
+          port: ${{ secrets.PROD_PORT }}
+          script_stop: true
+          envs: PROJECT_FOLDER, PROJECT_ENV, FINISH_CMD
+          script: |
+            cd "$PROJECT_FOLDER"
+            git pull
+            source ~/miniconda3/etc/profile.d/conda.sh
+            conda activate "$PROJECT_ENV"
+            pip install -r requirements/production.txt
+            python manage.py makemigrations
+            python manage.py migrate
+            python manage.py collectstatic --noinput
+            $FINISH_CMD
+
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'Django CI failed, the project was not deployed'
