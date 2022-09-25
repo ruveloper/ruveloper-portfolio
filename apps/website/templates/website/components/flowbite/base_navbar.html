@@ -13,15 +13,16 @@ PARAMETERS
 {# * -------------------------------- CONTENT ------------------------------- #}
 <nav id="navbar"
      class="w-screen md:h-16 px-3 py-2.5 fixed top-0 z-30
-              bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg drop-shadow-lg
-              font-bold text-xl text-white
+              bg-transparent
+              font-bold text-xl text-white drop-shadow-md
               transition-[background-color] ease-in-out duration-300">
-    <div class="container h-full flex flex-wrap justify-between items-center mx-auto">
+
+    <div class="container h-full flex flex-wrap items-center mx-auto    ">
         {# -------- Developer link -------- #}
-        <a href="/" class="flex items-center">
+        <a href="/" class="flex-1 flex items-center min-w-min">
             <span class="self-center">{{ cms_base.brand }}</span>
         </a>
-        <div class="flex items-center gap-x-3 md:order-2">
+        <div class="flex items-center gap-x-3 md:order-2 md:flex-1 md:min-w-min md:justify-end ">
             {# -------- Social links -------- #}
             <a href="{{ cms_base.github }}"
                target="_blank"
@@ -58,8 +59,8 @@ PARAMETERS
             </button>
         </div>
         {# -------- Menu entries -------- #}
-        <div id="navbar-menu" class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0">
+        <div id="navbar-menu" class="hidden w-full md:flex md:w-auto">
+            <ul class="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0">
                 {# Add aria current if view_name match with the element url #}
                 {% with request.resolver_match.view_name as view_name %}
                     <li>

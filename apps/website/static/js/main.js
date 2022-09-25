@@ -43,18 +43,18 @@ function InitScripts() {
     const navbarTargetEl = document.getElementById('navbar-menu')
     /* Init state */
     navbarTargetEl.classList.add('hidden')
-    navbarEl.classList.add('bg-gray-300')
-    navbarEl.classList.remove('bg-gray-800')
+    navbarEl.classList.add('bg-transparent')
+    navbarEl.classList.remove('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
 
     /* Navbar change color on scroll */
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 140) {
-            navbarEl.classList.remove('bg-gray-300')
-            navbarEl.classList.add('bg-gray-800')
+        if (window.scrollY > 70) {
+            navbarEl.classList.remove('bg-transparent',)
+            navbarEl.classList.add('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
             return null;
         }
-        navbarEl.classList.add('bg-gray-300')
-        navbarEl.classList.remove('bg-gray-800')
+        navbarEl.classList.add('bg-transparent',)
+        navbarEl.classList.remove('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
     })
 
     // * --------------- INIT FLOWBITE COMPONENTS ---------------
@@ -62,16 +62,23 @@ function InitScripts() {
     const navbarOptions = {
         triggerEl: navbarTriggerEl,
         onExpand: () => {
-            navbarEl.classList.remove('bg-gray-300')
-            navbarEl.classList.add('bg-gray-800')
+            navbarEl.classList.remove('bg-transparent',)
+            navbarEl.classList.add('bg-gray-800', 'bg-opacity-30', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
         },
         onCollapse: () => {
-            navbarEl.classList.add('bg-gray-300')
-            navbarEl.classList.remove('bg-gray-800')
+            navbarEl.classList.add('bg-transparent',)
+            navbarEl.classList.remove('bg-gray-800', 'bg-opacity-30', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
         }
     };
     // * Component declaration
     const navbarCollapse = new Collapse(navbarTargetEl, navbarOptions);
+
+    // * Tooltips
+    const tooltipsEls = document.querySelectorAll('[data-tooltip-target]')
+    tooltipsEls.forEach((tooltipEl ) => {
+        const targetEl = document.getElementById(tooltipEl.dataset.tooltipTarget)
+        new Tooltip(targetEl, tooltipEl);
+    })
 
     // * ---- Language Selector ----
     const langSelectorTriggerEl = document.getElementById("langSelectorDropdownButton")
