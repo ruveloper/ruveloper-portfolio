@@ -41,6 +41,13 @@ module.exports = {
          */
         '../../**/*.py'
     ],
+    // * ---------------- CLASES INCLUDED MANUALLY ----------------
+    safelist: [
+        'underline', 'decoration-2', 'decoration-fuchsia-600', 'decoration-green-600', 'decoration-indigo-600',
+        'w-full',  'md:w-5/6',  'md:ml-auto',  'my-5',  'p-5',  'rounded-md',  'bg-gray-100',  'text-end',
+        'bg-clip-text', 'text-transparent', 'bg-gradient-to-r', 'from-blue-700', 'to-violet-700',
+    ],
+    // * ----------------------------------------------------------
     theme: {
         extend: {},
     },
