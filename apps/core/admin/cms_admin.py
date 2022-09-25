@@ -84,6 +84,15 @@ class CompanyInline(admin.TabularInline):
 class ResumeEntryInline(admin.StackedInline):
     model = ResumeEntry
     extra = 0
+    fields = [
+        "title",
+        "company",
+        "start",
+        "end",
+        "type",
+        "priority_order",
+        "description",
+    ]
 
 
 @admin.register(About)

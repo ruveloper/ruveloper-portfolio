@@ -134,10 +134,19 @@ class ResumeEntry(models.Model):
         default=EntryTypes.EXPERIENCE,
     )
 
+    # * Extra options
+    priority_order = models.PositiveSmallIntegerField(
+        _("Priority order"),
+        default=0,
+        help_text=_(
+            "Positive number used to order, the highest number is positioned first."
+        ),
+    )
+
     class Meta:
         verbose_name = _("Resume entry")
         verbose_name_plural = _("Resume entries")
-        ordering = ["-start"]
+        ordering = ["-priority_order"]
 
     def __str__(self):
         return self.title

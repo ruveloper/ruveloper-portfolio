@@ -35,7 +35,7 @@ PARAMETERS
     .brand-slider::before, .brand-slider::after {
         background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
         content: "";
-        height: 100px;
+        height: 100%;
         position: absolute;
         width: 200px;
         z-index: 2;
@@ -57,18 +57,19 @@ PARAMETERS
         animation: scroll {% widthratio companies.count 1 6 %}s linear infinite;
         display: flex;
         width: calc(250px * {% widthratio companies.count 1 2 %});
-        height: 100px;
+        height: 100%;
     }
 
     .brand-slider .slide {
         width: 250px;
-        height: 100px;
+        height: 100%;
     }
 
     .brand-slider .slide img {
         width: 100%;
         height: 100%;
-        padding: 20px;
+        padding: 0 20px;
+        object-fit: contain;
     }
 
 
