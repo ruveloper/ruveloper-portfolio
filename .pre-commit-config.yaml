@@ -44,8 +44,8 @@ repos:
       - id: django-upgrade
         args: [ --target-version, "4.0" ]   # Replace with Django version
 
-# sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
-ci:
-  autoupdate_schedule: weekly
-  skip: [ ]
-  submodules: false
+# [OPTIONAL] sets up .pre-commit-ci.yaml to ensure pre-commit dependencies stay up to date
+#ci:
+#  autoupdate_schedule: weekly
+#  skip: [ ]
+#  submodules: false
