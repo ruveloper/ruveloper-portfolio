@@ -2,11 +2,11 @@
 # PYTHON==3.9
 # -----------------------------------------
 asgiref==3.5.2
-sqlparse==0.4.2
+sqlparse==0.4.3
 # * Specific for image files
 pillow==9.3.0
 # * Specific for python modules
-requests==2.28.0
+requests==2.28.1
 
 # -----------------------------------------
 # Django

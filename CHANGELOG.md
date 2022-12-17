@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 2.0.0 - 16-12-2022
+
+### Added
+- Add new components (Gradient button, Card Glass, Section title and subtitle)
+- Add sections to Home page:
+  - Services/Skills
+  - Latest projects
+  - Contact
+
+### Changed
+
+- Redesign the Home, Projects and Contact pages.
+
+### Fixed
+
+- Navbar background animation on scroll.
+
 ## 1.0.3 - 15/09/2022
 
 ### Added

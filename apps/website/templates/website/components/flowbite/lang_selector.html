@@ -1,7 +1,16 @@
+{# ! DYNAMIC FLOWBITE COMPONENT - Requires Flowbite #}
+
 {# LOAD PACKAGES/TAGs #}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
 {% load compress %}
+
+{# CURRENT REQUEST LANGUAGE CODE #}
+{% get_current_language as LANGUAGE_CURRENT_CODE %}
+{# LANGUAGE LIST --> LANGUAGES:list[ tuple(language_code, language_name_translated) ] #}
+{% get_available_languages as LANGUAGES %}
+{# LANGUAGE DATA LIST --> LANGUAGES_DATA_LIST:List[dict{LANG DATA}] #}
+{% get_language_info_list for LANGUAGES as LANGUAGES_DATA_LIST %}
+
 
 {# * -------------------------------- CONTENT ------------------------------- #}
 <div id="language-selector"
@@ -14,22 +23,27 @@
             focus:border-white focus:drop-shadow-lg"
             type="button">
         <p><i class="fa-solid fa-earth-americas fa-lg"></i>
-            <span id="language-selector-content">{{ LANGUAGE_CODE | upper }}</span>
-            <i class="fa-solid fa-chevron-down fa-md"></i></p>
+            <i class="fa-solid fa-chevron-down fa-md mr-0.5"></i></p>
     </button>
 
     <!-- Dropdown menu -->
     <div id="langSelectorDropdownMenu"
          class="hidden z-10 w-24 bg-white rounded divide-y divide-gray-100 shadow">
         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="langSelectorDropdownButton">
-            <li>
-                <button onclick="changeLanguageCookie('en');"
-                        class="block w-full py-2 px-4 hover:bg-gray-100">{% translate "English" %}</button>
-            </li>
-            <li>
-                <button onclick="changeLanguageCookie('es');"
-                        class="block w-full py-2 px-4 hover:bg-gray-100">{% translate "Spanish" %}</button>
-            </li>
+            {% for lang in LANGUAGES_DATA_LIST %}
+                {% if lang.code == LANGUAGE_CURRENT_CODE %}
+                    <li>
+                        <button onclick="changeLanguageCookie('{{ lang.code }}');"
+                                class="block w-full py-2 px-4 bg-indigo-700 text-white hover:bg-indigo-600">
+                            {{ lang.name_translated }}</button>
+                    </li>
+                {% else %}
+                    <li>
+                        <button onclick="changeLanguageCookie('{{ lang.code }}');"
+                                class="block w-full py-2 px-4 hover:bg-gray-100">{{ lang.name_translated }}</button>
+                    </li>
+                {% endif %}
+            {% endfor %}
         </ul>
     </div>
 
@@ -37,26 +51,23 @@
 
 {# * --------------------------------- SCRIPT -------------------------------- #}
 {% compress js %}
-<script type="text/javascript">
+    <script type="text/javascript">
 
-    const langSelectorContentEl = document.getElementById("language-selector-content")
+        const langSelectorContentEl = document.getElementById("language-selector-content")
 
-    function getDateUTCFullYear() {
-        let newDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
-        return newDate.toUTCString()
-    }
+        function getDateUTCFullYear() {
+            let newDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+            return newDate.toUTCString()
+        }
 
-    function changeLanguageCookie(language) {
-        // Update selector text
-        langSelectorContentEl.innerText = language.toUpperCase()
-        // Set cookie
-        document.cookie = `django_language=${language}; expires=${getDateUTCFullYear()}; path=/`;
-        // Reload page
-        {#location.reload()#}
-        const regex = /(\/en\/|\/es\/)/; // regex: select first /en/ or /es/
-        newUrl = window.location.href.replace(regex, "/")
-        console.log(newUrl)
-        window.location = newUrl
-    }
-</script>
+        function changeLanguageCookie(language) {
+            // Set cookie
+            document.cookie = `django_language=${language}; expires=${getDateUTCFullYear()}; path=/`;
+            // Reload page
+            const regex = /(\/en\/|\/es\/)/; // regex: select first /en/ or /es/
+            newUrl = window.location.href.replace(regex, "/")
+            console.log(newUrl)
+            window.location = newUrl
+        }
+    </script>
 {% endcompress %}

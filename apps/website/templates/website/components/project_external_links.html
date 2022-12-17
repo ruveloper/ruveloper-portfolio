@@ -1,0 +1,36 @@
+{% comment %}
+PARAMETERS
+    * project:Project --> Project model object
+    * show_details:Bool --> Choose whether to show the project details (Read more) button
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load i18n %}
+
+{# * -------------------------------- CONTENT ------------------------------- #}
+<div class="flex flex-wrap justify-center items-center gap-4">
+
+    {% if project.github_url %}
+        <a class="py-2 px-8 font-medium bg-white border border-black text-black rounded-xl
+                    hover:text-white hover:bg-black
+                    transition-all duration-300"
+           href="{{ project.github_url }}" target="_blank">
+            <i class="fa-brands fa-github-alt mr-2"></i>{% translate "View code" %}</a>
+    {% endif %}
+
+    {% if project.link %}
+        <a class="py-2 px-8 font-medium bg-white border border-blue-700 text-blue-700 rounded-xl
+                    hover:text-white  hover:bg-blue-700
+                    transition-all duration-300"
+           href="{{ project.link }}" target="_blank">
+            <i class="fa-solid fa-globe mr-2"></i>{% translate "Visit website" %}</a>
+    {% endif %}
+
+    {% if project.activate_details and show_details %}
+        {% with icon_name="fa-solid fa-circle-plus" url=project.get_absolute_url %}
+            {% translate "Read more" as text %}
+            {% include "website/components/button_icon_gradient.html" %}
+        {% endwith %}
+    {% endif %}
+
+</div>

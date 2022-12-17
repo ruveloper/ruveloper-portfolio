@@ -10,6 +10,7 @@ from apps.core.models import (
     Home,
     Project,
     ResumeEntry,
+    Service,
     Technology,
 )
 from apps.core.utils import html_img_preview
@@ -41,6 +42,11 @@ class BaseAdmin(SingletonModelAdmin):
 
 
 # * ------------------ Home model ------------------
+class ServiceInline(admin.StackedInline):
+    model = Service
+    extra = 0
+
+
 @admin.register(Home)
 class HomeAdmin(admin.ModelAdmin):
     readonly_fields = ("id", "dev_photo_webp", "dev_photo_preview")
@@ -58,6 +64,18 @@ class HomeAdmin(admin.ModelAdmin):
             },
         ),
         (_("Card"), {"fields": ["card_title", "card_body"]}),
+        (
+            _("Contact"),
+            {
+                "fields": [
+                    "contact_msg",
+                ]
+            },
+        ),
+    ]
+
+    inlines = [
+        ServiceInline,
     ]
 
     # * Image preview
@@ -156,7 +174,11 @@ class ProjectAdmin(admin.ModelAdmin):
                 ]
             },
         ),
-        (_("Project content"), {"fields": ["description", "detail"]}),
+        (_("External links"), {"fields": ["link", "github_url"]}),
+        (
+            _("Project content"),
+            {"fields": ["description", "activate_details", "detail"]},
+        ),
     ]
     # Inline ManyToMany Relation managed by the through attribute (the intermediary model)
     inlines = [

@@ -1,0 +1,13 @@
+{% comment %}
+PARAMETERS
+    * icon_name:str --> fontawesome name of representative icon for the section, ex:"fa-solid fa-laptop-code"
+    * url:str --> go to reference
+    * text:str --> button text
+{% endcomment %}
+
+{# * -------------------------------- CONTENT ------------------------------- #}
+<a class="py-2 px-8 font-medium bg-white border border-indigo-700 text-indigo-700 rounded-xl
+            hover:text-white hover:bg-gradient-to-tr hover:from-indigo-700 hover:to-blue-700
+            transition-all duration-300"
+   href="{{ url }}">
+    <i class="{{ icon_name }} mr-2"></i>{{ text }}</a>

@@ -1,6 +1,7 @@
 from typing import Optional
 
 from django.conf import settings
+from django.http import Http404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, FormView, ListView, TemplateView
@@ -21,6 +22,7 @@ class HomePage(TemplateView):
         context["cms_home"] = get_model_with_lang(
             Home, self.request.LANGUAGE_CODE  # type: ignore
         )
+        context["cms_projects"] = Project.objects.filter(language=self.request.LANGUAGE_CODE)[:3]  # type: ignore
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -64,12 +66,19 @@ class ProjectDetailPage(DetailView):
     context_object_name = "project"
 
     def get_context_data(self, **kwargs):
+        # ! ---- Check if active ----
+        if not self.object.activate_details:
+            raise Http404
+
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
         # * Get previous and next project
         _prev, _next = None, None
-        projects = Project.objects.filter(language=self.request.LANGUAGE_CODE)  # type: ignore
+        projects = Project.objects.filter(
+            language=self.request.LANGUAGE_CODE,  # type: ignore
+            activate_details=True,
+        )
         for i in range(projects.count()):
             if projects[i] == context["project"]:
                 _prev = projects[i - 1] if (i - 1) >= 0 else None
