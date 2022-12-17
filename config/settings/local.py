@@ -55,3 +55,13 @@ if EMAIL_BACKEND == "django.core.mail.backends.smtp.EmailBackend":
     EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD")
 
 EMAIL_TIMEOUT = 5
+
+# * Google Analytics / Tag Manager
+# * ------------------------------------------------------------------------------
+GOOGLE_TAG_ID = env("GOOGLE_TAG_ID", default="")
+
+# * Google reCaptcha v3
+# * ------------------------------------------------------------------------------
+RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY", default="")
+RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY", default="")
+RECAPTCHA_REQUIRED_SCORE = env.float("RECAPTCHA_REQUIRED_SCORE", default=0.85)
