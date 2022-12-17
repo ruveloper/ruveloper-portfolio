@@ -24,6 +24,30 @@ class Project(models.Model):
 
     # * Project entry data
     title = models.CharField(_("Title"), max_length=255, unique=True)
+    slug = models.SlugField(
+        _("Slug"),
+        max_length=255,
+        unique=True,
+        blank=True,
+        help_text=_("Url endpoint for this project, leave blank to auto-generate."),
+    )
+    link = models.URLField(
+        _("Website URL or link to project demo"),
+        blank=True,
+        null=True,
+        help_text=_(
+            "Link to deployed project. Leave this field blank to hide the corresponding button on the projects page."
+        ),
+    )
+    github_url = models.URLField(
+        _("Github repository URL"),
+        blank=True,
+        null=True,
+        help_text=_(
+            "Link to project code repository. "
+            "leave this field blank to hide the corresponding button on the projects page."
+        ),
+    )
     cover_image = models.ImageField(
         _("Cover image"),
         blank=True,
@@ -40,24 +64,23 @@ class Project(models.Model):
         null=True,
         editable=False,
         upload_to=upload_cms_image_location,
-        help_text=_("Auto-generated WEBP version of [Cover image]"),
+        help_text=_("Auto-generated WEBP version of [Cover image]."),
     )
     description = models.TextField(
-        _("Description"), help_text=_("Project summary to display in project list")
+        _("Description"),
+        help_text=_("< Accept HTML > Project summary to display in project list."),
     )
 
     # * Project details
-    slug = models.SlugField(
-        _("Slug"),
-        max_length=255,
-        unique=True,
-        blank=True,
-        help_text=_("Url endpoint of this project, leave blank to auto-generate"),
+    activate_details = models.BooleanField(
+        _("Activate project details"),
+        default=True,
+        help_text=_("Activate project details button and expose project details page"),
     )
     detail = HTMLField(
         _("Project details"),
         help_text=_(
-            "Long description about the project, it is the content of the project endpoint"
+            "< Accept HTML > Long description about the project, it's the content of the project details page."
         ),
     )
 

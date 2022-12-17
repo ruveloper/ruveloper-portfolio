@@ -1,0 +1,61 @@
+{% comment %}
+PARAMETERS
+    Card content
+        * card_title: str|html_str
+        * card_body: str|html_str
+    Card button
+        * btn_icon_name: str
+        * btn_url: url_str
+        * btn_text: str
+{% endcomment %}
+
+{# LOAD PACKAGES/TAGs #}
+{% load static %}
+{% load i18n %}
+
+{# * -------------------------------- CONTENT ------------------------------- #}
+<div class="text-gray-800
+            mx-2 my-10 p-5 rounded-xl
+            md:max-w-sm lg:max-w-lg xl:max-w-[41rem]
+            bg-gray-300 bg-opacity-30 backdrop-filter backdrop-blur-lg border border-white-100">
+
+    {# White title #}
+    <p class="bg-white rounded-xl px-3 py-2
+                font-extrabold md:text-lg lg:text-xl xl:text-2xl">
+        {% if card_title %}
+            {{ card_title|safe }}
+        {% else %}
+            Hi! here @developer
+        {% endif %}
+    </p>
+
+    {# Main content #}
+    <div class="mt-3 font-bold text-white drop-shadow-md
+                            md:text-md lg:text-lg xl:text-xl">
+        {% if card_body %}
+            {{ card_body|safe }}
+        {% else %}
+            <p>
+                My name is John Doe , a Full-Stack web developer.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, optio. <br>
+            </p>
+            <div class="h-16 mt-2">
+                <p>
+                    I focus on
+                    <span class="typed"
+                          data-typed-items="
+                              <span class='font-extrabold bg-cyan-700 text-white px-2 py-0.5 rounded-lg'>Python</span> as programming language.,
+                              backend with <span class='font-extrabold bg-emerald-700 text-white px-2 py-0.5 rounded-lg'>Django</span>.,
+                              frontend with <span class='font-extrabold bg-amber-500 text-white px-2 py-0.5 rounded-lg'>Javascript</span>.">
+                    </span>
+                </p>
+            </div>
+        {% endif %}
+    </div>
+
+    {# Card button #}
+    <div class="flex justify-end items-center">
+        {% include "website/components/button_icon_gradient.html" with icon_name=btn_icon_name url=btn_url text=btn_text %}
+    </div>
+
+</div>

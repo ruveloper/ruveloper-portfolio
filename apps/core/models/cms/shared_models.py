@@ -37,7 +37,9 @@ class Technology(models.Model):
         ],
         help_text=_("Allow image files (JPG, PNG, GIF, WEBP) + SVG files"),
     )
-    description = models.TextField(_("Description"), blank=True)
+    description = models.TextField(
+        _("Description"), blank=True, help_text=_("< Accept HTML >")
+    )
 
     # * Extra options
     priority_order = models.PositiveSmallIntegerField(

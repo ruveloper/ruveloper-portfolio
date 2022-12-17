@@ -17,9 +17,9 @@ PARAMETERS:
 {% block main-content %}
 
     <!------------------------------------------------------------------------------
-    About Page Section
+    Project Detail Page
     -------------------------------------------------------------------------------->
-    <section class="container max-w-5xl mx-auto mt-32 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
+    <section class="container mx-auto mt-32 mb-10 px-5 md:px-10 lg:px-20 pb-10 rounded-xl bg-white shadow-xl
     page-radial-cut">
 
         {# -------- Section icon -------- #}
@@ -54,6 +54,11 @@ PARAMETERS:
 
         {# * ---- Project Detail ---- #}
         <div id="project-detail" class="prose prose-slate max-w-[100ch] mx-auto"> {{ project.detail|safe }} </div>
+
+        {# * ---- Project links ---- #}
+        <div class="my-5">
+            {% include "website/components/project_external_links.html" with project=project show_details=False %}
+        </div>
 
     </section>
 

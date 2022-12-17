@@ -20,8 +20,12 @@ class Home(models.Model):
     )
 
     # * Card component
-    card_title = models.TextField(_("Card title"), blank=True)
-    card_body = models.TextField(_("Card Body"), blank=True)
+    card_title = models.TextField(
+        _("Card title"), blank=True, help_text=_("< Accept HTML >")
+    )
+    card_body = models.TextField(
+        _("Card Body"), blank=True, help_text=_("< Accept HTML >")
+    )
 
     # * Developer
     dev_photo = models.ImageField(
@@ -43,6 +47,14 @@ class Home(models.Model):
         help_text=_("Auto-generated WEBP version of [Developer photo]"),
     )
 
+    # * Contact
+    contact_msg = models.TextField(
+        _("Invitation to contact"),
+        blank=True,
+        null=True,
+        help_text=_("< Accept HTML >"),
+    )
+
     def save(self, *args, **kwargs):
         # * ---- Before save model ----
         # Auto-generate webp version of image field for web optimizations
@@ -60,3 +72,23 @@ class Home(models.Model):
 
     def __str__(self):
         return str(_("CMS - Home"))
+
+
+class Service(models.Model):
+    created = models.DateTimeField(_("Created on"), auto_now_add=True)
+    modified = models.DateTimeField(_("Modified on"), auto_now=True)
+
+    fa_icon = models.CharField(_("Fontawesome icon"), max_length=30)
+    title = models.CharField(_("Service title"), max_length=255)
+    description = models.TextField(_("Service description"))
+
+    # Relation to home model
+    home = models.ForeignKey(Home, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _("CMS - Service")
+        verbose_name_plural = _("CMS - Services")
+        ordering = ["home", "title"]
+
+    def __str__(self):
+        return self.title

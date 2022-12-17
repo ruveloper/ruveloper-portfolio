@@ -41,21 +41,25 @@ function InitScripts() {
     const navbarEl = document.getElementById('navbar')
     const navbarTriggerEl = document.getElementById('navbar-mobile-menu')
     const navbarTargetEl = document.getElementById('navbar-menu')
-    /* Init state */
-    navbarTargetEl.classList.add('hidden')
-    navbarEl.classList.add('bg-transparent')
-    navbarEl.classList.remove('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
 
     /* Navbar change color on scroll */
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 70) {
+    function navbarChangeColorOnScroll() {
+        if (window.scrollY > 33) {
             navbarEl.classList.remove('bg-transparent',)
             navbarEl.classList.add('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
             return null;
         }
         navbarEl.classList.add('bg-transparent',)
         navbarEl.classList.remove('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
-    })
+    }
+
+    window.addEventListener('scroll', navbarChangeColorOnScroll)
+
+    /* Init state */
+    navbarTargetEl.classList.add('hidden')
+    navbarEl.classList.add('bg-transparent')
+    navbarEl.classList.remove('bg-gray-800', 'bg-opacity-40', 'backdrop-filter', 'backdrop-blur-lg', 'drop-shadow-lg')
+    navbarChangeColorOnScroll();
 
     // * --------------- INIT FLOWBITE COMPONENTS ---------------
     // * ---- Navbar ----
@@ -75,7 +79,7 @@ function InitScripts() {
 
     // * Tooltips
     const tooltipsEls = document.querySelectorAll('[data-tooltip-target]')
-    tooltipsEls.forEach((tooltipEl ) => {
+    tooltipsEls.forEach((tooltipEl) => {
         const targetEl = document.getElementById(tooltipEl.dataset.tooltipTarget)
         new Tooltip(targetEl, tooltipEl);
     })

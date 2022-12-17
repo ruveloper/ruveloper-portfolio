@@ -38,7 +38,7 @@ class About(models.Model):
         upload_to=upload_cms_image_location,
         help_text=_("Auto-generated WEBP version of [Profile image]"),
     )
-    body = models.TextField(_("Profile body"))
+    body = models.TextField(_("Profile body"), help_text=_("< Accept HTML >"))
 
     # * Activate/Deactivate Optional sections
     activate_stack = models.BooleanField(_("Activate stack section"), default=True)
@@ -120,7 +120,9 @@ class ResumeEntry(models.Model):
     company = models.CharField(_("Company or institution"), max_length=255)
     start = models.DateField(_("Start date"))
     end = models.DateField(_("End date"), blank=True, null=True)
-    description = models.TextField(_("Description"), blank=True)
+    description = models.TextField(
+        _("Description"), blank=True, help_text=_("< Accept HTML >")
+    )
 
     # * Type of entry
     class EntryTypes(models.TextChoices):

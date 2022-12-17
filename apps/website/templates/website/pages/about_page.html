@@ -52,7 +52,7 @@
             {% with cms_about.technology_set.all as technologies %}
                 <section class="w-full h-fit my-14">
                     {% translate "My tech stack" as my_tech_stack_title %}
-                    {% include 'website/components/section_title.html' with section_title=my_tech_stack_title %}
+                    {% include 'website/components/section_subtitle.html' with section_title=my_tech_stack_title %}
                     {% include 'website/components/flowbite/tech_stack.html' with technologies=technologies %}
                 </section>
             {% endwith %}
@@ -63,7 +63,7 @@
             {% with cms_about.company_set.all as companies %}
                 <section class="w-full h-fit my-14">
                     {% translate "They trusted me" as trus_me_title %}
-                    {% include 'website/components/section_title.html' with section_title=trus_me_title %}
+                    {% include 'website/components/section_subtitle.html' with section_title=trus_me_title %}
                     {% include 'website/components/brand_slider.html' with companies=companies %}
                 </section>
             {% endwith %}
@@ -74,7 +74,7 @@
             {% with cms_about.resumeentry_set.all as resume_entries %}
                 <section>
                     {% translate "Resume" as resume_title %}
-                    {% include 'website/components/section_title.html' with section_title=resume_title %}
+                    {% include 'website/components/section_subtitle.html' with section_title=resume_title %}
                     {% include 'website/components/resume.html' with resume_entries=resume_entries %}
                 </section>
             {% endwith %}
