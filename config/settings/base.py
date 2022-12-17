@@ -267,13 +267,3 @@ TINYMCE_DEFAULT_CONFIG = {
     "quickbars_insert_toolbar": "false",  # Ex: 'quickimage quicktable | hr pagebreak',
     "quickbars_image_toolbar": "alignleft aligncenter alignright | rotateleft rotateright | imageoptions",
 }
-
-# * Google Analytics / Tag Manager
-# * ------------------------------------------------------------------------------
-GOOGLE_TAG_ID = env("GOOGLE_TAG_ID")
-
-# * Google reCaptcha v3
-# * ------------------------------------------------------------------------------
-RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY")
-RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY")
-RECAPTCHA_REQUIRED_SCORE = env.float("RECAPTCHA_REQUIRED_SCORE")

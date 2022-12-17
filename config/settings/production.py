@@ -82,3 +82,13 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # * SECURE_PROXY_SSL_HEADER
 # https://docs.djangoproject.com/en/stable/ref/settings/#secure-proxy-ssl-header
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# * Google Analytics / Tag Manager
+# * ------------------------------------------------------------------------------
+GOOGLE_TAG_ID = env("GOOGLE_TAG_ID", default="")
+
+# * Google reCaptcha v3
+# * ------------------------------------------------------------------------------
+RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY")
+RECAPTCHA_REQUIRED_SCORE = env.float("RECAPTCHA_REQUIRED_SCORE", default=0.85)
