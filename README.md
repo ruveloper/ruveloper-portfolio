@@ -1,6 +1,7 @@
 # 🐱‍💻 Ruveloper Portfolio
 
 [![GitHub](https://img.shields.io/github/license/ruveloper/django-portfolio-project)](https://www.mit.edu/~amini/LICENSE.md)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![Coverage Status](./media/default/coverage-badge.svg?dummy=8484744)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ruveloper/ruveloper-portfolio/main.svg)](https://results.pre-commit.ci/latest/github/ruveloper/ruveloper-portfolio/main)
 [![Django CI](https://github.com/ruveloper/ruveloper-portfolio/actions/workflows/django_ci.yaml/badge.svg?branch=main)](https://github.com/ruveloper/ruveloper-portfolio/actions/workflows/django_ci.yaml)
@@ -8,9 +9,9 @@
 
 ![Home preview](/media/default/porfolio_preview/ruveloper-portfolio.jpg "Home preview")
 
-# --> 👨‍💻 [Ruveloper](https://github.com/ruveloper/django-portfolio-project) 🌐 <--
+# --> 👨‍💻 [Ruveloper Website](https://www.ruveloper.dev) 🌐 <--
 
-### Personal portfolio based on [Portfolio Project](https://github.com/ruveloper/django-portfolio-project), visit the link above to see it in action.
+### Personal portfolio based on [Django Portfolio Project](https://github.com/ruveloper/django-portfolio-project), visit the link above to see it in action.
 
 ### Build with:
 
