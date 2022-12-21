@@ -85,10 +85,19 @@ class Service(models.Model):
     # Relation to home model
     home = models.ForeignKey(Home, on_delete=models.CASCADE)
 
+    # * Extra options
+    priority_order = models.PositiveSmallIntegerField(
+        _("Priority order"),
+        default=0,
+        help_text=_(
+            "Positive number used to order, the highest number is positioned first."
+        ),
+    )
+
     class Meta:
         verbose_name = _("CMS - Service")
         verbose_name_plural = _("CMS - Services")
-        ordering = ["home", "title"]
+        ordering = ["-priority_order", "home", "title"]
 
     def __str__(self):
         return self.title
