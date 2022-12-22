@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-16 23:28-0500\n"
-"PO-Revision-Date: 2022-12-16 23:46-0500\n"
+"POT-Creation-Date: 2022-12-22 10:47-0500\n"
+"PO-Revision-Date: 2022-12-22 10:46-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgid "Social networks"
 msgstr "Redes sociales"
 
 #: .\apps\core\admin\cms_admin.py:34 .\apps\core\admin\cms_admin.py:97
-#: .\apps\core\admin\cms_admin.py:224 .\apps\core\admin\cms_admin.py:229
+#: .\apps\core\admin\cms_admin.py:225 .\apps\core\admin\cms_admin.py:230
 #: .\apps\core\admin\shared_admin.py:18
 msgid "Logo preview"
 msgstr "Vista previa del logo"
@@ -50,27 +50,27 @@ msgstr "Contacto"
 msgid "Developer photo preview"
 msgstr "Vista previa de la foto del desarrollador"
 
-#: .\apps\core\admin\cms_admin.py:123
+#: .\apps\core\admin\cms_admin.py:124
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\apps\core\admin\cms_admin.py:134
+#: .\apps\core\admin\cms_admin.py:135
 msgid "Activate/Inactivate sections"
 msgstr "Activar/desactivar secciones"
 
-#: .\apps\core\admin\cms_admin.py:147
+#: .\apps\core\admin\cms_admin.py:148
 msgid "Profile image preview"
 msgstr "Vista previa de la imagen del perfil"
 
-#: .\apps\core\admin\cms_admin.py:177
+#: .\apps\core\admin\cms_admin.py:178
 msgid "External links"
 msgstr "Enlaces externos"
 
-#: .\apps\core\admin\cms_admin.py:179
+#: .\apps\core\admin\cms_admin.py:180
 msgid "Project content"
 msgstr "Contenido del proyecto"
 
-#: .\apps\core\admin\cms_admin.py:190 .\apps\core\admin\cms_admin.py:195
+#: .\apps\core\admin\cms_admin.py:191 .\apps\core\admin\cms_admin.py:196
 msgid "Cover image preview"
 msgstr "Vista previa de la imagen de portada"
 
@@ -82,9 +82,9 @@ msgstr "Tecnología"
 msgid "Technologies"
 msgstr "Tecnologías"
 
-#: .\apps\core\models\cms\about_models.py:11
-#: .\apps\core\models\cms\about_models.py:72
-#: .\apps\core\models\cms\about_models.py:112
+#: .\apps\core\models\cms\about_models.py:12
+#: .\apps\core\models\cms\about_models.py:73
+#: .\apps\core\models\cms\about_models.py:113
 #: .\apps\core\models\cms\base_models.py:11
 #: .\apps\core\models\cms\home_models.py:11
 #: .\apps\core\models\cms\home_models.py:78
@@ -94,9 +94,9 @@ msgstr "Tecnologías"
 msgid "Created on"
 msgstr "Creado"
 
-#: .\apps\core\models\cms\about_models.py:12
-#: .\apps\core\models\cms\about_models.py:73
-#: .\apps\core\models\cms\about_models.py:113
+#: .\apps\core\models\cms\about_models.py:13
+#: .\apps\core\models\cms\about_models.py:74
+#: .\apps\core\models\cms\about_models.py:114
 #: .\apps\core\models\cms\base_models.py:12
 #: .\apps\core\models\cms\home_models.py:12
 #: .\apps\core\models\cms\home_models.py:79
@@ -106,31 +106,31 @@ msgstr "Creado"
 msgid "Modified on"
 msgstr "Modificado"
 
-#: .\apps\core\models\cms\about_models.py:16
+#: .\apps\core\models\cms\about_models.py:17
 #: .\apps\core\models\cms\home_models.py:16
 #: .\apps\core\models\cms\project_models.py:19
 #: .\apps\core\models\cms\shared_models.py:17
 msgid "Language"
 msgstr "Idioma"
 
-#: .\apps\core\models\cms\about_models.py:24
+#: .\apps\core\models\cms\about_models.py:25
 msgid "Profile image"
 msgstr "Imagen de perfil"
 
-#: .\apps\core\models\cms\about_models.py:34
+#: .\apps\core\models\cms\about_models.py:35
 msgid "Profile image (Webp)"
 msgstr "Image de perfil (webp)"
 
-#: .\apps\core\models\cms\about_models.py:39
+#: .\apps\core\models\cms\about_models.py:40
 msgid "Auto-generated WEBP version of [Profile image]"
 msgstr "Version WEBP auto-generada de [Imagen de perfil]"
 
-#: .\apps\core\models\cms\about_models.py:41
+#: .\apps\core\models\cms\about_models.py:42
 msgid "Profile body"
 msgstr "Contenido del perfil"
 
-#: .\apps\core\models\cms\about_models.py:41
-#: .\apps\core\models\cms\about_models.py:124
+#: .\apps\core\models\cms\about_models.py:42
+#: .\apps\core\models\cms\about_models.py:132
 #: .\apps\core\models\cms\home_models.py:24
 #: .\apps\core\models\cms\home_models.py:27
 #: .\apps\core\models\cms\home_models.py:55
@@ -138,50 +138,51 @@ msgstr "Contenido del perfil"
 msgid "< Accept HTML >"
 msgstr "< Acepta HTML >"
 
-#: .\apps\core\models\cms\about_models.py:44
+#: .\apps\core\models\cms\about_models.py:45
 msgid "Activate stack section"
 msgstr "Activar sección Mi Stack"
 
-#: .\apps\core\models\cms\about_models.py:46
+#: .\apps\core\models\cms\about_models.py:47
 msgid "Activate trust me section"
 msgstr "Activar sección Confían en mí"
 
-#: .\apps\core\models\cms\about_models.py:48
+#: .\apps\core\models\cms\about_models.py:49
 msgid "Activate resume section"
 msgstr "Activar sección Trayectoria"
 
-#: .\apps\core\models\cms\about_models.py:63
 #: .\apps\core\models\cms\about_models.py:64
-#: .\apps\core\models\cms\about_models.py:68
+#: .\apps\core\models\cms\about_models.py:65
 msgid "CMS - About"
 msgstr "CMS - Sobre mí"
 
-#: .\apps\core\models\cms\about_models.py:79
+#: .\apps\core\models\cms\about_models.py:80
 #: .\apps\core\models\cms\shared_models.py:28
 #: .\apps\core\models\contact_model.py:10
 msgid "Name"
 msgstr "Nombre"
 
-#: .\apps\core\models\cms\about_models.py:81
+#: .\apps\core\models\cms\about_models.py:82
 #: .\apps\core\models\cms\base_models.py:20
 #: .\apps\core\models\cms\shared_models.py:30
 msgid "Logo"
 msgstr "Logo"
 
-#: .\apps\core\models\cms\about_models.py:90
+#: .\apps\core\models\cms\about_models.py:91
 #: .\apps\core\models\cms\shared_models.py:38
 msgid "Allow image files (JPG, PNG, GIF, WEBP) + SVG files"
 msgstr "Permite archivos de imágenes (JPG, PNG, GIF, WEBP) + archivos SVG"
 
-#: .\apps\core\models\cms\about_models.py:95
-#: .\apps\core\models\cms\about_models.py:141
+#: .\apps\core\models\cms\about_models.py:96
+#: .\apps\core\models\cms\about_models.py:149
+#: .\apps\core\models\cms\home_models.py:90
 #: .\apps\core\models\cms\project_models.py:89
 #: .\apps\core\models\cms\shared_models.py:46
 msgid "Priority order"
 msgstr "Orden de prioridad"
 
-#: .\apps\core\models\cms\about_models.py:98
-#: .\apps\core\models\cms\about_models.py:144
+#: .\apps\core\models\cms\about_models.py:99
+#: .\apps\core\models\cms\about_models.py:152
+#: .\apps\core\models\cms\home_models.py:93
 #: .\apps\core\models\cms\project_models.py:92
 #: .\apps\core\models\cms\shared_models.py:49
 msgid "Positive number used to order, the highest number is positioned first."
@@ -189,55 +190,60 @@ msgstr ""
 "Número positivo usado para ordenar la lista, el número mas grande es "
 "posicionado primero."
 
-#: .\apps\core\models\cms\about_models.py:103
+#: .\apps\core\models\cms\about_models.py:104
 msgid "Company"
 msgstr "Compañía"
 
-#: .\apps\core\models\cms\about_models.py:104
+#: .\apps\core\models\cms\about_models.py:105
 msgid "Companies"
 msgstr "Compañías"
 
-#: .\apps\core\models\cms\about_models.py:119
+#: .\apps\core\models\cms\about_models.py:123
+msgid "Related project to link technologies and details (Can be null)."
+msgstr ""
+"Proyecto relacionado para vincular tecnologías y detalles (Puede ser nulo)."
+
+#: .\apps\core\models\cms\about_models.py:127
 #: .\apps\core\models\cms\project_models.py:26
 msgid "Title"
 msgstr "Título"
 
-#: .\apps\core\models\cms\about_models.py:120
+#: .\apps\core\models\cms\about_models.py:128
 msgid "Company or institution"
 msgstr "Compañía o institución"
 
-#: .\apps\core\models\cms\about_models.py:121
+#: .\apps\core\models\cms\about_models.py:129
 msgid "Start date"
 msgstr "Fecha de inicio"
 
-#: .\apps\core\models\cms\about_models.py:122
+#: .\apps\core\models\cms\about_models.py:130
 msgid "End date"
 msgstr "Fecha de finalización"
 
-#: .\apps\core\models\cms\about_models.py:124
+#: .\apps\core\models\cms\about_models.py:132
 #: .\apps\core\models\cms\project_models.py:70
 #: .\apps\core\models\cms\shared_models.py:41
 msgid "Description"
 msgstr "Descripción"
 
-#: .\apps\core\models\cms\about_models.py:129
+#: .\apps\core\models\cms\about_models.py:137
 msgid "Experience"
 msgstr "Experiencia"
 
-#: .\apps\core\models\cms\about_models.py:130
-#: .\apps\website\templates\website\components\resume.html:44
+#: .\apps\core\models\cms\about_models.py:138
+#: .\apps\website\templates\website\components\resume.html:71
 msgid "Education"
 msgstr "Educación"
 
-#: .\apps\core\models\cms\about_models.py:133
+#: .\apps\core\models\cms\about_models.py:141
 msgid "Type of entry"
 msgstr "Tipo de entrada"
 
-#: .\apps\core\models\cms\about_models.py:149
+#: .\apps\core\models\cms\about_models.py:157
 msgid "Resume entry"
 msgstr "Entrada de trayectoria"
 
-#: .\apps\core\models\cms\about_models.py:150
+#: .\apps\core\models\cms\about_models.py:158
 msgid "Resume entries"
 msgstr "Entradas de trayectoria"
 
@@ -338,11 +344,11 @@ msgstr "Título del servicio"
 msgid "Service description"
 msgstr "Descripción del servicio"
 
-#: .\apps\core\models\cms\home_models.py:89
+#: .\apps\core\models\cms\home_models.py:98
 msgid "CMS - Service"
 msgstr "CMS - Servicio"
 
-#: .\apps\core\models\cms\home_models.py:90
+#: .\apps\core\models\cms\home_models.py:99
 msgid "CMS - Services"
 msgstr "CMS - Servicios"
 
@@ -527,6 +533,10 @@ msgstr "Leer más"
 #: .\apps\website\templates\website\components\resume.html:12
 msgid "Professional Experience"
 msgstr "Experiencia Profesional"
+
+#: .\apps\website\templates\website\components\resume.html:53
+msgid "Details"
+msgstr "Detalles"
 
 #: .\apps\website\templates\website\errors\400.html:21
 msgid "BAD REQUEST"

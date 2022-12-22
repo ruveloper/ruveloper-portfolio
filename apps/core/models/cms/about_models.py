@@ -3,6 +3,7 @@ from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from apps.core.models.cms.project_models import Project
 from apps.core.utils import convert_img_to_webp, upload_cms_image_location
 from apps.core.validators import MaxFileSizeValidator, validate_image_logo
 
@@ -65,7 +66,7 @@ class About(models.Model):
         ordering = ["language", "-modified"]
 
     def __str__(self):
-        return str(_("CMS - About"))
+        return str(f'{self.language.upper()}: {self.id} {_("CMS - About")}')
 
 
 class Company(models.Model):
@@ -114,6 +115,13 @@ class ResumeEntry(models.Model):
 
     # * Relations
     about = models.ForeignKey(About, on_delete=models.CASCADE)
+    project = models.OneToOneField(
+        Project,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text=_("Related project to link technologies and details (Can be null)."),
+    )
 
     # * Resume entry data
     title = models.CharField(_("Title"), max_length=255)
@@ -148,7 +156,7 @@ class ResumeEntry(models.Model):
     class Meta:
         verbose_name = _("Resume entry")
         verbose_name_plural = _("Resume entries")
-        ordering = ["-priority_order"]
+        ordering = ["-type", "-priority_order"]
 
     def __str__(self):
         return self.title
