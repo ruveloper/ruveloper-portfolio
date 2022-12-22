@@ -8,7 +8,7 @@ PARAMETERS
 
 {# * -------------------------------- CONTENT ------------------------------- #}
 <div class="grid grid-cols-1 md:grid-cols-2 ">
-    <div>
+    <div class="w-full max-w-md">
         <h2 class="mb-2 text-xl font-medium">{% translate "Professional Experience" %}</h2>
 
         <div class="pl-1 bg-gradient-to-t from-blue-500 via-indigo-500 to-purple-500">
@@ -19,18 +19,45 @@ PARAMETERS
 
                         <li class="mb-10 ml-4">
                             <div class="absolute w-3 h-3 bg-white rounded-full mt-2 -left-2 border border-indigo-600"></div>
-                            <h3 class="text-lg font-semibold text-indigo-800">
+
+                            <h2 class="text-lg font-semibold text-indigo-800">
                                 {{ resume_entry.title }}
-                            </h3>
+                            </h2>
                             <h3 class="font-semibold">
                                 {{ resume_entry.company }}
                             </h3>
-                            <h4 class="inline-block my-2 px-3 py-1 rounded-lg text-sm font-normal text-gray-600 bg-gray-100">
+                            <p class="inline-block my-2 px-3 py-1 rounded-lg text-sm font-normal text-gray-600 bg-gray-100">
                                 {{ resume_entry.start }} {% if resume_entry.end %} - {{ resume_entry.end }}{% endif %}
-                            </h4>
-                            <p class="mb-4 text-base font-normal text-gray-600">
+                            </p>
+                            <p class="mb-4 text-base font-normal text-gray-600 text-justify">
                                 {{ resume_entry.description|safe }}
                             </p>
+
+                            {# * Linked project technologies and details #}
+                            {% if resume_entry.project %}
+                                {# Technology list #}
+                                <div class="w-full pb-2 flex flex-row flex-wrap gap-2 justify-start items-center">
+                                    {% for technology in resume_entry.project.technology_set.all %}
+                                        <div>
+                                            <img class="h-5 mx-auto object-contain"
+                                                 src="{{ technology.logo.url }}"
+                                                 alt="{{ technology.name|lower }}">
+                                            <p class="px-2 pt-2 text-md text-center">
+                                                {{ technology.name }}</p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                {# Link to details page #}
+                                {% if  resume_entry.project.activate_details %}
+                                    {% with btn_url=resume_entry.project.get_absolute_url btn_icon_name="fa-regular fa-file-lines" %}
+                                        {% translate "Details" as btn_text %}
+                                        <div class="flex justify-end items-center">
+                                            {% include "website/components/button_icon_gradient.html" with icon_name=btn_icon_name url=btn_url text=btn_text %}
+                                        </div>
+                                    {% endwith %}
+                                {% endif %}
+                            {% endif %}
+
                         </li>
 
                     {% endif %}
@@ -40,7 +67,7 @@ PARAMETERS
         </div>
     </div>
 
-    <div>
+    <div class="w-full max-w-md">
         <h2 class="mb-2 text-xl font-medium">{% translate "Education" %}</h2>
 
         <div class="pl-1 bg-gradient-to-t from-indigo-500 to-purple-500">
@@ -60,7 +87,7 @@ PARAMETERS
                                 {{ resume_entry.start|date:'Y' }} {% if resume_entry.end %} -
                                 {{ resume_entry.end|date:'Y' }}{% endif %}
                             </h4>
-                            <p class="mb-4 text-base font-normal text-gray-600">
+                            <p class="mb-4 text-base font-normal text-gray-600 text-justify">
                                 {{ resume_entry.description|safe }}
                             </p>
                         </li>

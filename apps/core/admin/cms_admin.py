@@ -109,6 +109,7 @@ class ResumeEntryInline(admin.StackedInline):
         "end",
         "type",
         "priority_order",
+        "project",
         "description",
     ]
 
