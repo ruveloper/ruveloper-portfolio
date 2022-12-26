@@ -79,6 +79,8 @@ class Project(models.Model):
     )
     detail = HTMLField(
         _("Project details"),
+        blank=True,
+        null=True,
         help_text=_(
             "< Accept HTML > Long description about the project, it's the content of the project details page."
         ),
