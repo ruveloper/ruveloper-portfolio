@@ -16,6 +16,21 @@ function onSubmitFormContact(token) {
     document.getElementById("contact-form").submit();
 }
 
+/* * -------- Project Cards Script -------- */
+
+// In viewports > md breakpoint, make visible the selected Project Information Panel
+function openProjectInformation(projectID) {
+    let projectInformationEls = document.querySelectorAll('[id^="project-information-"]');
+
+    projectInformationEls.forEach((project) => {
+        project.classList.add("md:hidden")
+        if (projectID === project.id) {
+            project.classList.remove("md:hidden")
+            scrollToIdWithDelay(project.id, 100)
+        }
+    })
+}
+
 /**
  * Init Scripts Function
  */

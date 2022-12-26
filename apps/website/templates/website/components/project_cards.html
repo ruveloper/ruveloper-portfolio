@@ -3,11 +3,6 @@ PARAMETERS
     * cms_projects: QuerySet[Project] --> QuerySet of Project model objects
 {% endcomment %}
 
-{# LOAD PACKAGES/TAGs #}
-{% load static %}
-{% load i18n %}
-{% load compress %}
-
 {# * -------------------------------- CONTENT ------------------------------- #}
 <div id="project-cards" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -105,19 +100,3 @@ PARAMETERS
     {% endfor %}
 
 </div>
-
-{# * --------------------------------- SCRIPT -------------------------------- #}
-<script>
-    /** In viewports > md breakpoint, make visible the selected Project Information Panel */
-    function openProjectInformation(projectID) {
-        let projectInformationEls = document.querySelectorAll('[id^="project-information-"]');
-
-        projectInformationEls.forEach((project) => {
-            project.classList.add("md:hidden")
-            if (projectID === project.id) {
-                project.classList.remove("md:hidden")
-                scrollToIdWithDelay(project.id, 100)
-            }
-        })
-    }
-</script>
