@@ -52,6 +52,22 @@ PARAMETERS:
 
         {# -------- Section Content -------- #}
 
+        {# * ---- Project Title ---- #}
+        {# Title #}
+        {% include 'website/components/section_title.html' with section_title=project.title %}
+        {# Technologies #}
+        <div class="w-full p-5 flex flex-row flex-wrap gap-2 justify-center items-center">
+            {% for technology in project.technology_set.all %}
+                <div>
+                    <img class="h-5 mx-auto object-contain"
+                         src="{{ technology.logo.url }}"
+                         alt="{{ technology.name|lower }}">
+                    <p class="px-2 pt-2 text-md text-center font-semibold">
+                        {{ technology.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
         {# * ---- Project Detail ---- #}
         <div id="project-detail" class="prose prose-slate max-w-[100ch] mx-auto"> {{ project.detail|safe }} </div>
 
