@@ -94,8 +94,10 @@
 
             {# ---- Latest Projects ---- #}
             {# Title #}
-            {% translate "My latest projects" as latest_projects_title %}
-            {% include 'website/components/section_title.html' with section_title=latest_projects_title %}
+            <div class="mb-10">
+                {% translate "My latest projects" as latest_projects_title %}
+                {% include 'website/components/section_title.html' with section_title=latest_projects_title %}
+            </div>
             {# Project Cards #}
             {% include 'website/components/project_cards.html' with cms_projects=cms_projects %}
             <div class="my-10 mb-24 flex justify-center items-center">
@@ -108,8 +110,10 @@
 
             {# ---- Contact Section ---- #}
             {# Title #}
-            {% translate "Let's talk!" as contact_form_title %}
-            {% include 'website/components/section_title.html' with section_title=contact_form_title %}
+            <div class="mb-10">
+                {% translate "Let's talk!" as contact_form_title %}
+                {% include 'website/components/section_title.html' with section_title=contact_form_title %}
+            </div>
             {# Contact #}
             {% if cms_home.contact_msg %}
                 <div class="max-w-2xl mx-auto my-10 text-center text-xl font-medium">
