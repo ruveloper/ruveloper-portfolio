@@ -37,6 +37,13 @@ function openProjectInformation(projectID) {
 function InitScripts() {
     "use strict";
 
+    /* * ---- Autoplay videos ---- */
+    // Autoplay video with class .autoplay-video after reload content with AJAX
+    const autoPlayVideoEls = document.querySelectorAll(".autoplay-video")
+    autoPlayVideoEls.forEach((videoEl) => {
+        videoEl.play();
+    })
+
     /* * ---- Typing animation ---- */
     const typed = document.querySelector('.typed')
     if (typed) {
