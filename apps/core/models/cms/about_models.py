@@ -77,7 +77,7 @@ class Company(models.Model):
     about = models.ForeignKey(About, on_delete=models.CASCADE)
 
     # * Company data
-    name = models.CharField(_("Name"), max_length=255, unique=True)
+    name = models.CharField(_("Name"), max_length=255)
     logo = models.FileField(
         _("Logo"),
         upload_to=upload_cms_image_location,
