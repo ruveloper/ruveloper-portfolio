@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="CODE-QUALITY COVERAGE TESTS" type="PythonConfigurationType" factoryName="Python">
+  <configuration default="false" name="COVERAGE TESTS" type="PythonConfigurationType" factoryName="Python" folderName="COVERAGE">
     <module name="PORTAFOLIO_PROJECT" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
