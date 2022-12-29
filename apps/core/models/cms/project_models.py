@@ -23,7 +23,7 @@ class Project(models.Model):
     )
 
     # * Project entry data
-    title = models.CharField(_("Title"), max_length=255, unique=True)
+    title = models.CharField(_("Title"), max_length=255)
     slug = models.SlugField(
         _("Slug"),
         max_length=255,
