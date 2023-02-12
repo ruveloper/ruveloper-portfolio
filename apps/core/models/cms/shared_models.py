@@ -12,14 +12,6 @@ class Technology(models.Model):
     created = models.DateTimeField(_("Created on"), auto_now_add=True)
     modified = models.DateTimeField(_("Modified on"), auto_now=True)
 
-    # * Language selector
-    language = models.CharField(
-        _("Language"),
-        max_length=30,
-        choices=settings.LANGUAGES,
-        default=settings.LANGUAGE_CODE,
-    )
-
     # * Relations
     about = models.ManyToManyField(About, blank=True)
     project = models.ManyToManyField(Project, blank=True)
@@ -37,9 +29,6 @@ class Technology(models.Model):
         ],
         help_text=_("Allow image files (JPG, PNG, GIF, WEBP) + SVG files"),
     )
-    description = models.TextField(
-        _("Description"), blank=True, help_text=_("< Accept HTML >")
-    )
 
     # * Extra options
     priority_order = models.PositiveSmallIntegerField(
@@ -53,7 +42,36 @@ class Technology(models.Model):
     class Meta:
         verbose_name = _("CMS - Technology")
         verbose_name_plural = _("CMS - Technologies")
-        ordering = ["language", "-priority_order"]
+        ordering = ["-priority_order"]
 
     def __str__(self):
-        return f"{self.language}: {self.name}"
+        return f"{self.name}"
+
+
+class TechnologyDescription(models.Model):
+    language = models.CharField(
+        _("Language"),
+        max_length=30,
+        choices=settings.LANGUAGES,
+        default=settings.LANGUAGE_CODE,
+    )
+
+    description = models.TextField(
+        _("Description"),
+        blank=True,
+        null=True,
+        help_text=_(
+            '< Accept HTML > Technology description to display on the "About" page'
+        ),
+    )
+
+    # * Relations
+    technology = models.ForeignKey(Technology, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = _("CMS - Technology Description")
+        verbose_name_plural = _("CMS - Technology Descriptions")
+        ordering = ["language"]
+
+    def __str__(self):
+        return f"{self.language}:{self.technology.name}"

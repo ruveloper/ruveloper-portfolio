@@ -123,10 +123,11 @@ class AboutModelsTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         # Initial model objects
-        AboutFactory.create()
-        CompanyFactory.create_batch(7)
-        ResumeEntryFactory.create_batch(7)
-        cls.about: About = About.objects.first()
+        cls.about: About = AboutFactory.create()
+        # ! Since Company and ResumeEntry need an About Model relation, we need to pass the relation to the factory
+        # ! to ensure don't create another About object outside the TestCase context (and Temporal Test Database)
+        CompanyFactory.create_batch(7, about=cls.about)
+        ResumeEntryFactory.create_batch(7, about=cls.about)
         cls.company: Company = Company.objects.first()
         cls.resume_entry: ResumeEntry = ResumeEntry.objects.first()
 

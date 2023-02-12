@@ -62,7 +62,8 @@ class AboutFactory(DjangoModelFactory):
 
 
 class CompanyFactory(DjangoModelFactory):
-    about = About.objects.first()
+    # about = field (Foreign key relation) need to be passed as parameter in factory create or create_batch methods
+    # to avoid use the real database information since these factories are outside the TestCase context
     name = Faker("company")
     logo = SimpleUploadedFile(
         name="image.jpg",
@@ -75,7 +76,8 @@ class CompanyFactory(DjangoModelFactory):
 
 
 class ResumeEntryFactory(DjangoModelFactory):
-    about = About.objects.first()
+    # about = field (Foreign key relation) need to be passed as parameter in factory create or create_batch methods
+    # to avoid use the real database information since these factories are outside the TestCase context
     title = Faker("sentences", nb=1)
     company = Faker("company")
     start = Faker("date_between")
@@ -105,7 +107,6 @@ class TechnologyFactory(DjangoModelFactory):
     logo = SimpleUploadedFile(
         name="image.jpg", content=fake_image_bytes(512, 512), content_type="image/jpeg"
     )
-    description = Faker("text")
 
     class Meta:
         model = Technology

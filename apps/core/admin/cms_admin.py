@@ -12,6 +12,7 @@ from apps.core.models import (
     ResumeEntry,
     Service,
     Technology,
+    TechnologyDescription,
 )
 from apps.core.utils import html_img_preview
 
@@ -199,25 +200,33 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 # * ------------------ Shared models ------------------
+class TechnologyDescriptionInline(admin.StackedInline):
+    model = TechnologyDescription
+    extra = 0
+
+
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
     readonly_fields = ("id", "logo_preview", "mini_logo_preview")
-    list_display = ("name", "language", "priority_order", "mini_logo_preview")
+    list_display = ("name", "priority_order", "mini_logo_preview")
     filter_horizontal = ("project", "about")
     fieldsets = [
         (
             None,
             {
                 "fields": [
-                    ("id", "language"),
+                    "id",
                     "name",
                     "priority_order",
                     "logo",
                     "logo_preview",
-                    "description",
                 ]
             },
         ),
+    ]
+
+    inlines = [
+        TechnologyDescriptionInline,
     ]
 
     # * Image preview

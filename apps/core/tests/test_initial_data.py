@@ -8,6 +8,7 @@ from apps.core.models import (
     Project,
     ResumeEntry,
     Technology,
+    TechnologyDescription,
 )
 
 
@@ -21,4 +22,5 @@ class InitialDataTests(TestCase):
         self.assertEqual(Project.objects.count(), 6)
         self.assertEqual(Company.objects.count(), 5)
         self.assertEqual(Technology.objects.count(), 6)
+        self.assertEqual(TechnologyDescription.objects.count(), 12)
         self.assertEqual(ResumeEntry.objects.count(), 5)

@@ -4,10 +4,9 @@ from .base import env
 # GENERAL
 # ------------------------------------------------------------------------------
 DEBUG = env("DEBUG", default=True)
-SECRET_KEY = env(
-    "DJANGO_SECRET_KEY", default="pcq=6!i98hy=byg55_9^os2n!t8-4m84xh$=r2^**8ydpc@5$e"
-)
-ALLOWED_HOSTS = ["*"]
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="pcq=6!i98hy=byg55_9^os2n!t8-4m84xh$=r2^**8ydpc@5$e")  # fmt:skip
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+INTERNAL_IPS = ALLOWED_HOSTS
 
 # DATABASE
 # ---------------------------------------------------------------------------

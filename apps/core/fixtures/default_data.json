@@ -272,7 +272,6 @@
       "modified": "2022-07-05T14:56:46.514Z",
       "name": "Python",
       "logo": "default/logos/python.svg",
-      "description": "<strong> Python is a multipurpose programming language</strong> and is one of the most widely used languages in the world. It is used in automation processes, desktop applications, machine learning, data science, backend development, among others.",
       "priority_order": 10,
       "about": [
         1
@@ -291,7 +290,6 @@
       "modified": "2022-07-04T18:20:27.371Z",
       "name": "Django",
       "logo": "default/logos/django.svg",
-      "description": "<strong class=\"font-medium text-gray-800\">Django is a high-level Python web framework that encourages rapid development, clean and pragmatic design</strong>, with more than 15 years in the market, it is widely used by companies like Google, Instagram, Spotify and Mozilla who rely on it to build web applications today.",
       "priority_order": 9,
       "about": [
         1
@@ -310,7 +308,6 @@
       "modified": "2022-07-04T18:28:28.447Z",
       "name": "Web",
       "logo": "default/logos/web.svg",
-      "description": "<strong class=\"font-medium text-gray-800\">HTML, CSS and Javascript is the set of technologies that underpin the web</strong>, with them we can structure, style and give functionality to each page on Internet .",
       "priority_order": 8,
       "about": [
         1
@@ -330,7 +327,6 @@
       "modified": "2022-07-05T16:54:05.303Z",
       "name": "PostgreSQL",
       "logo": "default/logos/postgresql.svg",
-      "description": "<strong class=\"font-medium text-gray-800\">PostgreSQL, also called Postgres, is an open source object-oriented relational (SQL) database management system</strong>, with over 30 years of active development, it has earned a strong reputation for reliability, feature robustness, and performance.",
       "priority_order": 5,
       "about": [
         1
@@ -348,7 +344,6 @@
       "modified": "2022-07-05T14:53:50.574Z",
       "name": "Tailwind",
       "logo": "default/logos/tailwind.svg",
-      "description": "<strong class=\"font-medium text-gray-800\">Tailwind CSS is a \"utility-first\" CSS framework</strong> that provides a deep catalog of CSS classes and tools that lets you easily get started styling your website or application directly in your markup.",
       "priority_order": 6,
       "about": [
         1
@@ -366,7 +361,6 @@
       "modified": "2022-07-05T16:57:19.058Z",
       "name": "Flutter",
       "logo": "default/logos/flutter.svg",
-      "description": "<strong>>Flutter is a Dart framework created by Google to create beautiful, natively compiled apps for mobile, web, and desktop from a single code base</strong>. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.",
       "priority_order": 7,
       "about": [
         1
@@ -375,6 +369,114 @@
         5,
         6
       ]
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 1,
+    "fields": {
+      "language": "en",
+      "description": "<strong>Python is a multipurpose programming language</strong> and is one of the most widely used languages in the world. It is used in automation processes, desktop applications, artificial intelligence, web development, among others.",
+      "technology": 1
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 2,
+    "fields": {
+      "language": "es",
+      "description": "<strong> Python es un lenguaje de programaci¾n multiprop¾sito </strong> y es uno de los mßs usados en el mundo. Se utiliza en procesos de automatizaci¾n, aplicaciones de escritorio, inteligencia artificial, desarrollo web, entre otros.",
+      "technology": 1
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 9,
+    "fields": {
+      "language": "en",
+      "description": "<strong>Django is a high-level Python web framework that encourages rapid development, clean and pragmatic design</strong>, with more than 15 years in the market, it is widely used by companies like Google, Instagram, Spotify and Mozilla who rely on it to build web applications.",
+      "technology": 2
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 10,
+    "fields": {
+      "language": "es",
+      "description": "<strong> Django es un marco de trabajo web de alto nivel de Python que fomenta el desarrollo rßpido, el dise±o limpio y pragmßtico </strong>, con mßs de 15 a±os en el mercado, es ampliamente utilizado por empresas como Google, Instagram, Spotify y Mozilla que confÝan en Úl para construir aplicaciones web.",
+      "technology": 2
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 5,
+    "fields": {
+      "language": "en",
+      "description": "<strong>HTML, CSS and Javascript are the set of technologies that build websites</strong>. HTML is used to define the structure and layout of a web page, CSS is used to control the appearance of web content and JavaScript is primarily used to create interactive elements.",
+      "technology": 3
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 6,
+    "fields": {
+      "language": "es",
+      "description": "<strong> HTML, CSS and JavaScript son el conjunto de tecnologÝas que construyen sitios web</strong>. HTML se utiliza para definir la estructura y el dise±o de una pßgina web, CSS se utiliza para controlar la apariencia del contenido web y JavaScript se utiliza principalmente para crear elementos interactivos.",
+      "technology": 3
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 13,
+    "fields": {
+      "language": "en",
+      "description": "<strong>PostgreSQL, also called Postgres, is an open source object-oriented relational (SQL) database management system</strong>, with over 30 years of active development, it has earned a strong reputation for reliability, feature robustness, and performance.",
+      "technology": 4
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 14,
+    "fields": {
+      "language": "es",
+      "description": "<strong>PostgreSQL, tambiÚn llamado Postgres, es un sistema de gesti¾n de base de datos relacional (SQL) de c¾digo abierto</strong>, con mßs de 30 a±os de desarrollo activo, ha ganado una s¾lida reputaci¾n por su fiabilidad, robustez de caracterÝsticas y rendimiento.",
+      "technology": 4
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 11,
+    "fields": {
+      "language": "en",
+      "description": "<strong>Tailwind CSS is a utility-based CSS framework that allows you to style your HTML elements using pre-designed classes rather than writing your own CSS</strong>. It provides a wide range of low-level utility classes that can be combined to create complex designs, making it a powerful tool for building custom user interfaces.",
+      "technology": 5
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 12,
+    "fields": {
+      "language": "es",
+      "description": "<strong>Tailwind CSS es un marco de trabajo de estilos CSS basado en utilidades que permite dar estilo a los elementos HTML utilizando clases predise±adas en lugar de escribir CSS nativo</strong>. Proporciona una amplia gama de clases de bajo nivel que se pueden combinar para crear dise±os complejos, lo que lo convierte en una herramienta poderosa para construir interfaces de usuario personalizadas.",
+      "technology": 5
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 15,
+    "fields": {
+      "language": "en",
+      "description": "<strong>Flutter is a Dart framework created by Google to create beautiful, natively compiled apps for mobile, web, and desktop from a single code base</strong>. It provides a wide range of pre-designed widgets and tools for building responsive user interfaces resulting in one of the key features of Flutter, its fast development cycle.",
+      "technology": 6
+    }
+  },
+  {
+    "model": "core.technologydescription",
+    "pk": 16,
+    "fields": {
+      "language": "es",
+      "description": "<strong>Flutter es un marco de trabajo de Dart creado por Google para construir aplicaciones compiladas nativamente para m¾vil, web y escritorio a partir de un ·nico c¾digo base</strong>. Proporciona una amplia gama de widgets y herramientas predise±adas para crear interfaces de usuario responsivas, lo que resulta en una de las principales caracterÝsticas de Flutter, su ciclo de desarrollo rßpido.",
+      "technology": 6
     }
   }
 ]

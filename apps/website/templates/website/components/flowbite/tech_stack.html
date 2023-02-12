@@ -1,5 +1,12 @@
 {# ! DYNAMIC FLOWBITE COMPONENT - Requires Flowbite #}
 
+{# LOAD PACKAGES/TAGs #}
+{% load i18n %}
+{% load model_tags %}
+
+{# CURRENT REQUEST LANGUAGE CODE #}
+{% get_current_language as LANGUAGE_CURRENT_CODE %}
+
 {% comment %}
 PARAMETERS
     * technologies: QuerySet[Technology] -> QuerySet of Technology model objects
@@ -55,21 +62,23 @@ PARAMETERS
 
     {# ------------- Techology descriptions ------------- #}
     {% for technology in technologies %}
-        {% if forloop.first %}
-            {# * First element - activate by default #}
-            <div id="{{ technology.name|lower }}-tab-content" role="tabpanel"
-                 aria-labelledby="{{ technology.name|lower }}-tab"
-                 class="p-4 bg-gray-50 rounded-lg">
-                <p class="text-sm text-gray-500">{{ technology.description|safe }}</p>
-            </div>
-        {% else %}
-            {# * Else - deactivate by default #}
-            <div id="{{ technology.name|lower }}-tab-content" role="tabpanel"
-                 aria-labelledby="{{ technology.name|lower }}-tab"
-                 class="hidden p-4 bg-gray-50 rounded-lg">
-                <p class="text-sm text-gray-500">{{ technology.description|safe }}</p>
-            </div>
-        {% endif %}
+        {% with description=technology.technologydescription_set.all|get_technology_description:LANGUAGE_CURRENT_CODE %}
+            {% if forloop.first %}
+                {# * First element - activate by default #}
+                <div id="{{ technology.name|lower }}-tab-content" role="tabpanel"
+                     aria-labelledby="{{ technology.name|lower }}-tab"
+                     class="p-4 bg-gray-50 rounded-lg">
+                    <p class="text-sm text-gray-500">{{ description|safe }}</p>
+                </div>
+            {% else %}
+                {# * Else - deactivate by default #}
+                <div id="{{ technology.name|lower }}-tab-content" role="tabpanel"
+                     aria-labelledby="{{ technology.name|lower }}-tab"
+                     class="hidden p-4 bg-gray-50 rounded-lg">
+                    <p class="text-sm text-gray-500">{{ description|safe }}</p>
+                </div>
+            {% endif %}
+        {% endwith %}
     {% endfor %}
 
 </div>

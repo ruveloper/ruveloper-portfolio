@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-22 10:47-0500\n"
-"PO-Revision-Date: 2022-12-22 10:46-0500\n"
+"POT-Creation-Date: 2023-02-11 18:24-0500\n"
+"PO-Revision-Date: 2023-02-11 09:58-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -18,59 +18,59 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: .\apps\core\admin\cms_admin.py:26
+#: .\apps\core\admin\cms_admin.py:27
 msgid "Personal brand"
 msgstr "Marca personal"
 
-#: .\apps\core\admin\cms_admin.py:29
+#: .\apps\core\admin\cms_admin.py:30
 msgid "Social networks"
 msgstr "Redes sociales"
 
-#: .\apps\core\admin\cms_admin.py:34 .\apps\core\admin\cms_admin.py:97
-#: .\apps\core\admin\cms_admin.py:225 .\apps\core\admin\cms_admin.py:230
+#: .\apps\core\admin\cms_admin.py:35 .\apps\core\admin\cms_admin.py:98
+#: .\apps\core\admin\cms_admin.py:234 .\apps\core\admin\cms_admin.py:239
 #: .\apps\core\admin\shared_admin.py:18
 msgid "Logo preview"
 msgstr "Vista previa del logo"
 
-#: .\apps\core\admin\cms_admin.py:39
+#: .\apps\core\admin\cms_admin.py:40
 msgid "Favicon preview"
 msgstr "Vista previa de Favicon"
 
-#: .\apps\core\admin\cms_admin.py:66
+#: .\apps\core\admin\cms_admin.py:67
 msgid "Card"
 msgstr "Tarjeta"
 
-#: .\apps\core\admin\cms_admin.py:68
+#: .\apps\core\admin\cms_admin.py:69
 #: .\apps\website\templates\website\components\flowbite\base_navbar.html:92
 #: .\apps\website\templates\website\pages\contact_page.html:8
 msgid "Contact"
 msgstr "Contacto"
 
-#: .\apps\core\admin\cms_admin.py:83
+#: .\apps\core\admin\cms_admin.py:84
 msgid "Developer photo preview"
 msgstr "Vista previa de la foto del desarrollador"
 
-#: .\apps\core\admin\cms_admin.py:124
+#: .\apps\core\admin\cms_admin.py:125
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\apps\core\admin\cms_admin.py:135
+#: .\apps\core\admin\cms_admin.py:136
 msgid "Activate/Inactivate sections"
 msgstr "Activar/desactivar secciones"
 
-#: .\apps\core\admin\cms_admin.py:148
+#: .\apps\core\admin\cms_admin.py:149
 msgid "Profile image preview"
 msgstr "Vista previa de la imagen del perfil"
 
-#: .\apps\core\admin\cms_admin.py:178
+#: .\apps\core\admin\cms_admin.py:179
 msgid "External links"
 msgstr "Enlaces externos"
 
-#: .\apps\core\admin\cms_admin.py:180
+#: .\apps\core\admin\cms_admin.py:181
 msgid "Project content"
 msgstr "Contenido del proyecto"
 
-#: .\apps\core\admin\cms_admin.py:191 .\apps\core\admin\cms_admin.py:196
+#: .\apps\core\admin\cms_admin.py:192 .\apps\core\admin\cms_admin.py:197
 msgid "Cover image preview"
 msgstr "Vista previa de la imagen de portada"
 
@@ -109,7 +109,7 @@ msgstr "Modificado"
 #: .\apps\core\models\cms\about_models.py:17
 #: .\apps\core\models\cms\home_models.py:16
 #: .\apps\core\models\cms\project_models.py:19
-#: .\apps\core\models\cms\shared_models.py:17
+#: .\apps\core\models\cms\shared_models.py:53
 msgid "Language"
 msgstr "Idioma"
 
@@ -134,7 +134,6 @@ msgstr "Contenido del perfil"
 #: .\apps\core\models\cms\home_models.py:24
 #: .\apps\core\models\cms\home_models.py:27
 #: .\apps\core\models\cms\home_models.py:55
-#: .\apps\core\models\cms\shared_models.py:41
 msgid "< Accept HTML >"
 msgstr "< Acepta HTML >"
 
@@ -156,35 +155,35 @@ msgid "CMS - About"
 msgstr "CMS - Sobre mí"
 
 #: .\apps\core\models\cms\about_models.py:80
-#: .\apps\core\models\cms\shared_models.py:28
+#: .\apps\core\models\cms\shared_models.py:20
 #: .\apps\core\models\contact_model.py:10
 msgid "Name"
 msgstr "Nombre"
 
 #: .\apps\core\models\cms\about_models.py:82
 #: .\apps\core\models\cms\base_models.py:20
-#: .\apps\core\models\cms\shared_models.py:30
+#: .\apps\core\models\cms\shared_models.py:22
 msgid "Logo"
 msgstr "Logo"
 
 #: .\apps\core\models\cms\about_models.py:91
-#: .\apps\core\models\cms\shared_models.py:38
+#: .\apps\core\models\cms\shared_models.py:30
 msgid "Allow image files (JPG, PNG, GIF, WEBP) + SVG files"
 msgstr "Permite archivos de imágenes (JPG, PNG, GIF, WEBP) + archivos SVG"
 
 #: .\apps\core\models\cms\about_models.py:96
 #: .\apps\core\models\cms\about_models.py:149
 #: .\apps\core\models\cms\home_models.py:90
-#: .\apps\core\models\cms\project_models.py:89
-#: .\apps\core\models\cms\shared_models.py:46
+#: .\apps\core\models\cms\project_models.py:91
+#: .\apps\core\models\cms\shared_models.py:35
 msgid "Priority order"
 msgstr "Orden de prioridad"
 
 #: .\apps\core\models\cms\about_models.py:99
 #: .\apps\core\models\cms\about_models.py:152
 #: .\apps\core\models\cms\home_models.py:93
-#: .\apps\core\models\cms\project_models.py:92
-#: .\apps\core\models\cms\shared_models.py:49
+#: .\apps\core\models\cms\project_models.py:94
+#: .\apps\core\models\cms\shared_models.py:38
 msgid "Positive number used to order, the highest number is positioned first."
 msgstr ""
 "Número positivo usado para ordenar la lista, el número mas grande es "
@@ -222,7 +221,7 @@ msgstr "Fecha de finalización"
 
 #: .\apps\core\models\cms\about_models.py:132
 #: .\apps\core\models\cms\project_models.py:70
-#: .\apps\core\models\cms\shared_models.py:41
+#: .\apps\core\models\cms\shared_models.py:60
 msgid "Description"
 msgstr "Descripción"
 
@@ -231,7 +230,7 @@ msgid "Experience"
 msgstr "Experiencia"
 
 #: .\apps\core\models\cms\about_models.py:138
-#: .\apps\website\templates\website\components\resume.html:71
+#: .\apps\website\templates\website\components\resume.html:72
 msgid "Education"
 msgstr "Educación"
 
@@ -416,7 +415,7 @@ msgstr ""
 msgid "Project details"
 msgstr "Detalles del proyecto"
 
-#: .\apps\core\models\cms\project_models.py:83
+#: .\apps\core\models\cms\project_models.py:85
 msgid ""
 "< Accept HTML > Long description about the project, it's the content of the "
 "project details page."
@@ -424,21 +423,35 @@ msgstr ""
 "< Acepta HTML > Descripción larga acerca del proyecto, este sera el "
 "contenido de la URL del proyecto."
 
-#: .\apps\core\models\cms\project_models.py:114
+#: .\apps\core\models\cms\project_models.py:116
 msgid "CMS - Project"
 msgstr "CMS - Proyecto"
 
-#: .\apps\core\models\cms\project_models.py:115
+#: .\apps\core\models\cms\project_models.py:117
 msgid "CMS - Projects"
 msgstr "CMS - Proyectos"
 
-#: .\apps\core\models\cms\shared_models.py:54
+#: .\apps\core\models\cms\shared_models.py:43
 msgid "CMS - Technology"
 msgstr "CMS - Tecnología"
 
-#: .\apps\core\models\cms\shared_models.py:55
+#: .\apps\core\models\cms\shared_models.py:44
 msgid "CMS - Technologies"
 msgstr "CMS - Tecnologías"
+
+#: .\apps\core\models\cms\shared_models.py:64
+msgid "< Accept HTML > Technology description to display on the \"About\" page"
+msgstr ""
+"< Acepta HTML > Descripción de tecnología para mostrar en la página \"Sobre "
+"mí\""
+
+#: .\apps\core\models\cms\shared_models.py:72
+msgid "CMS - Technology Description"
+msgstr "CMS - Descripción de Tecnología"
+
+#: .\apps\core\models\cms\shared_models.py:73
+msgid "CMS - Technology Descriptions"
+msgstr "CMS - Descripción de Tecnologías"
 
 #: .\apps\core\models\contact_model.py:12
 msgid "Subject"
@@ -530,11 +543,11 @@ msgstr "Ver sitio web"
 msgid "Read more"
 msgstr "Leer más"
 
-#: .\apps\website\templates\website\components\resume.html:12
+#: .\apps\website\templates\website\components\resume.html:13
 msgid "Professional Experience"
 msgstr "Experiencia Profesional"
 
-#: .\apps\website\templates\website\components\resume.html:53
+#: .\apps\website\templates\website\components\resume.html:54
 msgid "Details"
 msgstr "Detalles"
 
@@ -590,19 +603,19 @@ msgstr "Prefieres enviarme un correo?"
 msgid "Know about me"
 msgstr "Conóceme"
 
-#: .\apps\website\templates\website\pages\home_page.html:97
+#: .\apps\website\templates\website\pages\home_page.html:98
 msgid "My latest projects"
 msgstr "Mis últimos proyectos"
 
-#: .\apps\website\templates\website\pages\home_page.html:104
+#: .\apps\website\templates\website\pages\home_page.html:106
 msgid "Explore projects"
 msgstr "Explorar proyectos"
 
-#: .\apps\website\templates\website\pages\home_page.html:111
+#: .\apps\website\templates\website\pages\home_page.html:114
 msgid "Let's talk!"
 msgstr "Hablemos!"
 
-#: .\apps\website\templates\website\pages\home_page.html:122
+#: .\apps\website\templates\website\pages\home_page.html:126
 msgid ""
 "Interested in starting a new project or collaborating? Tell me and let's do "
 "great things together."
@@ -610,7 +623,7 @@ msgstr ""
 "¿Interesado en comenzar un nuevo proyecto o colaborar en algo emocionante? "
 "hagamos grandes cosas juntos."
 
-#: .\apps\website\templates\website\pages\home_page.html:129
+#: .\apps\website\templates\website\pages\home_page.html:133
 msgid "Get it touch"
 msgstr "Escríbeme"
 
