@@ -160,7 +160,13 @@ class ProjectAdmin(admin.ModelAdmin):
         "cover_image_preview",
         "mini_cover_image_preview",
     )
-    list_display = ("title", "language", "priority_order", "mini_cover_image_preview")
+    list_display = (
+        "title",
+        "slug",
+        "language",
+        "priority_order",
+        "mini_cover_image_preview",
+    )
     fieldsets = [
         (
             None,

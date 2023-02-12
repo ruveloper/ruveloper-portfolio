@@ -27,9 +27,11 @@ class Project(models.Model):
     slug = models.SlugField(
         _("Slug"),
         max_length=255,
-        unique=True,
         blank=True,
-        help_text=_("Url endpoint for this project, leave blank to auto-generate."),
+        help_text=_(
+            "Url endpoint for this project, leave blank to auto-generate. <br>"
+            "<strong>WARNING:</strong> Set the same slug for the project model in different languages."
+        ),
     )
     link = models.URLField(
         _("Website URL or link to project demo"),
@@ -115,7 +117,7 @@ class Project(models.Model):
     class Meta:
         verbose_name = _("CMS - Project")
         verbose_name_plural = _("CMS - Projects")
-        ordering = ["language", "-priority_order"]
+        ordering = ["slug", "language", "-priority_order"]
 
     def __str__(self):
         return Truncator(f'{self.language}: {_("Project")} {self.title}').chars(

@@ -1,6 +1,7 @@
 from typing import Optional
 
 from django.conf import settings
+from django.db import models
 from django.http import Http404
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -49,7 +50,9 @@ class ProjectsPage(ListView):
     context_object_name = "cms_projects"
 
     def get_queryset(self):
-        return self.model.objects.filter(language=self.request.LANGUAGE_CODE)  # type: ignore
+        return self.model.objects.filter(language=self.request.LANGUAGE_CODE).order_by(
+            "-priority_order"
+        )  # type: ignore
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -64,6 +67,21 @@ class ProjectDetailPage(DetailView):
     template_name = "website/pages/project_detail_page.html"
     model = Project
     context_object_name = "project"
+
+    def get_queryset(self):
+        return self.model.objects.filter(slug=self.kwargs["slug"])
+
+    def get_object(self, queryset: Optional[models.query.QuerySet[Project]] = None) -> Project:  # fmt:skip
+        if queryset is None:
+            queryset = self.get_queryset()
+        # Get first the model that meets the requested language code and slug (filter from the queryset),
+        # if not exists, try to return in other language
+        obj = queryset.filter(
+            language=self.request.LANGUAGE_CODE,  # type: ignore
+        ).first()
+        if obj:
+            return obj
+        return super().get_object(queryset=queryset)
 
     def get_context_data(self, **kwargs):
         # ! ---- Check if active ----
