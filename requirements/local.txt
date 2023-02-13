@@ -1,24 +1,23 @@
 # -----------------------------------------
-# PYTHON==3.9
+# PYTHON==3.11
 # -----------------------------------------
 -r base.txt
 
 # * ---- Specific Local Development Requirements ----
-psycopg2-binary==2.9.3  # https://github.com/psycopg/psycopg2
-ipython==8.4.0
+psycopg2-binary==2.9.5 # https://github.com/psycopg/psycopg2
 
 # * Code quality
 # * ----------------------
-flake8==4.0.1  # https://github.com/PyCQA/flake8
-black==22.6.0  # https://github.com/psf/black
-isort==5.10.1  # https://github.com/pycqa/isort
-pre-commit==2.20.0 # https://github.com/pre-commit/pre-commit
+flake8==6.0.0 # https://github.com/PyCQA/flake8
+black==23.1.0 # https://github.com/psf/black
+isort==5.12.0 # https://github.com/pycqa/isort
+pre-commit==3.0.4 # https://github.com/pre-commit/pre-commit
 
 # * Type check
 # * ----------------------
-django-stubs[compatible-mypy]==1.12.0
+django-stubs[compatible-mypy]==1.14.0 # https://github.com/typeddjango/django-stubs
 
 # * Testing
 # * ----------------------
-coverage~=6.4.4
-factory-boy~=3.2.1
+coverage==7.1.0 # https://github.com/nedbat/coveragepy
+factory-boy==3.2.1 # https://github.com/FactoryBoy/factory_boy

@@ -1,11 +1,11 @@
 # -----------------------------------------
-# PYTHON==3.9
+# PYTHON==3.11
 # -----------------------------------------
 -r base.txt
 
 # * ---- Specific Production Requirements ----
-psycopg2==2.9.3  # https://github.com/psycopg/psycopg2
+psycopg2==2.9.5 # https://github.com/psycopg/psycopg2
 
 # * Server WSGI
 # * ----------------------
-gunicorn==20.1.0
+gunicorn==20.1.0 # https://github.com/benoitc/gunicorn
