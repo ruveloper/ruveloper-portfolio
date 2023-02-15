@@ -22,7 +22,6 @@ class AboutViewSet(viewsets.ReadOnlyModelViewSet):
 class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = cms.ProjectSerializer
 
-    @property
     def get_queryset(self):
         """
         Allow filter project objects by language and count using URL query parameters.
