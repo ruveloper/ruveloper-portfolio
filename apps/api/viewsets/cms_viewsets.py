@@ -26,7 +26,7 @@ class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
         """
         Allow filter project objects by language and count using URL query parameters.
         """
-        queryset = Project.objects.all()
+        queryset = Project.objects.all().order_by("-priority_order")
         language: str = self.request.query_params.get("language")
         count: str = self.request.query_params.get("count")
         if language:
