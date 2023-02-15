@@ -29,7 +29,7 @@ admin.site.site_title = str(_("DEVELOPER"))
 admin.site.index_title = str(_("ADMIN PORTAL"))
 
 # * ---------- URLs -------------
-# * Static url patterns
+# * Static Url patterns
 urlpatterns = [
     path("admin/filebrowser/", fb_site.urls),
     path(settings.ADMIN_URL, admin.site.urls),
@@ -39,11 +39,14 @@ urlpatterns = [
     path("tinymce/", include("tinymce.urls")),
 ]
 
-# * I18N patterns
+# * I18N URL Patterns
 urlpatterns += i18n_patterns(
     # Website URLs
     path("", include("apps.website.urls", namespace="website")),
 )
+
+# * API URL Patterns
+urlpatterns += [path("api/", include("apps.api.urls", namespace="api"))]
 
 # * -------- ERROR VIEWS --------
 handler400 = apps.website.views.error_400_bad_request

@@ -25,7 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/apps/website/static/lottie" />
       <excludeFolder url="file://$MODULE_DIR$/static" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (RuveloperPortfolio)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="RuveloperPortfolio" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="flowbite" level="application" />
     <orderEntry type="library" name="swup" level="application" />

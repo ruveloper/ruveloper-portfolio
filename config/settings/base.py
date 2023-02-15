@@ -33,6 +33,8 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 THIRD_PARTY_APPS = [
+    # Django Rest Framework
+    "rest_framework",
     "solo",
     "widget_tweaks",
     "fontawesomefree",
@@ -45,8 +47,9 @@ THIRD_PARTY_APPS = [
     "tinymce",
 ]
 LOCAL_APPS = [
-    "apps.website.apps.WebsiteConfig",
-    "apps.core.apps.CoreConfig",
+    "apps.api",
+    "apps.core",
+    "apps.website",
 ]
 
 INSTALLED_APPS = PRE_THIRD_PARTY_APPS + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -190,7 +193,14 @@ STATICFILES_DIRS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = Path(BASE_DIR, "media")
 
-# --------------------------- THIRD-PARTY CONFIG ----------------------------
+# * --------------------------- THIRD-PARTY CONFIG ----------------------------
+
+# Django Rest Framework
+# ---------------------------------------------------------------------------
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
+}
 
 # Django SOLO
 # ---------------------------------------------------------------------------
