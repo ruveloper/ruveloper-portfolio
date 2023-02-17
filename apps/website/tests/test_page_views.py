@@ -1,11 +1,15 @@
 from django.template.response import TemplateResponse
-from django.test import TestCase
+from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from apps.core.models import About, Base, Home, Project
 from apps.website.forms import ContactRecordForm
 
+# * Due to the Google Services Implementation which only run under production environment,
+# * the tests for views in the website app must be run with DEBUG=True
 
+
+@override_settings(DEBUG=True)
 class PageViewTests(TestCase):
     def test_home_page_view(self):
         url = reverse("website:home")
@@ -46,6 +50,7 @@ class PageViewTests(TestCase):
         )
 
 
+@override_settings(DEBUG=True)
 class PageContentTests(TestCase):
     # Load initial model data from core.fixtures to test view content
     fixtures = ["default_data.json"]

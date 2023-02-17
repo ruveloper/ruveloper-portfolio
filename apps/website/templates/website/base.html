@@ -41,7 +41,7 @@
     {# ------------------------------ JAVASCRIPT - JS ------------------------------#}
     {# Placed at the top of the document. Pages load faster and at the end execute the scripts (defer) #}
     {% block javascript %}
-        <!-- VENDOR MINIFIED JS -->
+        {# * ----------------- VENDOR SCRIPTS ----------------- #}
         <script defer src="{% static 'js/vendor/typed.min.js' %}"></script>
         <script defer src="{% static 'js/vendor/background_animated_gradient.js' %}"></script>
         {# Flowbite script #}
@@ -57,23 +57,25 @@
         <script src="https://cdn.jsdelivr.net/npm/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"
                 integrity="sha256-maJRZiFl9M6KWEUDMNA7RXjwWhejqmJfnK6fiGe5GGg=" crossorigin="anonymous"></script>
 
-        <!-- Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ g_tag_id }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
+        {# * --------------- PRODUCTION SCRIPTS --------------- #}
+        {% if not debug %}
+            <!-- Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ g_tag_id }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
 
-            gtag('js', new Date());
-            gtag('config', 'G-0NTD322SN5');
-        </script>
+                gtag('js', new Date());
+                gtag('config', 'G-0NTD322SN5');
+            </script>
+            <!-- reCAPTCHA v3 API -->
+            <script data-script-reload="active" src="https://www.google.com/recaptcha/api.js"></script>
+        {% endif %}
 
-        <!-- reCAPTCHA v3 API -->
-        <script data-script-reload="active" src="https://www.google.com/recaptcha/api.js"></script>
-
-        <!-- Main JS -->
+        {# * ---------------- PROJECT SCRIPTS ----------------- #}
         {% compress js %}
             <script defer src="{% static 'js/main.js' %}"></script>
         {% endcompress %}

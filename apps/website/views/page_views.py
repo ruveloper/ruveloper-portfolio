@@ -24,6 +24,8 @@ class HomePage(TemplateView):
             Home, self.request.LANGUAGE_CODE  # type: ignore
         )
         context["cms_projects"] = Project.objects.filter(language=self.request.LANGUAGE_CODE)[:3]  # type: ignore
+        if settings.DEBUG:
+            return context
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -39,6 +41,8 @@ class AboutPage(TemplateView):
         context["cms_about"] = get_model_with_lang(
             About, self.request.LANGUAGE_CODE  # type: ignore
         )
+        if settings.DEBUG:
+            return context
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -58,6 +62,8 @@ class ProjectsPage(ListView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
+        if settings.DEBUG:
+            return context
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -104,6 +110,8 @@ class ProjectDetailPage(DetailView):
                 break
         context["prev_project"] = _prev
         context["next_project"] = _next
+        if settings.DEBUG:
+            return context
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         return context
@@ -114,6 +122,8 @@ class ContactPage(FormView):
     form_class = ContactRecordForm
 
     def form_valid(self, form):
+        if settings.DEBUG:
+            return super().form_valid(form)
         # * ---- reCaptcha validation ----
         recaptcha_token: Optional[str] = self.request.POST.get("g-recaptcha-response")
         success, score = validate_recaptcha_token(recaptcha_token)
@@ -133,6 +143,8 @@ class ContactPage(FormView):
         context = super().get_context_data(**kwargs)
         # ! ---- CMS Data ----
         context["cms_base"] = get_model_or_none(Base)
+        if settings.DEBUG:
+            return context
         # ! ---- Google Services  ----
         context["g_tag_id"] = settings.GOOGLE_TAG_ID
         context["g_recaptcha_publickey"] = settings.RECAPTCHA_PUBLIC_KEY

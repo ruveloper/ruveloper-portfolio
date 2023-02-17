@@ -8,12 +8,17 @@ from .base import BASE_DIR, env
 
 # GENERAL
 # ------------------------------------------------------------------------------
-DEBUG = env("DEBUG", default=True)
+# ! By default all Django test run with DEBUG=False, we can set the flag --debug-mode to run with DEBUG=True
+# ! Or override the settings for specific tests, more information on the following links:
+# https://docs.djangoproject.com/en/stable/topics/testing/overview/#other-test-conditions
+# https://docs.djangoproject.com/en/stable/topics/testing/tools/#overriding-settings
+DEBUG = False
 SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
     default="0jj2@a8#01k0cy1q1i1_tljr=y=2pyqmy0k+-h%6gl2jkggh(6",
 )
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+INTERNAL_IPS = ALLOWED_HOSTS
 
 # INTERNATIONALIZATIONS
 # ---------------------------------------------------------------------------
@@ -51,13 +56,3 @@ RECIPIENT_ADDRESS = env.list(
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
-
-# * Google Analytics / Tag Manager
-# * ------------------------------------------------------------------------------
-GOOGLE_TAG_ID = env("GOOGLE_TAG_ID", default="")
-
-# * Google reCaptcha v3
-# * ------------------------------------------------------------------------------
-RECAPTCHA_PUBLIC_KEY = env("RECAPTCHA_PUBLIC_KEY", default="")
-RECAPTCHA_PRIVATE_KEY = env("RECAPTCHA_PRIVATE_KEY", default="")
-RECAPTCHA_REQUIRED_SCORE = env.float("RECAPTCHA_REQUIRED_SCORE", default=0.85)

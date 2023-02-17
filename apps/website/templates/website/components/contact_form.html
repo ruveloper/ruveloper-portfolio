@@ -62,16 +62,19 @@ PARAMETERS:
 
     {% endfor %}
 
-    {# * ----- reCaptcha information ----- #}
-    <div class="w-full mb-5 flex flex-row items-center">
-        <img class="h-10 border rounded-md " src="{% static 'img/logos/recaptcha.svg' %}" alt="reCaptcha logo">
-        <p class="pl-2 text-xs">
-            {% translate "This site is protected by Google reCaptcha, you can see the" %}
-            <a class="text-indigo-500" href="https://policies.google.com/privacy">{% translate "Privacy Policy" %}</a>
-            {% translate "and" %}
-            <a class="text-indigo-500" href="https://policies.google.com/terms">{% translate "Service Terms" %}</a>.
-        </p>
-    </div>
+    {% if not debug %}
+        {# * ----- reCaptcha information ----- #}
+        <div class="w-full mb-5 flex flex-row items-center">
+            <img class="h-10 border rounded-md " src="{% static 'img/logos/recaptcha.svg' %}" alt="reCaptcha logo">
+            <p class="pl-2 text-xs">
+                {% translate "This site is protected by Google reCaptcha, you can see the" %}
+                <a class="text-indigo-500"
+                   href="https://policies.google.com/privacy">{% translate "Privacy Policy" %}</a>
+                {% translate "and" %}
+                <a class="text-indigo-500" href="https://policies.google.com/terms">{% translate "Service Terms" %}</a>.
+            </p>
+        </div>
+    {% endif %}
 
     {# * ----- Submit ----- #}
 
@@ -79,9 +82,11 @@ PARAMETERS:
             type="submit"
             class="g-recaptcha w-full sm:w-auto px-5 py-2.5 bg-blue-700 hover:bg-blue-800 rounded-lg
                 text-center text-sm text-white font-medium focus:ring-4 focus:outline-none focus:ring-blue-300"
+            {% if not debug %}
             data-sitekey="{{ g_recaptcha_publickey }}"
             data-callback='onSubmitFormContact'
             data-action='submit'>
+            {% endif %}
         <svg id="spinner-form-contact" aria-hidden="true"
              class="hidden mr-3 w-4 h-4 text-white animate-spin" viewBox="0 0 100 101"
              fill="none" xmlns="http://www.w3.org/2000/svg">
