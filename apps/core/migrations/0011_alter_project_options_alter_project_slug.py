@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='project',
-            options={'ordering': ['slug', 'language', '-priority_order'], 'verbose_name': 'CMS - Project', 'verbose_name_plural': 'CMS - Projects'},
+            options={'ordering': ['-priority_order', 'slug', 'language'], 'verbose_name': 'CMS - Project', 'verbose_name_plural': 'CMS - Projects'},
         ),
         migrations.AlterField(
             model_name='project',

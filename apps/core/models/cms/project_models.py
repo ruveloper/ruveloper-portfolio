@@ -117,7 +117,7 @@ class Project(models.Model):
     class Meta:
         verbose_name = _("CMS - Project")
         verbose_name_plural = _("CMS - Projects")
-        ordering = ["slug", "language", "-priority_order"]
+        ordering = ["-priority_order", "slug", "language"]
 
     def __str__(self):
         return Truncator(f'{self.language}: {_("Project")} {self.title}').chars(
