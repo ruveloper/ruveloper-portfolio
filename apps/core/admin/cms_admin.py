@@ -27,6 +27,10 @@ class BaseAdmin(SingletonModelAdmin):
             _("Personal brand"),
             {"fields": ["brand", "logo", "logo_preview", "favicon", "favicon_preview"]},
         ),
+        (
+            _("Background colors"),
+            {"fields": ["color_one", "color_two", "color_three", "color_four"]},
+        ),
         (_("Social networks"), {"fields": ["github", "linkedin"]}),
     ]
 

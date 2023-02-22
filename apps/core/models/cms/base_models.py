@@ -1,3 +1,4 @@
+from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -35,6 +36,38 @@ class Base(SingletonModel):
         upload_to=upload_cms_image_location,
         validators=[MaxFileSizeValidator(kilobytes=10)],
         help_text=_("Favicon of the website"),
+    )
+
+    # * Background colors
+    DEFAULT_COLOR_PALETTE = [
+        ("#00d3ef", "sky"),
+        ("#6eb8f4", "blue"),
+        ("#3849ff", "indigo"),
+        ("#6427ff", "purple"),
+    ]
+    color_one = ColorField(
+        _("Background Color One"),
+        format="hex",
+        samples=DEFAULT_COLOR_PALETTE,
+        default=DEFAULT_COLOR_PALETTE[0][0],
+    )
+    color_two = ColorField(
+        _("Background Color Two"),
+        format="hex",
+        samples=DEFAULT_COLOR_PALETTE,
+        default=DEFAULT_COLOR_PALETTE[1][0],
+    )
+    color_three = ColorField(
+        _("Background Color Three"),
+        format="hex",
+        samples=DEFAULT_COLOR_PALETTE,
+        default=DEFAULT_COLOR_PALETTE[2][0],
+    )
+    color_four = ColorField(
+        _("Background Color Four"),
+        format="hex",
+        samples=DEFAULT_COLOR_PALETTE,
+        default=DEFAULT_COLOR_PALETTE[3][0],
     )
 
     # * Social networks

@@ -34,14 +34,6 @@ body::-webkit-scrollbar-track-piece:end {
     }
 }
 
-/* Background - effect colors */
-#main #base-canvas-animated-gradient {
-    --gradient-color-1: #00d3ef;
-    --gradient-color-2: #6eb8f4;
-    --gradient-color-3: #3849ff;
-    --gradient-color-4: #6427ff;
-}
-
 /* --------- Home styles --------- */
 .background-clip-path::after {
     display: block;

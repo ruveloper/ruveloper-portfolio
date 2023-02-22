@@ -36,6 +36,7 @@ THIRD_PARTY_APPS = [
     # Django Rest Framework
     "rest_framework",
     "solo",
+    "colorfield",
     "widget_tweaks",
     "fontawesomefree",
     "tailwind",

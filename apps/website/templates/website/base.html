@@ -32,10 +32,20 @@
 
         <!-- MAIN CSS -->
         {% tailwind_css %}
-
         {% compress css %}
             <link rel="stylesheet" href="{% static 'css/main.css' %}">
         {% endcompress %}
+
+        <!-- INLINE CSS -->
+        <style>
+            /* Background - effect colors */
+            #main #base-canvas-animated-gradient {
+                --gradient-color-1: {{ cms_base.color_one }};
+                --gradient-color-2: {{ cms_base.color_two }};
+                --gradient-color-3: {{ cms_base.color_three }};
+                --gradient-color-4: {{ cms_base.color_four }};
+            }
+        </style>
     {% endblock css %}
 
     {# ------------------------------ JAVASCRIPT - JS ------------------------------#}

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-11 18:24-0500\n"
-"PO-Revision-Date: 2023-02-11 09:58-0500\n"
+"POT-Creation-Date: 2023-02-22 10:29-0500\n"
+"PO-Revision-Date: 2023-02-22 10:31-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -22,55 +22,59 @@ msgstr ""
 msgid "Personal brand"
 msgstr "Marca personal"
 
-#: .\apps\core\admin\cms_admin.py:30
+#: .\apps\core\admin\cms_admin.py:31
+msgid "Background colors"
+msgstr "Colores de fondo"
+
+#: .\apps\core\admin\cms_admin.py:34
 msgid "Social networks"
 msgstr "Redes sociales"
 
-#: .\apps\core\admin\cms_admin.py:35 .\apps\core\admin\cms_admin.py:98
-#: .\apps\core\admin\cms_admin.py:234 .\apps\core\admin\cms_admin.py:239
+#: .\apps\core\admin\cms_admin.py:39 .\apps\core\admin\cms_admin.py:102
+#: .\apps\core\admin\cms_admin.py:244 .\apps\core\admin\cms_admin.py:249
 #: .\apps\core\admin\shared_admin.py:18
 msgid "Logo preview"
 msgstr "Vista previa del logo"
 
-#: .\apps\core\admin\cms_admin.py:40
+#: .\apps\core\admin\cms_admin.py:44
 msgid "Favicon preview"
 msgstr "Vista previa de Favicon"
 
-#: .\apps\core\admin\cms_admin.py:67
+#: .\apps\core\admin\cms_admin.py:71
 msgid "Card"
 msgstr "Tarjeta"
 
-#: .\apps\core\admin\cms_admin.py:69
+#: .\apps\core\admin\cms_admin.py:73
 #: .\apps\website\templates\website\components\flowbite\base_navbar.html:92
 #: .\apps\website\templates\website\pages\contact_page.html:8
 msgid "Contact"
 msgstr "Contacto"
 
-#: .\apps\core\admin\cms_admin.py:84
+#: .\apps\core\admin\cms_admin.py:88
 msgid "Developer photo preview"
 msgstr "Vista previa de la foto del desarrollador"
 
-#: .\apps\core\admin\cms_admin.py:125
+#: .\apps\core\admin\cms_admin.py:129
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\apps\core\admin\cms_admin.py:136
+#: .\apps\core\admin\cms_admin.py:140
 msgid "Activate/Inactivate sections"
 msgstr "Activar/desactivar secciones"
 
-#: .\apps\core\admin\cms_admin.py:149
+#: .\apps\core\admin\cms_admin.py:153
 msgid "Profile image preview"
 msgstr "Vista previa de la imagen del perfil"
 
-#: .\apps\core\admin\cms_admin.py:179
+#: .\apps\core\admin\cms_admin.py:189
 msgid "External links"
 msgstr "Enlaces externos"
 
-#: .\apps\core\admin\cms_admin.py:181
+#: .\apps\core\admin\cms_admin.py:191
 msgid "Project content"
 msgstr "Contenido del proyecto"
 
-#: .\apps\core\admin\cms_admin.py:192 .\apps\core\admin\cms_admin.py:197
+#: .\apps\core\admin\cms_admin.py:202 .\apps\core\admin\cms_admin.py:207
 msgid "Cover image preview"
 msgstr "Vista previa de la imagen de portada"
 
@@ -85,7 +89,7 @@ msgstr "Tecnologías"
 #: .\apps\core\models\cms\about_models.py:12
 #: .\apps\core\models\cms\about_models.py:73
 #: .\apps\core\models\cms\about_models.py:113
-#: .\apps\core\models\cms\base_models.py:11
+#: .\apps\core\models\cms\base_models.py:12
 #: .\apps\core\models\cms\home_models.py:11
 #: .\apps\core\models\cms\home_models.py:78
 #: .\apps\core\models\cms\project_models.py:14
@@ -97,7 +101,7 @@ msgstr "Creado"
 #: .\apps\core\models\cms\about_models.py:13
 #: .\apps\core\models\cms\about_models.py:74
 #: .\apps\core\models\cms\about_models.py:114
-#: .\apps\core\models\cms\base_models.py:12
+#: .\apps\core\models\cms\base_models.py:13
 #: .\apps\core\models\cms\home_models.py:12
 #: .\apps\core\models\cms\home_models.py:79
 #: .\apps\core\models\cms\project_models.py:15
@@ -161,7 +165,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #: .\apps\core\models\cms\about_models.py:82
-#: .\apps\core\models\cms\base_models.py:20
+#: .\apps\core\models\cms\base_models.py:21
 #: .\apps\core\models\cms\shared_models.py:22
 msgid "Logo"
 msgstr "Logo"
@@ -174,7 +178,7 @@ msgstr "Permite archivos de imágenes (JPG, PNG, GIF, WEBP) + archivos SVG"
 #: .\apps\core\models\cms\about_models.py:96
 #: .\apps\core\models\cms\about_models.py:149
 #: .\apps\core\models\cms\home_models.py:90
-#: .\apps\core\models\cms\project_models.py:91
+#: .\apps\core\models\cms\project_models.py:93
 #: .\apps\core\models\cms\shared_models.py:35
 msgid "Priority order"
 msgstr "Orden de prioridad"
@@ -182,7 +186,7 @@ msgstr "Orden de prioridad"
 #: .\apps\core\models\cms\about_models.py:99
 #: .\apps\core\models\cms\about_models.py:152
 #: .\apps\core\models\cms\home_models.py:93
-#: .\apps\core\models\cms\project_models.py:94
+#: .\apps\core\models\cms\project_models.py:96
 #: .\apps\core\models\cms\shared_models.py:38
 msgid "Positive number used to order, the highest number is positioned first."
 msgstr ""
@@ -220,7 +224,7 @@ msgid "End date"
 msgstr "Fecha de finalización"
 
 #: .\apps\core\models\cms\about_models.py:132
-#: .\apps\core\models\cms\project_models.py:70
+#: .\apps\core\models\cms\project_models.py:72
 #: .\apps\core\models\cms\shared_models.py:60
 msgid "Description"
 msgstr "Descripción"
@@ -246,24 +250,24 @@ msgstr "Entrada de trayectoria"
 msgid "Resume entries"
 msgstr "Entradas de trayectoria"
 
-#: .\apps\core\models\cms\base_models.py:15
+#: .\apps\core\models\cms\base_models.py:16
 #: .\apps\core\models\contact_model.py:11
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: .\apps\core\models\cms\base_models.py:15
+#: .\apps\core\models\cms\base_models.py:16
 msgid "Contact email"
 msgstr "Correo electrónico de contacto"
 
-#: .\apps\core\models\cms\base_models.py:17
+#: .\apps\core\models\cms\base_models.py:18
 msgid "Brand"
 msgstr "Marca"
 
-#: .\apps\core\models\cms\base_models.py:17
+#: .\apps\core\models\cms\base_models.py:18
 msgid "Name of your personal brand"
 msgstr "Nombre de tu marca personal"
 
-#: .\apps\core\models\cms\base_models.py:30
+#: .\apps\core\models\cms\base_models.py:31
 msgid ""
 "Logo of your personal brand. Allow image files (JPG, PNG, GIF, WEBP) + SVG "
 "files"
@@ -271,33 +275,49 @@ msgstr ""
 "Logo de tu marca personal. Permite archivos de imagen (JPG, PNG, GIF, WEBP) "
 "+ archivos SVG"
 
-#: .\apps\core\models\cms\base_models.py:34
+#: .\apps\core\models\cms\base_models.py:35
 msgid "favicon"
 msgstr "favicon"
 
-#: .\apps\core\models\cms\base_models.py:37
+#: .\apps\core\models\cms\base_models.py:38
 msgid "Favicon of the website"
 msgstr "Favicon del sitio web"
 
-#: .\apps\core\models\cms\base_models.py:42
+#: .\apps\core\models\cms\base_models.py:49
+msgid "Background Color One"
+msgstr "Color de fondo uno"
+
+#: .\apps\core\models\cms\base_models.py:55
+msgid "Background Color Two"
+msgstr "Color de fondo dos"
+
+#: .\apps\core\models\cms\base_models.py:61
+msgid "Background Color Three"
+msgstr "Color de fondo tres"
+
+#: .\apps\core\models\cms\base_models.py:67
+msgid "Background Color Four"
+msgstr "Color de fondo cuatro"
+
+#: .\apps\core\models\cms\base_models.py:75
 msgid "Github profile url"
 msgstr "URL del perfil de GitHub"
 
-#: .\apps\core\models\cms\base_models.py:42
+#: .\apps\core\models\cms\base_models.py:75
 msgid "Example: https://github.com/dev-user"
 msgstr "Ejemplo: https://github.com/dev-user"
 
-#: .\apps\core\models\cms\base_models.py:45
+#: .\apps\core\models\cms\base_models.py:78
 msgid "Linkedin profile url"
 msgstr "URL del perfil de Linkedin"
 
-#: .\apps\core\models\cms\base_models.py:46
+#: .\apps\core\models\cms\base_models.py:79
 msgid "Example: https://www.linkedin.com/in/dev-user"
 msgstr "Ejemplo: https://www.linkedin.com/in/dev-user"
 
-#: .\apps\core\models\cms\base_models.py:50
-#: .\apps\core\models\cms\base_models.py:51
-#: .\apps\core\models\cms\base_models.py:54
+#: .\apps\core\models\cms\base_models.py:83
+#: .\apps\core\models\cms\base_models.py:84
+#: .\apps\core\models\cms\base_models.py:87
 msgid "CMS - Base"
 msgstr "CMS - Base"
 
@@ -356,14 +376,20 @@ msgid "Slug"
 msgstr "Slug"
 
 #: .\apps\core\models\cms\project_models.py:32
-msgid "Url endpoint for this project, leave blank to auto-generate."
-msgstr "Ruta URL para este proyecto, dejar en blanco para ser auto-generado."
+msgid ""
+"Url endpoint for this project, leave blank to auto-generate. "
+"<br><strong>WARNING:</strong> Set the same slug for the project model in "
+"different languages."
+msgstr ""
+"Url endpoint para este proyecto, dejar en blanco para auto-generar. "
+"<br><strong>ADVERTENCIA:</strong> Establezca el mismo slug para el proyecto "
+"en diferentes idiomas."
 
-#: .\apps\core\models\cms\project_models.py:35
+#: .\apps\core\models\cms\project_models.py:37
 msgid "Website URL or link to project demo"
 msgstr "URL del sitio web o demo del proyecto"
 
-#: .\apps\core\models\cms\project_models.py:39
+#: .\apps\core\models\cms\project_models.py:41
 msgid ""
 "Link to deployed project. Leave this field blank to hide the corresponding "
 "button on the projects page."
@@ -371,11 +397,11 @@ msgstr ""
 "Link al proyecto desplegado. Dejar en blanco este campo para ocultar el "
 "botón correspondiente en la pagina de proyectos."
 
-#: .\apps\core\models\cms\project_models.py:43
+#: .\apps\core\models\cms\project_models.py:45
 msgid "Github repository URL"
 msgstr "URL del repositorio GitHub"
 
-#: .\apps\core\models\cms\project_models.py:47
+#: .\apps\core\models\cms\project_models.py:49
 msgid ""
 "Link to project code repository. leave this field blank to hide the "
 "corresponding button on the projects page."
@@ -383,39 +409,39 @@ msgstr ""
 "Link al repositorio de código del proyecto. Dejar en blanco este campo para "
 "ocultar el botón correspondiente en la pagina de proyectos."
 
-#: .\apps\core\models\cms\project_models.py:52
+#: .\apps\core\models\cms\project_models.py:54
 msgid "Cover image"
 msgstr "Imagen de portada"
 
-#: .\apps\core\models\cms\project_models.py:62
+#: .\apps\core\models\cms\project_models.py:64
 msgid "Cover image (Webp)"
 msgstr "Imagen de portada (Webp)"
 
-#: .\apps\core\models\cms\project_models.py:67
+#: .\apps\core\models\cms\project_models.py:69
 msgid "Auto-generated WEBP version of [Cover image]."
 msgstr "Version WEBP auto-generada de [Imagen de portada]"
 
-#: .\apps\core\models\cms\project_models.py:71
+#: .\apps\core\models\cms\project_models.py:73
 msgid "< Accept HTML > Project summary to display in project list."
 msgstr ""
 "< Acepta HTML > Resumen corto del proyecto para mostrar en la lista de "
 "proyectos."
 
-#: .\apps\core\models\cms\project_models.py:76
+#: .\apps\core\models\cms\project_models.py:78
 msgid "Activate project details"
 msgstr "Activar detalles del proyecto"
 
-#: .\apps\core\models\cms\project_models.py:78
+#: .\apps\core\models\cms\project_models.py:80
 msgid "Activate project details button and expose project details page"
 msgstr ""
 "Activar botón de detalles del proyecto y exponer la pagina de detalles del "
 "proyecto"
 
-#: .\apps\core\models\cms\project_models.py:81
+#: .\apps\core\models\cms\project_models.py:83
 msgid "Project details"
 msgstr "Detalles del proyecto"
 
-#: .\apps\core\models\cms\project_models.py:85
+#: .\apps\core\models\cms\project_models.py:87
 msgid ""
 "< Accept HTML > Long description about the project, it's the content of the "
 "project details page."
@@ -423,11 +449,11 @@ msgstr ""
 "< Acepta HTML > Descripción larga acerca del proyecto, este sera el "
 "contenido de la URL del proyecto."
 
-#: .\apps\core\models\cms\project_models.py:116
+#: .\apps\core\models\cms\project_models.py:118
 msgid "CMS - Project"
 msgstr "CMS - Proyecto"
 
-#: .\apps\core\models\cms\project_models.py:117
+#: .\apps\core\models\cms\project_models.py:119
 msgid "CMS - Projects"
 msgstr "CMS - Proyectos"
 
@@ -482,34 +508,34 @@ msgstr ""
 "El tamaño del archivo %(file_size).2f KB no está permitido. El tamaño máximo "
 "es: %(kilobytes).2f KB."
 
-#: .\apps\website\templates\website\components\contact_form.html:69
+#: .\apps\website\templates\website\components\contact_form.html:70
 msgid "This site is protected by Google reCaptcha, you can see the"
 msgstr "Este sitio web está protegido por Google reCaptcha, puedes ver la"
 
-#: .\apps\website\templates\website\components\contact_form.html:70
+#: .\apps\website\templates\website\components\contact_form.html:72
 msgid "Privacy Policy"
 msgstr "Política de privacidad"
 
-#: .\apps\website\templates\website\components\contact_form.html:71
+#: .\apps\website\templates\website\components\contact_form.html:73
 msgid "and"
 msgstr "y"
 
-#: .\apps\website\templates\website\components\contact_form.html:72
+#: .\apps\website\templates\website\components\contact_form.html:74
 msgid "Service Terms"
 msgstr "Términos de servicio"
 
-#: .\apps\website\templates\website\components\contact_form.html:93
+#: .\apps\website\templates\website\components\contact_form.html:98
 msgid "Send message"
 msgstr "Enviar mensaje"
 
 #: .\apps\website\templates\website\components\flowbite\base_navbar.html:71
-#: .\apps\website\templates\website\pages\about_page.html:8
 #: .\apps\website\templates\website\pages\home_page.html:8
 #: .\apps\website\templates\website\pages\project_detail_page.html:39
 msgid "Home"
 msgstr "Inicio"
 
 #: .\apps\website\templates\website\components\flowbite\base_navbar.html:78
+#: .\apps\website\templates\website\pages\about_page.html:8
 msgid "About"
 msgstr "Sobre mí"
 
@@ -627,15 +653,15 @@ msgstr ""
 msgid "Get it touch"
 msgstr "Escríbeme"
 
-#: .\apps\website\views\page_views.py:108
+#: .\apps\website\views\page_views.py:134
 msgid "Invalid reCaptcha, please try again."
 msgstr "ReCaptcha invalida, por favor vuelva a intentarlo."
 
-#: .\config\settings\base.py:172
+#: .\config\settings\base.py:176
 msgid "English"
 msgstr "Inglés"
 
-#: .\config\settings\base.py:173
+#: .\config\settings\base.py:177
 msgid "Spanish"
 msgstr "Español"
 
@@ -650,6 +676,10 @@ msgstr "DESARROLLADOR"
 #: .\config\urls.py:29
 msgid "ADMIN PORTAL"
 msgstr "PORTAL DE ADMINISTRACIÓN"
+
+#~ msgid "Url endpoint for this project, leave blank to auto-generate."
+#~ msgstr ""
+#~ "Ruta URL para este proyecto, dejar en blanco para ser auto-generado."
 
 #~ msgid "Message sent"
 #~ msgstr "Mensaje enviado"
