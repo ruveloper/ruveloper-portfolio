@@ -35,6 +35,16 @@ body::-webkit-scrollbar-track-piece:end {
 }
 
 /* --------- Home styles --------- */
+.background-blue-clip-path::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 99%;
+    background: rgb(44, 44, 143);
+    clip-path: polygon(0 0, 20% 0, 70% 100%, 0% 100%);
+}
 .background-clip-path::after {
     display: block;
     content: '';
@@ -43,7 +53,7 @@ body::-webkit-scrollbar-track-piece:end {
     width: 100%;
     height: 100%;
     background: rgb(249, 250, 251);
-    clip-path: polygon(0 90%, 100% 65%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 98%, 100% 60%, 100% 100%, 0% 100%);
 }
 
 /* ----- Section page styles ----- */
